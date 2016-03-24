@@ -5,8 +5,10 @@
 **Module:** Graph Theory </br>
 **Lecturer:** Ian Mcloughlin </br>
 
-## Introduction
-Give a summary here of what your project is about.
+## **_Introduction_**
+My name is Ciaran Whyte and as part of a Graph Thoery Module based in GMIT (Galway-Mayo Institute of Technology) i have to design and build a.
+graph database. I will be creating the database in Neo4J which used a query language called Cypher. This is the equivalant of a language like SQL used
+with relational databases.
 
 ## Database
 Explain how you created your database, and how information is represented in it.
