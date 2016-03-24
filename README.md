@@ -10,7 +10,7 @@ My name is Ciaran Whyte and as part of a Graph Thoery Module based in GMIT (Galw
 graph database. I will be creating the database in Neo4J which used a query language called Cypher. This is the equivalant of a language like SQL used
 with relational databases.
 
-## Database
+## **_Database_**
 Explain how you created your database, and how information is represented in it.
 
 ## Queries
