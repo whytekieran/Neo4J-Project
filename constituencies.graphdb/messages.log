@@ -955,3 +955,39 @@ Storage files: (filename : modification date - size)
 2016-03-24 15:44:34.650+0000 INFO  [o.n.k.i.DiagnosticsManager] --- SERVER STARTED START ---
 2016-03-24 15:44:37.728+0000 INFO  [o.n.k.i.DiagnosticsManager] --- SERVER STARTED END ---
 2016-03-24 16:44:27.814+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 372ms.
+2016-03-24 17:44:28.169+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 287ms.
+2016-03-24 18:44:28.461+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 212ms.
+2016-03-24 19:24:34.516+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [10]:  Starting check pointing...
+2016-03-24 19:24:34.517+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [10]:  Starting store flush...
+2016-03-24 19:24:34.570+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 10 to [B:\Software Engineering Year 3 GMIT\Graph Theory\Labs\Project Neo4J\Neo4J Project\constituencies.graphdb\neostore.counts.db.b], from [B:\Software Engineering Year 3 GMIT\Graph Theory\Labs\Project Neo4J\Neo4J Project\constituencies.graphdb\neostore.counts.db.a].
+2016-03-24 19:24:34.586+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 10 to [B:\Software Engineering Year 3 GMIT\Graph Theory\Labs\Project Neo4J\Neo4J Project\constituencies.graphdb\neostore.counts.db.b], from [B:\Software Engineering Year 3 GMIT\Graph Theory\Labs\Project Neo4J\Neo4J Project\constituencies.graphdb\neostore.counts.db.a].
+2016-03-24 19:24:34.973+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [10]:  Store flush completed
+2016-03-24 19:24:34.973+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [10]:  Starting appending check point entry into the tx log...
+2016-03-24 19:24:35.054+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [10]:  Appending check point entry into the tx log completed
+2016-03-24 19:24:35.055+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [10]:  Check pointing completed
+2016-03-24 19:24:35.055+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-03-24 19:24:35.056+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-03-24 19:30:35.360+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [11]:  Starting check pointing...
+2016-03-24 19:30:35.360+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [11]:  Starting store flush...
+2016-03-24 19:30:35.407+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 11 to [B:\Software Engineering Year 3 GMIT\Graph Theory\Labs\Project Neo4J\Neo4J Project\constituencies.graphdb\neostore.counts.db.a], from [B:\Software Engineering Year 3 GMIT\Graph Theory\Labs\Project Neo4J\Neo4J Project\constituencies.graphdb\neostore.counts.db.b].
+2016-03-24 19:30:35.407+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 11 to [B:\Software Engineering Year 3 GMIT\Graph Theory\Labs\Project Neo4J\Neo4J Project\constituencies.graphdb\neostore.counts.db.a], from [B:\Software Engineering Year 3 GMIT\Graph Theory\Labs\Project Neo4J\Neo4J Project\constituencies.graphdb\neostore.counts.db.b].
+2016-03-24 19:30:35.500+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [11]:  Store flush completed
+2016-03-24 19:30:35.500+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [11]:  Starting appending check point entry into the tx log...
+2016-03-24 19:30:35.516+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [11]:  Appending check point entry into the tx log completed
+2016-03-24 19:30:35.516+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [11]:  Check pointing completed
+2016-03-24 19:30:35.516+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-03-24 19:30:35.516+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-03-24 19:44:28.727+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 229ms.
+2016-03-24 20:03:06.608+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [15]:  Starting check pointing...
+2016-03-24 20:03:06.608+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [15]:  Starting store flush...
+2016-03-24 20:03:06.780+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 15 to [B:\Software Engineering Year 3 GMIT\Graph Theory\Labs\Project Neo4J\Neo4J Project\constituencies.graphdb\neostore.counts.db.b], from [B:\Software Engineering Year 3 GMIT\Graph Theory\Labs\Project Neo4J\Neo4J Project\constituencies.graphdb\neostore.counts.db.a].
+2016-03-24 20:03:06.782+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 15 to [B:\Software Engineering Year 3 GMIT\Graph Theory\Labs\Project Neo4J\Neo4J Project\constituencies.graphdb\neostore.counts.db.b], from [B:\Software Engineering Year 3 GMIT\Graph Theory\Labs\Project Neo4J\Neo4J Project\constituencies.graphdb\neostore.counts.db.a].
+2016-03-24 20:03:06.956+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [15]:  Store flush completed
+2016-03-24 20:03:06.957+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [15]:  Starting appending check point entry into the tx log...
+2016-03-24 20:03:06.979+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [15]:  Appending check point entry into the tx log completed
+2016-03-24 20:03:06.979+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [15]:  Check pointing completed
+2016-03-24 20:03:06.979+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-03-24 20:03:06.980+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-03-24 20:03:20.645+0000 INFO  [o.n.c.i.ServerExecutionEngine] Discarded stale query from the query cache: CYPHER 2.3 match (n) return n
+2016-03-24 20:03:20.646+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: Query(None,SingleQuery(List(Match(false,Pattern(List(EveryPath(NodePattern(Some(Identifier(n)),List(),None,false)))),List(),None), Return(false,ReturnItems(false,List(AliasedReturnItem(Identifier(n),Identifier(n)))),None,None,None))))
+2016-03-24 20:03:21.140+0000 INFO  [o.n.c.i.ServerExecutionEngine] Discarded stale query from the query cache: CYPHER 2.3 match (n) return n;

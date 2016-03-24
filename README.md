@@ -1,9 +1,9 @@
-# Irish Constituencies Neo4j Database
+# **_Irish Constituencies Neo4j Database_**
 
-**_Student Name:_** Ciaran Whyte </br>
-**_Student ID:_** G00254624 </br>
-**_Module:_** Graph Theory </br>
-**_Lecturer:_** Ian Mcloughlin </br>Student name, G00123456
+**Student Name:** Ciaran Whyte </br>
+**Student ID:** G00254624 </br>
+**Module:** Graph Theory </br>
+**Lecturer:** Ian Mcloughlin </br>
 
 ## Introduction
 Give a summary here of what your project is about.
