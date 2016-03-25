@@ -3,208 +3,208 @@
 
 //1. QUERY CREATES NODES REPRESENTING ALL CONSTITUENCIES IN IRELAND
 
-CREATE (ck:Constituency {Name: "Carlow-Kilkenny", 
+CREATE (:Constituency {Name: "Carlow-Kilkenny", 
 						 Seats: "5", 
 						 Population: "145649", 
 						 Province: "Leinster",
 						 Created: "1948"}), 
-       (cm:Constituency {Name: "Cavan-Monaghan", 
+       (:Constituency {Name: "Cavan-Monaghan", 
 						 Seats: "4", 
 						 Population: "120483", 
 						 Province: "Ulster",
 						 Created: "1977"}),
-       (cl:Constituency {Name: "Clare", 
+       (:Constituency {Name: "Clare", 
 						 Seats: "4", 
 						 Population: "111336", 
 						 Province: "Munster",
 						 Created: "1921"}),
-	   (ce:Constituency {Name: "Cork East", 
+	   (:Constituency {Name: "Cork East", 
 						 Seats: "4", 
 						 Population: "114365", 
 						 Province: "Munster",
 						 Created: "1981"}),
-	   (cnc:Constituency {Name: "Cork North-Central", 
+	   (:Constituency {Name: "Cork North-Central", 
 						  Seats: "4", 
 						  Population: "117170", 
 						  Province: "Munster",
 						  Created: "1981"}),
-	   (cnw:Constituency {Name: "Cork North-West", 
+	   (:Constituency {Name: "Cork North-West", 
 						  Seats: "3", 
 						  Population: "86539", 
 						  Province: "Munster",
 						  Created: "1980"}),
-	   (csc:Constituency {Name: "Cork South-Central", 
+	   (:Constituency {Name: "Cork South-Central", 
 						  Seats: "4", 
 						  Population: "117952", 
 						  Province: "Munster",
 						  Created: "1981"}),
-	   (csw:Constituency {Name: "Cork South-West",
+	   (:Constituency {Name: "Cork South-West",
 						  Seats: "3", 
 						  Population: "82952", 
 						  Province: "Munster",
 						  Created: "1961"}),
-	   (dg:Constituency {Name: "Donegal",
+	   (:Constituency {Name: "Donegal",
 						 Seats: "5", 
 						 Population: "152358", 
 						 Province: "Ulster",
 						 Created: "2016"}),
-	   (dbn:Constituency {Name: "Dublin Bay North",
+	   (:Constituency {Name: "Dublin Bay North",
 						  Seats: "5", 
 						  Population: "146512", 
 						  Province: "Leinster",
 						  Created: "2016"}),
-	   (dbs:Constituency {Name: "Dublin Bay South", 
+	   (:Constituency {Name: "Dublin Bay South", 
 						  Seats: "4", 
 						  Population: "116396", 
 						  Province: "Leinster",
 						  Created: "2016"}),
-	   (dbc:Constituency {Name: "Dublin Central", 
+	   (:Constituency {Name: "Dublin Central", 
 						  Seats: "3", 
 						  Population: "89030", 
 						  Province: "Leinster",
 						  Created: "1981"}),
-	   (dbf:Constituency {Name: "Dublin Fingal",
+	   (:Constituency {Name: "Dublin Fingal",
 						  Seats: "5", 
 						  Population: "141162", 
 						  Province: "Leinster",
 						  Created: "2016"}),
-	   (dmw:Constituency {Name: "Dublin Mid-West", 
+	   (:Constituency {Name: "Dublin Mid-West", 
 						  Seats: "4", 
 						  Population: "110427", 
 						  Province: "Leinster",
 						  Created: "2002"}),
-	   (dnw:Constituency {Name: "Dublin North-West", 
+	   (:Constituency {Name: "Dublin North-West", 
 						  Seats: "3", 
 						  Population: "90534", 
 						  Province: "Leinster",
 					      Created: "1981"}),
-	   (dbr:Constituency {Name: "Dublin Rathdown", 
+	   (:Constituency {Name: "Dublin Rathdown", 
 						  Seats: "3", 
 						  Population: "87470", 
 						  Province: "Leinster",
 						  Created: "2016"}),
-	   (dsc:Constituency {Name: "Dublin South-Central", 
+	   (:Constituency {Name: "Dublin South-Central", 
 						  Seats: "4", 
 						  Population: "114660", 
 						  Province: "Leinster",
 						  Created: "1948"}),
-	   (dsw:Constituency {Name: "Dublin South-West", 
+	   (:Constituency {Name: "Dublin South-West", 
 						  Seats: "5", 
 						  Population: "144908", 
 						  Province: "Leinster",
 						  Created: "1981"}),
-	   (dbw:Constituency {Name: "Dublin West", 
+	   (:Constituency {Name: "Dublin West", 
 						  Seats: "4", 
 						  Population: "113179", 
 						  Province: "Leinster",
 						  Created: "1981"}),
-	   (dbl:Constituency {Name: "Dun Laoghaire", 
+	   (:Constituency {Name: "Dun Laoghaire", 
 						  Seats: "4", 
 						  Population: "118791", 
 						  Province: "Leinster",
 						  Created: "1977"}),
-	   (ge:Constituency {Name: "Galway East", 
+	   (:Constituency {Name: "Galway East", 
 						 Seats: "3", 
 						 Population: "89564", 
 						 Province: "Connacht",
 						 Created: "1977"}),
-	   (gw:Constituency {Name: "Galway West", 
+	   (:Constituency {Name: "Galway West", 
 						 Seats: "5", 
 						 Population: "150874", 
 						 Province: "Connacht",
 						 Created: "1937"}),
-	   (ky:Constituency {Name: "Kerry", 
+	   (:Constituency {Name: "Kerry", 
 						 Seats: "5", 
 						 Population: "145502", 
 						 Province: "Munster",
 						 Created: "2016"}),
-	   (kn:Constituency {Name: "Kildare North", 
+	   (:Constituency {Name: "Kildare North", 
 						 Seats: "4", 
 						 Population: "115350",
 						 Province: "Leinster",
 						 Created: "1997"}),
-	   (ks:Constituency {Name: "Kildare South", 
+	   (:Constituency {Name: "Kildare South", 
 						 Seats: "3", 
 						 Population: "115350", 
 						 Province: "Leinster",
 						 Created: "1997"}),
-	   (lo:Constituency {Name: "Laois", 
+	   (:Constituency {Name: "Laois", 
 						 Seats: "3", 
 						 Population: "87745", 
 						 Province: "Leinster",
 						 Created: "2016"}),
-	   (lci:Constituency {Name: "Limerick City", 
+	   (:Constituency {Name: "Limerick City", 
 						  Seats: "4", 
 						  Population: "113835", 
 						  Province: "Munster",
 						  Created: "2011"}),
-	   (lcn:Constituency {Name: "Limerick County", 
+	   (:Constituency {Name: "Limerick County", 
 						  Seats: "3", 
 						  Population: "83834", 
 						  Province: "Munster",
 						  Created: "2016"}),
-	   (lmh:Constituency {Name: "Longford-Westmeath", 
+	   (:Constituency {Name: "Longford-Westmeath", 
 						  Seats: "4", 
 						  Population: "116802", 
 						  Province: "Leinster",
 						  Created: "2007"}),
-	   (lu:Constituency {Name: "Louth", 
+	   (:Constituency {Name: "Louth", 
 						 Seats: "5", 
 						 Population: "143272", 
 						 Province: "Leinster",
 						 Created: "2007"}),
-	   (my:Constituency {Name: "Mayo", 
+	   (:Constituency {Name: "Mayo", 
 						 Seats: "4", 
 						 Population: "120332", 
 						 Province: "Connacht",
 						 Created: "1997"}),
-	   (mhe:Constituency {Name: "Meath East", 
+	   (:Constituency {Name: "Meath East", 
 						  Seats: "3", 
 						  Population: "86527", 
 						  Province: "Leinster",
 						  Created: "2007"}),
-	   (mhw:Constituency {Name: "Meath West", 
+	   (:Constituency {Name: "Meath West", 
 						  Seats: "3", 
 						  Population: "85550", 
 						  Province: "Leinster",
 						  Created: "2007"}),
-	   (oly:Constituency {Name: "Offaly", 
+	   (:Constituency {Name: "Offaly", 
 						  Seats: "3", 
 						  Population: "87640", 
 						  Province: "Leinster",
 						  Created: "2016"}),
-	   (rgl:Constituency {Name: "Roscommon-Galway", 
+	   (:Constituency {Name: "Roscommon-Galway", 
 						  Seats: "3", 
 						  Population: "84586", 
 						  Province: "Connacht",
 						  Created: "2016"}),
-	   (slt:Constituency {Name: "Sligo-Leitrim", 
+	   (:Constituency {Name: "Sligo-Leitrim", 
 						  Seats: "4", 
 						  Population: "119153", 
 						  Province: "Connacht",
 						  Created: "2016"}),
-	   (tp:Constituency {Name: "Tipperary", 
+	   (:Constituency {Name: "Tipperary", 
 						 Seats: "5", 
 						 Population: "147801", 
 						 Province: "Munster",
 						 Created: "2016"}),
-	   (wt:Constituency {Name: "Waterford", 
+	   (:Constituency {Name: "Waterford", 
 						 Seats: "4", 
 						 Population: "113795", 
 						 Province: "Munster",
 						 Created: "1923"}),
-	   (wx:Constituency {Name: "Wexford", 
+	   (:Constituency {Name: "Wexford", 
 						 Seats: "5", 
 						 Population: "145320", 
 						 Province: "Leinster",
 						 Created: "1921"}),
-	   (wck:Constituency {Name: "Wicklow", 
+	   (:Constituency {Name: "Wicklow", 
 						  Seats: "5", 
 						  Population: "141012", 
 						  Province: "Leinster",
 						  Created: "1923"});
 
-//2. QUERY CREATES NODES REPRESENTING ALL THE ELECTION CANDITATES IN IRELAND
+//2. QUERIES CREATE NODES REPRESENTING ALL THE ELECTION CANDITATES IN IRELAND
 --Candidates for Carlow-Kilkenny Constituency--
 
 CREATE (:Candidate {Name: "John Paul Phelan", 
@@ -355,49 +355,49 @@ CREATE (:Candidate {Name: "Pat Breen",
 --Candidates for Cork-East Constituency--
 	   
 CREATE (:Candidate {Name: "Tom Barry", 
-					Constituency: "Cork-East",
+					Constituency: "Cork East",
 					Party: "Fine Gael"}), 
        (:Candidate {Name: "David Stanton", 
-					Constituency: "Cork-East",
+					Constituency: "Cork East",
 					Party: "Fine Gael"}),
 	   (:Candidate {Name: "Noel McCarthy", 
-					Constituency: "Cork-East",
+					Constituency: "Cork East",
 					Party: "Fine Gael"}),
 	   (:Candidate {Name: "Kevin O’Keeffe", 
-					Constituency: "Cork-East",
+					Constituency: "Cork East",
 					Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Barbara Ahern", 
-					Constituency: "Cork-East",
+					Constituency: "Cork East",
 					Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Sean Sherlock", 
-					Constituency: "Cork-East",
+					Constituency: "Cork East",
 					Party: "Labour"}),
 	   (:Candidate {Name: "Pat Buckley", 
-					Constituency: "Cork-East",
+					Constituency: "Cork East",
 					Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Ciara Leonardi Roche", 
-					Constituency: "Cork-East",
+					Constituency: "Cork East",
 					Party: "Anti Austerity Alliance"}),
 	   (:Candidate {Name: "Paul Bradford", 
-					Constituency: "Cork-East",
+					Constituency: "Cork East",
 					Party: "RENUA"}),
 	   (:Candidate {Name: "Ken Curtin", 
-					Constituency: "Cork-East",
+					Constituency: "Cork East",
 					Party: "Social Democrats"}),
 	   (:Candidate {Name: "Natasha Harty", 
-					Constituency: "Cork-East",
+					Constituency: "Cork East",
 					Party: "Green Party"}),
 	   (:Candidate {Name: "Kieran McCarthy", 
-					Constituency: "Cork-East",
+					Constituency: "Cork East",
 					Party: "Independant"}),
 	   (:Candidate {Name: "Mary Linehan Foley", 
-					Constituency: "Cork-East",
+					Constituency: "Cork East",
 					Party: "Independant"}),
 	   (:Candidate {Name: "Ross Cannon", 
-					Constituency: "Cork-East",
+					Constituency: "Cork East",
 					Party: "Independant"}),
 	   (:Candidate {Name: "Paddy Bullman", 
-					Constituency: "Cork-East",
+					Constituency: "Cork East",
 					Party: "Independant"});	   
 	   
 --Candidates for Cork North-Central Constituency--
@@ -1978,3 +1978,260 @@ CREATE (:Candidate {Name: "Andrew Doyle",
 	   (:Candidate {Name: "Katrina Hutchinson", 
 					Constituency: "Wicklow",
 					Party: "Direct Democracy Ireland a National Citizens Movement Conference"});
+					
+//3. QUERIES CREATE THE RELATIONSHIPS BETWEEN CANDIDATES AND CONSTITUENCIES (RELATION TYPE IS: 'CANDIDATE_IN')
+//CANDIDATE NODES ARE RELATED TO A CONSTITUENCY NODES VIA THE 'CANDIDATE_IN' RELATIONSHIP DEPENDING ON THE CONSTITUENCY THE CANDIDATE IN INVOLVED IN
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Carlow-Kilkenny' and the 'Carlow-Kilkenny' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Carlow-Kilkenny" AND cand.Constituency = "Carlow-Kilkenny"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Cavan-Monaghan' and the 'Cavan-Monaghan' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Cavan-Monaghan" AND cand.Constituency = "Cavan-Monaghan"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Clare' and the 'Clare' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Clare" AND cand.Constituency = "Clare"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Cork East' and the 'Cork East' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Cork East" AND cand.Constituency = "Cork East"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Cork North-Central' and the 'Cork North-Central' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Cork North-Central" AND cand.Constituency = "Cork North-Central"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Cork North-West' and the 'Cork North-West' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Cork North-West" AND cand.Constituency = "Cork North-West"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Cork South-Central' and the 'Cork South-Central' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Cork South-Central" AND cand.Constituency = "Cork South-Central"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Cork South-West' and the 'Cork South-West' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Cork South-West" AND cand.Constituency = "Cork South-West"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Donegal' and the 'Donegal' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Donegal" AND cand.Constituency = "Donegal"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Dublin Bay North' and the 'Dublin Bay North' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Dublin Bay North" AND cand.Constituency = "Dublin Bay North"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Dublin Bay South' and the 'Dublin Bay South' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Dublin Bay South" AND cand.Constituency = "Dublin Bay South"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Dublin Central' and the 'Dublin Central' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Dublin Central" AND cand.Constituency = "Dublin Central"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Dublin Fingal' and the 'Dublin Fingal' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Dublin Fingal" AND cand.Constituency = "Dublin Fingal"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Dublin Mid-West' and the 'Dublin Mid-West' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Dublin Mid-West" AND cand.Constituency = "Dublin Mid-West"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Dublin North-West' and the 'Dublin North-West' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Dublin North-West" AND cand.Constituency = "Dublin North-West"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Dublin Rathdown' and the 'Rathdown' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Dublin Rathdown" AND cand.Constituency = "Dublin Rathdown"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Dublin South-Central' and the 'Dublin South-Central' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Dublin South-Central" AND cand.Constituency = "Dublin South-Central"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Dublin South-West' and the 'Dublin South-West' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Dublin South-West" AND cand.Constituency = "Dublin South-West"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Dublin West' and the 'Dublin West' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Dublin West" AND cand.Constituency = "Dublin West"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Dun Laoghaire' and the 'Dun Laoghaire' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Dun Laoghaire" AND cand.Constituency = "Dun Laoghaire"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Galway East' and the 'Galway East' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Galway East" AND cand.Constituency = "Galway East"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Galway West' and the 'Galway West' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Galway West" AND cand.Constituency = "Galway West"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Kerry' and the 'Kerry' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Kerry" AND cand.Constituency = "Kerry"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Kildare North' and the 'Kildare North' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Kildare North" AND cand.Constituency = "Kildare North"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Kildare South' and the 'Kildare South' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Kildare South" AND cand.Constituency = "Kildare South"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Laois' and the 'Laois' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Laois" AND cand.Constituency = "Laois"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Limerick City' and the 'Limerick City' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Limerick City" AND cand.Constituency = "Limerick City"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Limerick County' and the 'Limerick County' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Limerick County" AND cand.Constituency = "Limerick County"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Longford-Westmeath' and the 'Longford-Westmeath' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Longford-Westmeath" AND cand.Constituency = "Longford-Westmeath"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Longford-Westmeath' and the 'Longford-Westmeath' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Longford-Westmeath" AND cand.Constituency = "Longford-Westmeath"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Louth' and the 'Louth' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Louth" AND cand.Constituency = "Louth"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Mayo' and the 'Mayo' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Mayo" AND cand.Constituency = "Mayo"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Meath East' and the 'Meath East' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Meath East" AND cand.Constituency = "Meath East"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Meath West' and the 'Meath West' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Meath West" AND cand.Constituency = "Meath West"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Offaly' and the 'Offaly' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Offaly" AND cand.Constituency = "Offaly"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Roscommon-Galway' and the 'Roscommon-Galway' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Roscommon-Galway" AND cand.Constituency = "Roscommon-Galway"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Sligo-Leitrim' and the 'Sligo-Leitrim' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Sligo-Leitrim" AND cand.Constituency = "Sligo-Leitrim"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Tipperary' and the 'Tipperary' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Tipperary" AND cand.Constituency = "Tipperary"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Waterford' and the 'Waterford' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Waterford" AND cand.Constituency = "Waterford"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Wexford' and the 'Wexford' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Waterford" AND cand.Constituency = "Waterford"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+--Creates a relationship between candidate nodes with a Constituency property of 'Wicklow' and the 'Wicklow' constituency node--
+
+MATCH (cons:Constituency), (cand:Candidate)
+WHERE cons.Name = "Wicklow" AND cand.Constituency = "Wicklow"
+CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+
+
+
+
+
+
+
+
