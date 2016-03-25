@@ -6,8 +6,8 @@
 **Lecturer:** Ian Mcloughlin </br>
 
 ## **_Introduction_**
-My name is Ciaran Whyte and as part of a Graph Thoery Module based in GMIT (Galway-Mayo Institute of Technology) i have to design and build a.
-graph database. I will be creating the database in Neo4J which used a query language called Cypher. This is the equivalant of a language like SQL used
+My name is Ciaran Whyte and as part of a Graph Thoery Module based in GMIT (Galway-Mayo Institute of Technology) i have to design and build a
+graph database. I will be creating the database in Neo4J which uses a query language called Cypher. This is the equivalant of a language like SQL used
 with relational databases.
 
 ## **_Database_**
