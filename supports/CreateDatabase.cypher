@@ -977,6 +977,7 @@ CREATE (:PoliticalParty {Name: "Fine Gael", Founded: "1933"}),
 	   (:PoliticalParty {Name: "Social Democrats", Founded: "2015"}),
 	   (:PoliticalParty {Name: "Communist Party", Founded: "1933"}),
 	   (:PoliticalParty {Name: "Catholic Democrats", Founded: "1995"}),
+	   (:PoliticalParty {Name: "No Associated Party", Founded: "n/a"}),
 	   (:PoliticalParty {Name: "Workers Party", Founded: "1970"});
 	   
 	   
