@@ -1035,7 +1035,7 @@ CREATE (:Candidate {Name: "Colm Brophy",
 					Party: "Independant"}),
 	   (:Candidate {Name: "Eamonn Maloney", 
 					Constituency: "Dublin South-West",
-					Party: Independant"}),
+					Party: "Independant"}),
 	   (:Candidate {Name: "Peter Fitzpatrick", 
 					Constituency: "Dublin South-West",
 					Party: "Independant"}),
@@ -2075,7 +2075,7 @@ CREATE (cand)-[r:CANDIDATE_IN]->(cons);
 --Creates a relationship between candidate nodes with a Constituency property of 'Dublin Rathdown' and the 'Rathdown' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
-WHERE cons.Name = "Dublin Rathdown" AND cand.Constituency = "Dublin Rathdown"
+WHERE cons.Name = "Dublin Rathdown" AND cand.Constituency = "Rathdown"
 CREATE (cand)-[r:CANDIDATE_IN]->(cons);
 
 --Creates a relationship between candidate nodes with a Constituency property of 'Dublin South-Central' and the 'Dublin South-Central' constituency node--
@@ -2156,12 +2156,6 @@ MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Longford-Westmeath" AND cand.Constituency = "Longford-Westmeath"
 CREATE (cand)-[r:CANDIDATE_IN]->(cons);
 
---Creates a relationship between candidate nodes with a Constituency property of 'Longford-Westmeath' and the 'Longford-Westmeath' constituency node--
-
-MATCH (cons:Constituency), (cand:Candidate)
-WHERE cons.Name = "Longford-Westmeath" AND cand.Constituency = "Longford-Westmeath"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
-
 --Creates a relationship between candidate nodes with a Constituency property of 'Louth' and the 'Louth' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
@@ -2219,7 +2213,7 @@ CREATE (cand)-[r:CANDIDATE_IN]->(cons);
 --Creates a relationship between candidate nodes with a Constituency property of 'Wexford' and the 'Wexford' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
-WHERE cons.Name = "Waterford" AND cand.Constituency = "Waterford"
+WHERE cons.Name = "Wexford" AND cand.Constituency = "Wexford"
 CREATE (cand)-[r:CANDIDATE_IN]->(cons);
 
 --Creates a relationship between candidate nodes with a Constituency property of 'Wicklow' and the 'Wicklow' constituency node--
