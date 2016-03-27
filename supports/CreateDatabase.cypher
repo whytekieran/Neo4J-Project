@@ -1,7 +1,7 @@
 															QUERIES USED TO CREATE THE DATABASE
 															-----------------------------------	
 
-//1. QUERY CREATES NODES REPRESENTING ALL CONSTITUENCIES IN IRELAND
+//1. THE FOLLOWING QUERY CREATES NODES REPRESENTING ALL CONSTITUENCIES IN IRELAND
 
 CREATE (:Constituency {Name: "Carlow-Kilkenny", Seats: "5", Population: "145649", Province: "Leinster", Created: "1948"}), 
        (:Constituency {Name: "Cavan-Monaghan", Seats: "4", Population: "120483", Province: "Ulster", Created: "1977"}),
@@ -45,7 +45,7 @@ CREATE (:Constituency {Name: "Carlow-Kilkenny", Seats: "5", Population: "145649"
 	   (:Constituency {Name: "Wicklow", Seats: "5", Population: "141012", Province: "Leinster", Created: "1923"});
 
 
-//2. QUERIES CREATE NODES REPRESENTING ALL THE ELECTION CANDITATES IN IRELAND
+//2. THE FOLLOWING QUERIES CREATE NODES REPRESENTING ALL THE ELECTION CANDITATES IN IRELAND
 --Candidates for Carlow-Kilkenny Constituency--
 
 CREATE (:Candidate {Name: "John Paul Phelan", Constituency: "Carlow-Kilkenny", Party: "Fine Gael"}), 
@@ -67,15 +67,15 @@ CREATE (:Candidate {Name: "John Paul Phelan", Constituency: "Carlow-Kilkenny", P
 --Candidates for Cavan-Monaghan Constituency--
 
 CREATE (:Candidate {Name: "Heather Humphries", Constituency: "Cavan-Monaghan", Party: "Fine Gael"}), 
-       (:Candidate {Name: "Joe O’Reilly", Constituency: "Cavan-Monaghan", Party: "Fine Gael"}),
+       (:Candidate {Name: "Joe O'Reilly", Constituency: "Cavan-Monaghan", Party: "Fine Gael"}),
 	   (:Candidate {Name: "Brendan Smith", Constituency: "Cavan-Monaghan", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Niamh Smyth", Constituency: "Cavan-Monaghan", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Mike Durkan", Constituency: "Cavan-Monaghan", Party: "Fianna Fail"}),
-	   (:Candidate {Name: "Caoimhghín Ó Caoláin", Constituency: "Cavan-Monaghan", Party: "Sinn Fein"}),
+	   (:Candidate {Name: "Caoimhghín O'Caoláin", Constituency: "Cavan-Monaghan", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Kathryn Reilly", Constituency: "Cavan-Monaghan", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Micheál Callaghan", Constituency: "Cavan-Monaghan", Party: "Green Party"}),
 	   (:Candidate {Name: "Mick McDermott", Constituency: "Cavan-Monaghan", Party: "Direct Democracy Ireland a National Citizens Movement Conference"}),
-	   (:Candidate {Name: "Aoife O’Connell", Constituency: "Cavan-Monaghan", Party: "Direct Democracy Ireland a National Citizens Movement Conference"}),
+	   (:Candidate {Name: "Aoife O'Connell", Constituency: "Cavan-Monaghan", Party: "Direct Democracy Ireland a National Citizens Movement Conference"}),
 	   (:Candidate {Name: "Sean Conlan", Constituency: "Cavan-Monaghan", Party: "Independant"}),
 	   (:Candidate {Name: "John Wilson", Constituency: "Cavan-Monaghan", Party: "Independant"}),
 	   (:Candidate {Name: "Jimmy Mee", Constituency: "Cavan-Monaghan", Party: "Independant"}),
@@ -93,7 +93,7 @@ CREATE (:Candidate {Name: "Pat Breen", Constituency: "Clare", Party: "Fine Gael"
 	   (:Candidate {Name: "Michael McNamara", Constituency: "Clare", Party: "Labour"}),
 	   (:Candidate {Name: "Noeleen Moran", Constituency: "Clare", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Fergal Smith", Constituency: "Clare", Party: "Green Party"}),
-	   (:Candidate {Name: "Niamh O’Brien", Constituency: "Clare", Party: "Fis Nua"}),
+	   (:Candidate {Name: "Niamh O'Brien", Constituency: "Clare", Party: "Fis Nua"}),
 	   (:Candidate {Name: "Ann Norton", Constituency: "Clare", Party: "Independant"}),
 	   (:Candidate {Name: "Richard Cahill", Constituency: "Clare", Party: "Independant"}),
 	   (:Candidate {Name: "Ian Lynch", Constituency: "Clare", Party: "Independant"}),
@@ -106,7 +106,7 @@ CREATE (:Candidate {Name: "Pat Breen", Constituency: "Clare", Party: "Fine Gael"
 CREATE (:Candidate {Name: "Tom Barry", Constituency: "Cork East", Party: "Fine Gael"}), 
        (:Candidate {Name: "David Stanton", Constituency: "Cork East", Party: "Fine Gael"}),
 	   (:Candidate {Name: "Noel McCarthy", Constituency: "Cork East", Party: "Fine Gael"}),
-	   (:Candidate {Name: "Kevin O’Keeffe", Constituency: "Cork East", Party: "Fianna Fail"}),
+	   (:Candidate {Name: "Kevin O'Keeffe", Constituency: "Cork East", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Barbara Ahern", Constituency: "Cork East", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Sean Sherlock", Constituency: "Cork East", Party: "Labour"}),
 	   (:Candidate {Name: "Pat Buckley", Constituency: "Cork East", Party: "Sinn Fein"}),
@@ -122,17 +122,17 @@ CREATE (:Candidate {Name: "Tom Barry", Constituency: "Cork East", Party: "Fine G
 --Candidates for Cork North-Central Constituency--
 
 CREATE (:Candidate {Name: "Dara Murphy", Constituency: "Cork North-Central", Party: "Fine Gael"}), 
-       (:Candidate {Name: "Julie O’Leary", Constituency: "Cork North-Central", Party: "Fine Gael"}),
+       (:Candidate {Name: "Julie O'Leary", Constituency: "Cork North-Central", Party: "Fine Gael"}),
 	   (:Candidate {Name: "Billy Kelleher", Constituency: "Cork North-Central", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Kathleen Lynch", Constituency: "Cork North-Central", Party: "Labour"}),
-	   (:Candidate {Name: "Jonathan O’Brien", Constituency: "Cork North-Central", Party: "Sinn Fein"}),
+	   (:Candidate {Name: "Jonathan O'Brien", Constituency: "Cork North-Central", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Thomas Gould", Constituency: "Cork North-Central", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Mick Barry", Constituency: "Cork North-Central", Party: "Anti Austerity Alliance"}),
 	   (:Candidate {Name: "Oliver Moran", Constituency: "Cork North-Central", Party: "Green Party"}),
 	   (:Candidate {Name: "Ted Tynan", Constituency: "Cork North-Central", Party: "Workers Party"}),
-	   (:Candidate {Name: "Paddy O’Leary", Constituency: "Cork North-Central", Party: "RENUA"}),
+	   (:Candidate {Name: "Paddy O'Leary", Constituency: "Cork North-Central", Party: "RENUA"}),
 	   (:Candidate {Name: "Ger Keohane", Constituency: "Cork North-Central", Party: "Independant"}),
-	   (:Candidate {Name: "Peter O’Loughlin", Constituency: "Cork North-Central", Party: "Independant"}),
+	   (:Candidate {Name: "Peter O'Loughlin", Constituency: "Cork North-Central", Party: "Independant"}),
 	   (:Candidate {Name: "Thomas Kiely", Constituency: "Cork North-Central", Party: "Independant"}),
 	   (:Candidate {Name: "Mick Murphy", Constituency: "Cork North-Central", Party: "Independant"});
 					
@@ -144,13 +144,13 @@ CREATE (:Candidate {Name: "Aine Collins", Constituency: "Cork North-West", Party
 	   (:Candidate {Name: "Aindrias Moynihan", Constituency: "Cork North-West", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Nigel Dennehy", Constituency: "Cork North-West", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Jason Fitzgerald", Constituency: "Cork North-West", Party: "RENUA"}),
-	   (:Candidate {Name: "Michael O’Donnell", Constituency: "Cork North-West", Party: "Communist Party"}),
+	   (:Candidate {Name: "Michael O'Donnell", Constituency: "Cork North-West", Party: "Communist Party"}),
 	   (:Candidate {Name: "Cormac Manning", Constituency: "Cork North-West", Party: "Green Party"}),
-	   (:Candidate {Name: "John Paul O’Shea", Constituency: "Cork North-West", Party: "Independant"}),
-	   (:Candidate {Name: "Steven O’Riordan", Constituency: "Cork North-West", Party: "Independant"}),
-	   (:Candidate {Name: "Diarmuid O’Flynn", Constituency: "Cork North-West", Party: "Independant"}),
+	   (:Candidate {Name: "John Paul O'Shea", Constituency: "Cork North-West", Party: "Independant"}),
+	   (:Candidate {Name: "Steven O'Riordan", Constituency: "Cork North-West", Party: "Independant"}),
+	   (:Candidate {Name: "Diarmuid O'Flynn", Constituency: "Cork North-West", Party: "Independant"}),
 	   (:Candidate {Name: "Shirley Griffin", Constituency: "Cork North-West", Party: "Independant"}),
-	   (:Candidate {Name: "Jerry O’Sullivan", Constituency: "Cork North-West", Party: "Independant"});
+	   (:Candidate {Name: "Jerry O'Sullivan", Constituency: "Cork North-West", Party: "Independant"});
 
 --Candidates for Cork South-Central Constituency--
 
@@ -159,13 +159,13 @@ CREATE (:Candidate {Name: "Jerry Buttimer", Constituency: "Cork South-Central", 
 	   (:Candidate {Name: "Micheal Martin", Constituency: "Cork South-Central", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Michael McGrath", Constituency: "Cork South-Central", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Ciaran Lynch", Constituency: "Cork South-Central", Party: "Labour"}),
-	   (:Candidate {Name: "Donnchadh Ó Laoghaire", Constituency: "Cork South-Central", Party: "Sinn Fein"}),
+	   (:Candidate {Name: "Donnchadh O'Laoghaire", Constituency: "Cork South-Central", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Lorna Bogue", Constituency: "Cork South-Central", Party: "Green Party"}),
-	   (:Candidate {Name: "Jim O’Connell", Constituency: "Cork South-Central", Party: "People Before Profit Alliance"}),
+	   (:Candidate {Name: "Jim O'Connell", Constituency: "Cork South-Central", Party: "People Before Profit Alliance"}),
 	   (:Candidate {Name: "Fiona Ryan", Constituency: "Cork South-Central", Party: "Anti Austerity Alliance"}),
 	   (:Candidate {Name: "Ciaran Kenneally", Constituency: "Cork South-Central", Party: "RENUA"}),
 	   (:Candidate {Name: "Mick Finn ", Constituency: "Cork South-Central", Party: "Independant"}),
-	   (:Candidate {Name: "Diarmaid O Cadhla", Constituency: "Cork South-Central", Party: "Independant"}),
+	   (:Candidate {Name: "Diarmaid O'Cadhla", Constituency: "Cork South-Central", Party: "Independant"}),
 	   (:Candidate {Name: "Michael Mohally", Constituency: "Cork South-Central", Party: "Independant"}),
 	   (:Candidate {Name: "Elizabeth Hourihane", Constituency: "Cork South-Central", Party: "Independant"}),
 	   (:Candidate {Name: "Joe Harris", Constituency: "Cork South-Central", Party: "Independant"});
@@ -174,14 +174,14 @@ CREATE (:Candidate {Name: "Jerry Buttimer", Constituency: "Cork South-Central", 
 
 CREATE (:Candidate {Name: "Noel Harrington", Constituency: "Cork South-West", Party: "Fine Gael"}), 
        (:Candidate {Name: "Jim Daly", Constituency: "Cork South-West", Party: "Fine Gael"}),
-	   (:Candidate {Name: "Margaret Murphy-O’Mahony", Constituency: "Cork South-West", Party: "Fianna Fail"}),
+	   (:Candidate {Name: "Margaret Murphy-O'Mahony", Constituency: "Cork South-West", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Michael McCarthy", Constituency: "Cork South-West", Party: "Labour"}),
 	   (:Candidate {Name: "Rachel McCarthy", Constituency: "Cork South-West", Party: "Sinn Fein"}),
-	   (:Candidate {Name: "Johnny O’Mahony", Constituency: "Cork South-West", Party: "Green Party"}),
+	   (:Candidate {Name: "Johnny O'Mahony", Constituency: "Cork South-West", Party: "Green Party"}),
 	   (:Candidate {Name: "Theresa Heaney", Constituency: "Cork South-West", Party: "Catholic Democrats"}),
 	   (:Candidate {Name: "Alan Coleman", Constituency: "Cork South-West", Party: "Independant"}),
 	   (:Candidate {Name: "Michael Collins", Constituency: "Cork South-West", Party: "Independant"}),
-	   (:Candidate {Name: "Fiona Pettit O’Leary", Constituency: "Cork South-West", Party: "Independant"}),
+	   (:Candidate {Name: "Fiona Pettit O'Leary", Constituency: "Cork South-West", Party: "Independant"}),
 	   (:Candidate {Name: "Gillian Powell", Constituency: "Cork South-West", Party: "Independant"});
 
 --Candidates for Donegal Constituency--  
@@ -206,31 +206,31 @@ CREATE (:Candidate {Name: "Joe McHugh", Constituency: "Donegal", Party: "Fine Ga
 --Candidates for Dublin Bay North Constituency-- 
 
 CREATE (:Candidate {Name: "Stephanie Regan", Constituency: "Dublin Bay North", Party: "Fine Gael"}), 
-       (:Candidate {Name: "Naoise O Muiri", Constituency: "Dublin Bay North", Party: "Fine Gael"}),
+       (:Candidate {Name: "Naoise O'Muiri", Constituency: "Dublin Bay North", Party: "Fine Gael"}),
 	   (:Candidate {Name: "Richard Bruton", Constituency: "Dublin Bay North", Party: "Fine Gael"}),
 	   (:Candidate {Name: "Deirdre Heney", Constituency: "Dublin Bay North", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Sean Haughey", Constituency: "Dublin Bay North", Party: "Fianna Fail"}),
-	   (:Candidate {Name: "Aodhan O Riordain", Constituency: "Dublin Bay North", Party: "Labour"}),
+	   (:Candidate {Name: "Aodhan O'Riordain", Constituency: "Dublin Bay North", Party: "Labour"}),
 	   (:Candidate {Name: "Micheál MacDonncha", Constituency: "Dublin Bay North", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Denise Mitchell", Constituency: "Dublin Bay North", Party: "Sinn Fein"}),
-	   (:Candidate {Name: "Michael O’Brien", Constituency: "Dublin Bay North", Party: "Anti Austerity Alliance"}),
+	   (:Candidate {Name: "Michael O'Brien", Constituency: "Dublin Bay North", Party: "Anti Austerity Alliance"}),
 	   (:Candidate {Name: "John Lyons", Constituency: "Dublin Bay North", Party: "People Before Profit Alliance"}),
 	   (:Candidate {Name: "Terence Flanagan", Constituency: "Dublin Bay North", Party: "RENUA"}),
-	   (:Candidate {Name: "Cian O’Callaghan", Constituency: "Dublin Bay North", Party: "Social Democrats"}),
+	   (:Candidate {Name: "Cian O'Callaghan", Constituency: "Dublin Bay North", Party: "Social Democrats"}),
 	   (:Candidate {Name: "Donna Cooney", Constituency: "Dublin Bay North", Party: "Green Party"}),
 	   (:Candidate {Name: "Finian McGrath", Constituency: "Dublin Bay North", Party: "Independant"}),
 	   (:Candidate {Name: "Tommy Broughan", Constituency: "Dublin Bay North", Party: "Independant"}),
 	   (:Candidate {Name: "Averil Power", Constituency: "Dublin Bay North", Party: "Independant"}),
 	   (:Candidate {Name: "Jimmy Guerin", Constituency: "Dublin Bay North", Party: "Independant"}),
 	   (:Candidate {Name: "Paul Clarke", Constituency: "Dublin Bay North", Party: "Independant"}),
-	   (:Candidate {Name: "Damien O’Neill", Constituency: "Dublin Bay North", Party: "Independant"}),
-	   (:Candidate {Name: "Proinsias Ó Conaráin", Constituency: "Dublin Bay North", Party: "Independant"});
+	   (:Candidate {Name: "Damien O'Neill", Constituency: "Dublin Bay North", Party: "Independant"}),
+	   (:Candidate {Name: "Proinsias O'Conaráin", Constituency: "Dublin Bay North", Party: "Independant"});
 
 --Candidates for Dublin Bay South Constituency-- 
  
  CREATE (:Candidate {Name: "Eoghan Murphy", Constituency: "Dublin Bay South", Party: "Fine Gael"}), 
-       (:Candidate {Name: "Kate O’Connell", Constituency: "Dublin Bay South", Party: "Fine Gael"}),
-	   (:Candidate {Name: "Jim O’Callaghan", Constituency: "Dublin Bay South", Party: "Fianna Fail"}),
+       (:Candidate {Name: "Kate O'Connell", Constituency: "Dublin Bay South", Party: "Fine Gael"}),
+	   (:Candidate {Name: "Jim O'Callaghan", Constituency: "Dublin Bay South", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Kevin Humphries", Constituency: "Dublin Bay South", Party: "Labour"}),
 	   (:Candidate {Name: "Chris Andrews", Constituency: "Dublin Bay South", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Annette Mooney", Constituency: "Dublin Bay South", Party: "People Before Profit Alliance"}),
@@ -252,12 +252,12 @@ CREATE (:Candidate {Name: "Paschal Donohoe", Constituency: "Dublin Central", Par
 	   (:Candidate {Name: "Gary Gannon", Constituency: "Dublin Central", Party: "Social Democrats"}),
 	   (:Candidate {Name: "Éilis Ryan", Constituency: "Dublin Central", Party: "Workers Party"}),
 	   (:Candidate {Name: "Ian Noel Smyth", Constituency: "Dublin Central", Party: "Green Party"}),
-	   (:Candidate {Name: "Diana O’Dwyer", Constituency: "Dublin Central", Party: "Anti Austerity Alliance"}),
+	   (:Candidate {Name: "Diana O'Dwyer", Constituency: "Dublin Central", Party: "Anti Austerity Alliance"}),
 	   (:Candidate {Name: "Cormac McKay", Constituency: "Dublin Central", Party: "Direct Democracy Ireland a National Citizens Movement Conference"}),
 	   (:Candidate {Name: "Jacqui Gilbourne", Constituency: "Dublin Central", Party: "RENUA"}),
 	   (:Candidate {Name: "Christy Burke", Constituency: "Dublin Central", Party: "Independant"}),
 	   (:Candidate {Name: "Cieran Perry", Constituency: "Dublin Central", Party: "Independant"}),
-	   (:Candidate {Name: "Maureen O’Sullivan", Constituency: "Dublin Central", Party: "Independant"}),
+	   (:Candidate {Name: "Maureen O'Sullivan", Constituency: "Dublin Central", Party: "Independant"}),
 	   (:Candidate {Name: "William D.J. Gorman", Constituency: "Dublin Central", Party: "Independant"}),
 	   (:Candidate {Name: "Kerry Guinan", Constituency: "Dublin Central", Party: "Independant"});
 
@@ -265,11 +265,11 @@ CREATE (:Candidate {Name: "Paschal Donohoe", Constituency: "Dublin Central", Par
 
 CREATE (:Candidate {Name: "Alan Farrell", Constituency: "Dublin Fingal", Party: "Fine Gael"}), 
        (:Candidate {Name: "James Reilly", Constituency: "Dublin Fingal", Party: "Fine Gael"}),
-	   (:Candidate {Name: "Darragh O’Brien", Constituency: "Dublin Fingal", Party: "Fianna Fail"}),
+	   (:Candidate {Name: "Darragh O'Brien", Constituency: "Dublin Fingal", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Lorraine Clifford-Lee", Constituency: "Dublin Fingal", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Brendan Ryan", Constituency: "Dublin Fingal", Party: "Labour"}),
-	   (:Candidate {Name: "Louise O’Reilly", Constituency: "Dublin Fingal", Party: "Sinn Fein"}),
-	   (:Candidate {Name: "Joe O’Brien", Constituency: "Dublin Fingal", Party: "Green Party"}),
+	   (:Candidate {Name: "Louise O'Reilly", Constituency: "Dublin Fingal", Party: "Sinn Fein"}),
+	   (:Candidate {Name: "Joe O'Brien", Constituency: "Dublin Fingal", Party: "Green Party"}),
 	   (:Candidate {Name: "Terry Kelleher", Constituency: "Dublin Fingal", Party: "Anti Austerity Alliance"}),
 	   (:Candidate {Name: "Gerry Molloy", Constituency: "Dublin Fingal", Party: "RENUA"}),
 	   (:Candidate {Name: "Clare Daly", Constituency: "Dublin Fingal", Party: "Independant"}),
@@ -277,7 +277,7 @@ CREATE (:Candidate {Name: "Alan Farrell", Constituency: "Dublin Fingal", Party: 
 	   (:Candidate {Name: "Roslyn Fuller", Constituency: "Dublin Fingal", Party: "Independant"}),
 	   (:Candidate {Name: "Tony Murphy", Constituency: "Dublin Fingal", Party: "Independant"}),
 	   (:Candidate {Name: "Marcus de Brun", Constituency: "Dublin Fingal", Party: "Independant"}),
-	   (:Candidate {Name: "Fergal O’Connell", Constituency: "Dublin Fingal", Party: "Independant"});
+	   (:Candidate {Name: "Fergal O'Connell", Constituency: "Dublin Fingal", Party: "Independant"});
 
 --Candidates for Dublin Mid-West Constituency--
 
@@ -285,7 +285,7 @@ CREATE (:Candidate {Name: "Frances Fitzgerald", Constituency: "Dublin Mid-West",
        (:Candidate {Name: "Derek Keating", Constituency: "Dublin Mid-West", Party: "Fine Gael"}),
 	   (:Candidate {Name: "John Curran", Constituency: "Dublin Mid-West", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Joanna Tuffy", Constituency: "Dublin Mid-West", Party: "Labour"}),
-	   (:Candidate {Name: "Eoin Ó Broin", Constituency: "Dublin Mid-West", Party: "Sinn Fein"}),
+	   (:Candidate {Name: "Eoin O'Broin", Constituency: "Dublin Mid-West", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Gino Kenny", Constituency: "Dublin Mid-West", Party: "People Before Profit Alliance"}),
 	   (:Candidate {Name: "Anne-Marie McNally", Constituency: "Dublin Mid-West", Party: "Social Democrats"}),
 	   (:Candidate {Name: "Lorraine Hennessy", Constituency: "Dublin Mid-West", Party: "Workers Party"}),
@@ -328,10 +328,10 @@ CREATE (:Candidate {Name: "Alan Shatter", Constituency: "Rathdown", Party: "Fine
 CREATE (:Candidate {Name: "Catherine Byrne", Constituency: "Dublin South-Central", Party: "Fine Gael"}), 
        (:Candidate {Name: "Catherine Ardagh", Constituency: "Dublin South-Central", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Eric Byrne", Constituency: "Dublin South-Central", Party: "Labour"}),
-	   (:Candidate {Name: "Aengus O Snodaigh", Constituency: "Dublin South-Central", Party: "Sinn Fein"}),
+	   (:Candidate {Name: "Aengus O'Snodaigh", Constituency: "Dublin South-Central", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Maire Devine", Constituency: "Dublin South-Central", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Bríd Smith", Constituency: "Dublin South-Central", Party: "People Before Profit Alliance"}),
-	   (:Candidate {Name: "Oisín Ó Halmhain", Constituency: "Dublin South-Central", Party: "Green Party"}),
+	   (:Candidate {Name: "Oisín O'Halmhain", Constituency: "Dublin South-Central", Party: "Green Party"}),
 	   (:Candidate {Name: "Michael Gargan", Constituency: "Dublin South-Central", Party: "RENUA"}),
 	   (:Candidate {Name: "Liam Coyne", Constituency: "Dublin South-Central", Party: "Social Democrats"}),
 	   (:Candidate {Name: "Neville Bradley", Constituency: "Dublin South-Central", Party: "Direct Democracy Ireland a National Citizens Movement Conference"}),
@@ -355,12 +355,12 @@ CREATE (:Candidate {Name: "Colm Brophy", Constituency: "Dublin South-West", Part
 	   (:Candidate {Name: "Ronan McMahon", Constituency: "Dublin South-West", Party: "RENUA"}),
 	   (:Candidate {Name: "Stephen Sinclair", Constituency: "Dublin South-West", Party: "Direct Democracy Ireland a National Citizens Movement Conference"}),
 	   (:Candidate {Name: "Katherine Zappone", Constituency: "Dublin South-West", Party: "Independant"}),
-	   (:Candidate {Name: "Deirdre O’Donovan", Constituency: "Dublin South-West", Party: "Independant"}),
+	   (:Candidate {Name: "Deirdre O'Donovan", Constituency: "Dublin South-West", Party: "Independant"}),
 	   (:Candidate {Name: "Declan Burke", Constituency: "Dublin South-West", Party: "Independant"}),
 	   (:Candidate {Name: "Eamonn Maloney", Constituency: "Dublin South-West", Party: "Independant"}),
 	   (:Candidate {Name: "Peter Fitzpatrick", Constituency: "Dublin South-West", Party: "Independant"}),
 	   (:Candidate {Name: "Kieran Adam Quigley", Constituency: "Dublin South-West", Party: "Independant"}),
-	   (:Candidate {Name: "Frank O’Gorman", Constituency: "Dublin South-West", Party: "Independant"}),
+	   (:Candidate {Name: "Frank O'Gorman", Constituency: "Dublin South-West", Party: "Independant"}),
 	   (:Candidate {Name: "Joan Summerville-Molloy", Constituency: "Dublin South-West", Party: "Independant"});
 					
 --Candidates for Dublin West Constituency--		
@@ -371,25 +371,26 @@ CREATE (:Candidate {Name: "Catherine Noone", Constituency: "Dublin West", Party:
 	   (:Candidate {Name: "Joan Burton", Constituency: "Dublin West", Party: "Labour"}),
 	   (:Candidate {Name: "Paul Donnelly", Constituency: "Dublin West", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Ruth Coppinger", Constituency: "Dublin West", Party: "Anti Austerity Alliance"}),
-	   (:Candidate {Name: "Roderic O’Gorman", Constituency: "Dublin West", Party: "Green Party"}),
-	   (:Candidate {Name: "Jo O’Brien", Constituency: "Dublin West", Party: "RENUA"}),
+	   (:Candidate {Name: "Roderic O'Gorman", Constituency: "Dublin West", Party: "Green Party"}),
+	   (:Candidate {Name: "Jo O'Brien", Constituency: "Dublin West", Party: "RENUA"}),
 	   (:Candidate {Name: "David McGuinness", Constituency: "Dublin West", Party: "Independant"}),
 	   (:Candidate {Name: "TJ Clare", Constituency: "Dublin West", Party: "Independant"}),
 	   (:Candidate {Name: "Dermot Casey", Constituency: "Dublin West", Party: "Independant"});
  
 --Candidates for Dun Laoghaire Constituency--	
 					
-CREATE (:Candidate {Name: "Mary Mitchell-O’Connor", Constituency: "Dun Laoghaire", Party: "Fine Gael"}), 
+CREATE (:Candidate {Name: "Mary Mitchell O'Connor", Constituency: "Dun Laoghaire", Party: "Fine Gael"}), 
        (:Candidate {Name: "Maria Bailey", Constituency: "Dun Laoghaire", Party: "Fine Gael"}),
 	   (:Candidate {Name: "Cormac Devlin", Constituency: "Dun Laoghaire", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Mary Hanafin", Constituency: "Dun Laoghaire", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Carrie Smyth", Constituency: "Dun Laoghaire", Party: "Labour"}),
-	   (:Candidate {Name: "Shane O’Brien", Constituency: "Dun Laoghaire", Party: "Sinn Fein"}),
+	   (:Candidate {Name: "Shane O'Brien", Constituency: "Dun Laoghaire", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Richard Boyd Barrett", Constituency: "Dun Laoghaire", Party: "People Before Profit Alliance"}),
 	   (:Candidate {Name: "Frank Cronin", Constituency: "Dun Laoghaire", Party: "RENUA"}),
 	   (:Candidate {Name: "Ossian Smyth", Constituency: "Dun Laoghaire", Party: "Green Party"}),
 	   (:Candidate {Name: "Raymond Whitehead", Constituency: "Dun Laoghaire", Party: "Direct Democracy Ireland a National Citizens Movement Conference"}),
-	   (:Candidate {Name: "Carol Hunt", Constituency: "Dun Laoghaire", Party: "Independant"});				
+	   (:Candidate {Name: "Carol Hunt", Constituency: "Dun Laoghaire", Party: "Independant"}),
+	   (:Candidate {Name: "Sean Barrett", Constituency: "Dun Laoghaire", Party: "Fine Gael"});				
 
 --Candidates for Galway East Constituency--
 					
@@ -408,17 +409,17 @@ CREATE (:Candidate {Name: "Paul Connaughton", Constituency: "Galway East", Party
 
 CREATE (:Candidate {Name: "Hildegarde Naughten", Constituency: "Galway West", Party: "Fine Gael"}), 
        (:Candidate {Name: "Sean Kyne", Constituency: "Galway West", Party: "Fine Gael"}),
-	   (:Candidate {Name: "John O’Mahony", Constituency: "Galway West", Party: "Fine Gael"}),
-	   (:Candidate {Name: "Eamon O’Cuiv", Constituency: "Galway West", Party: "Fianna Fail"}),
+	   (:Candidate {Name: "John O'Mahony", Constituency: "Galway West", Party: "Fine Gael"}),
+	   (:Candidate {Name: "Eamon O'Cuiv", Constituency: "Galway West", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Mary Hoade", Constituency: "Galway West", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "John Connolly", Constituency: "Galway West", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Derek Nolan", Constituency: "Galway West", Party: "Labour"}),
-	   (:Candidate {Name: "Trevor Ó Clochartaigh", Constituency: "Galway West", Party: "Sinn Fein"}),
+	   (:Candidate {Name: "Trevor O'Clochartaigh", Constituency: "Galway West", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Tommy Holohan", Constituency: "Galway West", Party: "Anti Austerity Alliance"}),
-	   (:Candidate {Name: "Niall Ó Tuathail", Constituency: "Galway West", Party: "Social Democrats"}),
+	   (:Candidate {Name: "Niall O'Tuathail", Constituency: "Galway West", Party: "Social Democrats"}),
 	   (:Candidate {Name: "Seamus Sheridan", Constituency: "Galway West", Party: "Green Party"}), 
        (:Candidate {Name: "Nicola Daveron", Constituency: "Galway West", Party: "RENUA"}),
-	   (:Candidate {Name: "Ruairi O’Neill", Constituency: "Galway West", Party: "Direct Democracy Ireland a National Citizens Movement Conference"}),
+	   (:Candidate {Name: "Ruairi O'Neill", Constituency: "Galway West", Party: "Direct Democracy Ireland a National Citizens Movement Conference"}),
 	   (:Candidate {Name: "James Charity", Constituency: "Galway West", Party: "Independant"}),
 	   (:Candidate {Name: "Noel Grealish", Constituency: "Galway West", Party: "Independant"}),
 	   (:Candidate {Name: "Catherine Connolly", Constituency: "Galway West", Party: "Independant"}),
@@ -431,7 +432,7 @@ CREATE (:Candidate {Name: "Hildegarde Naughten", Constituency: "Galway West", Pa
  
 CREATE (:Candidate {Name: "Jimmy Deenihan", Constituency: "Kerry", Party: "Fine Gael"}), 
        (:Candidate {Name: "Brendan Griffin", Constituency: "Kerry", Party: "Fine Gael"}),
-	   (:Candidate {Name: "Grace O’Donnell", Constituency: "Kerry", Party: "Fine Gael"}),
+	   (:Candidate {Name: "Grace O'Donnell", Constituency: "Kerry", Party: "Fine Gael"}),
 	   (:Candidate {Name: "John Brassill", Constituency: "Kerry", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Norma Moriarty", Constituency: "Kerry", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Arthur Spring", Constituency: "Kerry", Party: "Labour"}),
@@ -441,7 +442,7 @@ CREATE (:Candidate {Name: "Jimmy Deenihan", Constituency: "Kerry", Party: "Fine 
 	   (:Candidate {Name: "Michael Fitzgerald", Constituency: "Kerry", Party: "Green Party"}),
 	   (:Candidate {Name: "Michael Healy-Rae", Constituency: "Kerry", Party: "Independant"}), 
        (:Candidate {Name: "Danny Healy-Rae", Constituency: "Kerry", Party: "Independant"}),
-	   (:Candidate {Name: "Michael O’Gorman", Constituency: "Kerry", Party: "Independant"}),
+	   (:Candidate {Name: "Michael O'Gorman", Constituency: "Kerry", Party: "Independant"}),
 	   (:Candidate {Name: "Kevin Murphy", Constituency: "Kerry", Party: "Independant"}),
 	   (:Candidate {Name: "Henry Gaynor", Constituency: "Kerry", Party: "Independant"}),
 	   (:Candidate {Name: "Mary E. Fitzgibbon", Constituency: "Kerry", Party: "Independant"});
@@ -451,7 +452,7 @@ CREATE (:Candidate {Name: "Jimmy Deenihan", Constituency: "Kerry", Party: "Fine 
 CREATE (:Candidate {Name: "Anthony Lawlor", Constituency: "Kildare North", Party: "Fine Gael"}), 
        (:Candidate {Name: "Bernard Durkan", Constituency: "Kildare North", Party: "Fine Gael"}),
 	   (:Candidate {Name: "James Lawless", Constituency: "Kildare North", Party: "Fianna Fail"}),
-	   (:Candidate {Name: "Frank O’Rourke", Constituency: "Kildare North", Party: "Fianna Fail"}),
+	   (:Candidate {Name: "Frank O'Rourke", Constituency: "Kildare North", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Emmett Stagg", Constituency: "Kildare North", Party: "Labour"}),
 	   (:Candidate {Name: "Réada Cronin", Constituency: "Kildare North", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Catherine Murphy", Constituency: "Kildare North", Party: "Social Democrats"}),
@@ -461,14 +462,14 @@ CREATE (:Candidate {Name: "Anthony Lawlor", Constituency: "Kildare North", Party
 	   (:Candidate {Name: "Brendan Young", Constituency: "Kildare North", Party: "Independant"}), 
        (:Candidate {Name: "Michael Beirne", Constituency: "Kildare North", Party: "Independant"}),
 	   (:Candidate {Name: "Gerard Dunne", Constituency: "Kildare North", Party: "Independant"}),
-	   (:Candidate {Name: "Elizabeth O’Sullivan", Constituency: "Kildare North", Party: "Independant"});
+	   (:Candidate {Name: "Elizabeth O'Sullivan", Constituency: "Kildare North", Party: "Independant"});
 
 --Candidates for Kildare South Constituency--
 
 CREATE (:Candidate {Name: "Martin Heydon", Constituency: "Kildare South", Party: "Fine Gael"}), 
        (:Candidate {Name: "Fiona McLoughlin-Healy", Constituency: "Kildare South", Party: "Fine Gael"}),
-	   (:Candidate {Name: "Seán Ó Fearghaíl", Constituency: "Kildare South", Party: "Fianna Fail"}),
-	   (:Candidate {Name: "Fiona O’Loughlin", Constituency: "Kildare South", Party: "Fianna Fail"}),
+	   (:Candidate {Name: "Seán O'Fearghaíl", Constituency: "Kildare South", Party: "Fianna Fail"}),
+	   (:Candidate {Name: "Fiona O'Loughlin", Constituency: "Kildare South", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Mark Wall", Constituency: "Kildare South", Party: "Labour"}),
 	   (:Candidate {Name: "Patricia Ryan", Constituency: "Kildare South", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Suzanne McEneaney", Constituency: "Kildare South", Party: "Green Party"}),
@@ -487,10 +488,10 @@ CREATE (:Candidate {Name: "Charlie Flanagan", Constituency: "Laois", Party: "Fin
 --Candidates for Limerick City Constituency--
 
 CREATE (:Candidate {Name: "Michael Noonan", Constituency: "Limerick City", Party: "Fine Gael"}), 
-       (:Candidate {Name: "Kieran O’Donnell", Constituency: "Limerick City", Party: "Fine Gael"}),
-	   (:Candidate {Name: "Willie O’Dea", Constituency: "Limerick City", Party: "Fianna Fail"}),
+       (:Candidate {Name: "Kieran O'Donnell", Constituency: "Limerick City", Party: "Fine Gael"}),
+	   (:Candidate {Name: "Willie O'Dea", Constituency: "Limerick City", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Maurice Quinlivan", Constituency: "Limerick City", Party: "Sinn Fein"}),
-	   (:Candidate {Name: "Jan O’Sullivan", Constituency: "Limerick City", Party: "Labour"}),
+	   (:Candidate {Name: "Jan O'Sullivan", Constituency: "Limerick City", Party: "Labour"}),
 	   (:Candidate {Name: "Cian Prendiville", Constituency: "Limerick City", Party: "Anti Austerity Alliance"}),
 	   (:Candidate {Name: "James Gaffney", Constituency: "Limerick City", Party: "Green Party"}),
 	   (:Candidate {Name: "Sarah Jane Hennelly", Constituency: "Limerick City", Party: "Social Democrats"}),
@@ -500,16 +501,16 @@ CREATE (:Candidate {Name: "Michael Noonan", Constituency: "Limerick City", Party
 
 --Candidates for Limerick County Constituency--
 
-CREATE (:Candidate {Name: "Patrick O’Donovan", Constituency: "Limerick County", Party: "Fine Gael"}), 
+CREATE (:Candidate {Name: "Patrick O'Donovan", Constituency: "Limerick County", Party: "Fine Gael"}), 
        (:Candidate {Name: "Tom Neville", Constituency: "Limerick County", Party: "Fine Gael"}),
 	   (:Candidate {Name: "Niall Collins", Constituency: "Limerick County", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Seamus Browne", Constituency: "Limerick County", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Mark Keogh", Constituency: "Limerick County", Party: "Direct Democracy Ireland a National Citizens Movement Conference"}),
 	   (:Candidate {Name: "James Heffernan", Constituency: "Limerick County", Party: "Social Democrats"}),
 	   (:Candidate {Name: "Alexander Cosgrave", Constituency: "Limerick County", Party: "Green Party"}),
-	   (:Candidate {Name: "Emmett O’Brien", Constituency: "Limerick County", Party: "Independant"}),
-	   (:Candidate {Name: "Richard O’Donoghue", Constituency: "Limerick County", Party: "Independant"}),
-	   (:Candidate {Name: "John O’Gorman", Constituency: "Limerick County", Party: "Independant"});
+	   (:Candidate {Name: "Emmett O'Brien", Constituency: "Limerick County", Party: "Independant"}),
+	   (:Candidate {Name: "Richard O'Donoghue", Constituency: "Limerick County", Party: "Independant"}),
+	   (:Candidate {Name: "John O'Gorman", Constituency: "Limerick County", Party: "Independant"});
 
 --Candidates for Longford-Westmeath Constituency--
 
@@ -534,7 +535,7 @@ CREATE (:Candidate {Name: "Gabrielle McFadden", Constituency: "Longford-Westmeat
 
 --Candidates for Louth Constituency--
 
-CREATE (:Candidate {Name: "Fergus O’Dowd", Constituency: "Louth", Party: "Fine Gael"}), 
+CREATE (:Candidate {Name: "Fergus O'Dowd", Constituency: "Louth", Party: "Fine Gael"}), 
        (:Candidate {Name: "Peter Fitzpatrick", Constituency: "Louth", Party: "Fine Gael"}),
 	   (:Candidate {Name: "Declan Breathnach", Constituency: "Louth", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Emma Coffey", Constituency: "Louth", Party: "Fianna Fail"}),
@@ -542,7 +543,7 @@ CREATE (:Candidate {Name: "Fergus O’Dowd", Constituency: "Louth", Party: "Fine
 	   (:Candidate {Name: "Ged Nash", Constituency: "Louth", Party: "Labour"}),
 	   (:Candidate {Name: "Gerry Adams", Constituency: "Louth", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Imelda Munster", Constituency: "Louth", Party: "Sinn Fein"}),
-	   (:Candidate {Name: "Michael O’Dowd", Constituency: "Louth", Party: "RENUA"}),
+	   (:Candidate {Name: "Michael O'Dowd", Constituency: "Louth", Party: "RENUA"}),
 	   (:Candidate {Name: "Gareth Weldon", Constituency: "Louth", Party: "People Before Profit Alliance"}),
 	   (:Candidate {Name: "Mark Dearey", Constituency: "Louth", Party: "Green Party"}),
 	   (:Candidate {Name: "Anthony Connor", Constituency: "Louth", Party: "Direct Democracy Ireland a National Citizens Movement Conference"}),
@@ -562,8 +563,8 @@ CREATE (:Candidate {Name: "Enda Kenny", Constituency: "Mayo", Party: "Fine Gael"
 	   (:Candidate {Name: "Tom Moran", Constituency: "Mayo", Party: "People Before Profit Alliance"}),
 	   (:Candidate {Name: "Michael Farrington", Constituency: "Mayo", Party: "RENUA"}),
 	   (:Candidate {Name: "Margaret Sheehan", Constituency: "Mayo", Party: "Green Party"}),
-	   (:Candidate {Name: "Gerry O’Boyle", Constituency: "Mayo", Party: "Independant"}),
-	   (:Candidate {Name: "George O’Malley", Constituency: "Mayo", Party: "Independant"}),
+	   (:Candidate {Name: "Gerry O'Boyle", Constituency: "Mayo", Party: "Independant"}),
+	   (:Candidate {Name: "George O'Malley", Constituency: "Mayo", Party: "Independant"}),
 	   (:Candidate {Name: "Peter Jordan", Constituency: "Mayo", Party: "Independant"}),
 	   (:Candidate {Name: "Jerry Cowley", Constituency: "Mayo", Party: "Independant"}),
 	   (:Candidate {Name: "Kamal Uddin", Constituency: "Mayo", Party: "Independant"}),
@@ -576,10 +577,10 @@ CREATE (:Candidate {Name: "Regina Doherty", Constituency: "Meath East", Party: "
        (:Candidate {Name: "Helen McEntee", Constituency: "Meath East", Party: "Fine Gael"}),
 	   (:Candidate {Name: "Thomas Byrne", Constituency: "Meath East", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Dominic Hannigan", Constituency: "Meath East", Party: "Labour"}),
-	   (:Candidate {Name: "Darren O’Rourke", Constituency: "Meath East", Party: "Sinn Fein"}),
-	   (:Candidate {Name: "Seán Ó Buachalla", Constituency: "Meath East", Party: "Green Party"}),
+	   (:Candidate {Name: "Darren O'Rourke", Constituency: "Meath East", Party: "Sinn Fein"}),
+	   (:Candidate {Name: "Seán O'Buachalla", Constituency: "Meath East", Party: "Green Party"}),
 	   (:Candidate {Name: "Seamus McDonagh", Constituency: "Meath East", Party: "Workers Party"}),
-	   (:Candidate {Name: "Aisling O’Neill", Constituency: "Meath East", Party: "Social Democrat"}),
+	   (:Candidate {Name: "Aisling O'Neill", Constituency: "Meath East", Party: "Social Democrat"}),
 	   (:Candidate {Name: "Ben Gilroy", Constituency: "Meath East", Party: "Direct Democracy Ireland a National Citizens Movement Conference"}),
 	   (:Candidate {Name: "Sarah Tyrell", Constituency: "Meath East", Party: "RENUA"}),
 	   (:Candidate {Name: "Sharon Keogan", Constituency: "Meath East", Party: "Independant"}),
@@ -591,7 +592,7 @@ CREATE (:Candidate {Name: "Damien English", Constituency: "Meath West", Party: "
        (:Candidate {Name: "Ray Butler", Constituency: "Meath West", Party: "Fine Gael"}),
 	   (:Candidate {Name: "Shane Cassells", Constituency: "Meath West", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Tracy McElhinney", Constituency: "Meath West", Party: "Labour"}),
-	   (:Candidate {Name: "Peadar Tóibín", Constituency: "Meath West", Party: "Sinn Fein"}),
+	   (:Candidate {Name: "Peadar Toibin", Constituency: "Meath West", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Seamus McMenamin", Constituency: "Meath West", Party: "Green Party"}),
 	   (:Candidate {Name: "Alan Lawes", Constituency: "Meath West", Party: "Direct Democracy Ireland a National Citizens Movement Conference"}),
 	   (:Candidate {Name: "Trevor Golden", Constituency: "Meath West", Party: "Independant"}),
@@ -633,18 +634,18 @@ CREATE (:Candidate {Name: "Tony McLoughlin", Constituency: "Sligo-Leitrim", Part
 	   (:Candidate {Name: "John Perry", Constituency: "Sligo-Leitrim", Party: "Fine Gael"}),
 	   (:Candidate {Name: "Eamon Scanlon", Constituency: "Sligo-Leitrim", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Marc McSharry", Constituency: "Sligo-Leitrim", Party: "Fianna Fail"}),
-	   (:Candidate {Name: "Paddy O’Rourke", Constituency: "Sligo-Leitrim", Party: "Fianna Fail"}),
-	   (:Candidate {Name: "Susan O’Keeffe", Constituency: "Sligo-Leitrim", Party: "Labour"}),
+	   (:Candidate {Name: "Paddy O'Rourke", Constituency: "Sligo-Leitrim", Party: "Fianna Fail"}),
+	   (:Candidate {Name: "Susan O'Keeffe", Constituency: "Sligo-Leitrim", Party: "Labour"}),
 	   (:Candidate {Name: "Martin Kenny", Constituency: "Sligo-Leitrim", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Chris MacManus", Constituency: "Sligo-Leitrim", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Finbar Filan", Constituency: "Sligo-Leitrim", Party: "RENUA"}),
 	   (:Candidate {Name: "Nigel Gallagher", Constituency: "Sligo-Leitrim", Party: "People Before Profit Alliance"}),
-	   (:Candidate {Name: "Leslie O’Hora", Constituency: "Sligo-Leitrim", Party: "Green Party"}),
+	   (:Candidate {Name: "Leslie O'Hora", Constituency: "Sligo-Leitrim", Party: "Green Party"}),
 	   (:Candidate {Name: "Marie Casserly", Constituency: "Sligo-Leitrim", Party: "Independant"}),
 	   (:Candidate {Name: "Declan Bree", Constituency: "Sligo-Leitrim", Party: "Independant"}),
 	   (:Candidate {Name: "Des Guckian", Constituency: "Sligo-Leitrim", Party: "Independant"}),
 	   (:Candidate {Name: "Bernard Sweeney", Constituency: "Sligo-Leitrim", Party: "Independant"}),
-	   (:Candidate {Name: "Bernie O’Hara", Constituency: "Sligo-Leitrim", Party: "Independant"}),
+	   (:Candidate {Name: "Bernie O'Hara", Constituency: "Sligo-Leitrim", Party: "Independant"}),
 	   (:Candidate {Name: "Eamonn Murray", Constituency: "Sligo-Leitrim", Party: "Independant"});
 
 --Candidates for Tipperary Constituency--
@@ -670,7 +671,7 @@ CREATE (:Candidate {Name: "John Deasy", Constituency: "Waterford", Party: "Fine 
 	   (:Candidate {Name: "Mary Butler", Constituency: "Waterford", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Ciara Conway", Constituency: "Waterford", Party: "Labour"}),
 	   (:Candidate {Name: "David Cullinane", Constituency: "Waterford", Party: "Sinn Fein"}),
-	   (:Candidate {Name: "Grace O’Sullivan", Constituency: "Waterford", Party: "Green Party"}),
+	   (:Candidate {Name: "Grace O'Sullivan", Constituency: "Waterford", Party: "Green Party"}),
 	   (:Candidate {Name: "Mailo Power", Constituency: "Waterford", Party: "RENUA"}),
 	   (:Candidate {Name: "Una Dunphy", Constituency: "Waterford", Party: "People Before Profit Alliance"}),
 	   (:Candidate {Name: "Edward Quilty", Constituency: "Waterford", Party: "Direct Democracy Ireland a National Citizens Movement Conference"}),
@@ -681,7 +682,7 @@ CREATE (:Candidate {Name: "John Deasy", Constituency: "Waterford", Party: "Fine 
 --Candidates for Wexford Constituency--				
 					
 CREATE (:Candidate {Name: "Paul Kehoe", Constituency: "Wexford", Party: "Fine Gael"}), 
-       (:Candidate {Name: "Michael D’Arcy", Constituency: "Wexford", Party: "Fine Gael"}),
+       (:Candidate {Name: "Michael D'Arcy", Constituency: "Wexford", Party: "Fine Gael"}),
 	   (:Candidate {Name: "Julie Hogan", Constituency: "Wexford", Party: "Fine Gael"}),
 	   (:Candidate {Name: "Malcolm Byrne", Constituency: "Wexford", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "James Browne", Constituency: "Wexford", Party: "Fianna Fail"}),
@@ -695,7 +696,7 @@ CREATE (:Candidate {Name: "Paul Kehoe", Constituency: "Wexford", Party: "Fine Ga
 	   (:Candidate {Name: "Mick Wallace", Constituency: "Wexford", Party: "Independant"}),
 	   (:Candidate {Name: "Emmet Moloney", Constituency: "Wexford", Party: "Independant"}),
 	   (:Candidate {Name: "Ger Carthy", Constituency: "Wexford", Party: "Independant"}),
-	   (:Candidate {Name: "Paul O’Hanlon", Constituency: "Wexford", Party: "Independant"}),
+	   (:Candidate {Name: "Paul O'Hanlon", Constituency: "Wexford", Party: "Independant"}),
 	   (:Candidate {Name: "Caroline Foxe", Constituency: "Wexford", Party: "Independant"});
 					
 --Candidates for Wicklow Constituency--			
@@ -718,251 +719,251 @@ CREATE (:Candidate {Name: "Andrew Doyle", Constituency: "Wicklow", Party: "Fine 
 	   (:Candidate {Name: "Katrina Hutchinson", Constituency: "Wicklow", Party: "Direct Democracy Ireland a National Citizens Movement Conference"});
 					
 
-//3. QUERIES CREATE THE RELATIONSHIPS BETWEEN CANDIDATES AND CONSTITUENCIES (RELATIONSHIP TYPE IS: 'CANDIDATE_IN')
+//3. THE FOLLOWING QUERIES CREATE THE RELATIONSHIPS BETWEEN CANDIDATES AND CONSTITUENCIES (RELATIONSHIP TYPE IS: 'CANDIDATE_IN')
 //CANDIDATE NODES ARE RELATED TO A CONSTITUENCY NODES VIA THE 'CANDIDATE_IN' RELATIONSHIP DEPENDING ON THE CONSTITUENCY THE CANDIDATE IS INVOLVED IN
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Carlow-Kilkenny' and the 'Carlow-Kilkenny' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Carlow-Kilkenny' and the 'Carlow-Kilkenny' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Carlow-Kilkenny" AND cand.Constituency = "Carlow-Kilkenny"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[r:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Cavan-Monaghan' and the 'Cavan-Monaghan' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Cavan-Monaghan' and the 'Cavan-Monaghan' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Cavan-Monaghan" AND cand.Constituency = "Cavan-Monaghan"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[r:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Clare' and the 'Clare' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Clare' and the 'Clare' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Clare" AND cand.Constituency = "Clare"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[r:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Cork East' and the 'Cork East' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Cork East' and the 'Cork East' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Cork East" AND cand.Constituency = "Cork East"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[r:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Cork North-Central' and the 'Cork North-Central' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Cork North-Central' and the 'Cork North-Central' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Cork North-Central" AND cand.Constituency = "Cork North-Central"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[r:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Cork North-West' and the 'Cork North-West' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Cork North-West' and the 'Cork North-West' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Cork North-West" AND cand.Constituency = "Cork North-West"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Cork South-Central' and the 'Cork South-Central' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Cork South-Central' and the 'Cork South-Central' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Cork South-Central" AND cand.Constituency = "Cork South-Central"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Cork South-West' and the 'Cork South-West' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Cork South-West' and the 'Cork South-West' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Cork South-West" AND cand.Constituency = "Cork South-West"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Donegal' and the 'Donegal' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Donegal' and the 'Donegal' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Donegal" AND cand.Constituency = "Donegal"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Dublin Bay North' and the 'Dublin Bay North' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Dublin Bay North' and the 'Dublin Bay North' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Dublin Bay North" AND cand.Constituency = "Dublin Bay North"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Dublin Bay South' and the 'Dublin Bay South' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Dublin Bay South' and the 'Dublin Bay South' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Dublin Bay South" AND cand.Constituency = "Dublin Bay South"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Dublin Central' and the 'Dublin Central' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Dublin Central' and the 'Dublin Central' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Dublin Central" AND cand.Constituency = "Dublin Central"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Dublin Fingal' and the 'Dublin Fingal' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Dublin Fingal' and the 'Dublin Fingal' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Dublin Fingal" AND cand.Constituency = "Dublin Fingal"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Dublin Mid-West' and the 'Dublin Mid-West' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Dublin Mid-West' and the 'Dublin Mid-West' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Dublin Mid-West" AND cand.Constituency = "Dublin Mid-West"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Dublin North-West' and the 'Dublin North-West' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Dublin North-West' and the 'Dublin North-West' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Dublin North-West" AND cand.Constituency = "Dublin North-West"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[r:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
 --Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Dublin Rathdown' and the 'Rathdown' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Dublin Rathdown" AND cand.Constituency = "Rathdown"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Dublin South-Central' and the 'Dublin South-Central' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Dublin South-Central' and the 'Dublin South-Central' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Dublin South-Central" AND cand.Constituency = "Dublin South-Central"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates 'CANDIDATE_IN' a relationship between candidate nodes with a Constituency property of 'Dublin South-West' and the 'Dublin South-West' constituency node--
+--Creates 'CANDIDATE_IN' a relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Dublin South-West' and the 'Dublin South-West' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Dublin South-West" AND cand.Constituency = "Dublin South-West"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates 'CANDIDATE_IN' a relationship between candidate nodes with a Constituency property of 'Dublin West' and the 'Dublin West' constituency node--
+--Creates 'CANDIDATE_IN' a relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Dublin West' and the 'Dublin West' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Dublin West" AND cand.Constituency = "Dublin West"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN{Election: "General 2016" }]->(cons);
 
---Creates 'CANDIDATE_IN' a relationship between candidate nodes with a Constituency property of 'Dun Laoghaire' and the 'Dun Laoghaire' constituency node--
+--Creates 'CANDIDATE_IN' a relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Dun Laoghaire' and the 'Dun Laoghaire' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Dun Laoghaire" AND cand.Constituency = "Dun Laoghaire"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates 'CANDIDATE_IN' a relationship between candidate nodes with a Constituency property of 'Galway East' and the 'Galway East' constituency node--
+--Creates 'CANDIDATE_IN' a relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Galway East' and the 'Galway East' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Galway East" AND cand.Constituency = "Galway East"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates 'CANDIDATE_IN' a relationship between candidate nodes with a Constituency property of 'Galway West' and the 'Galway West' constituency node--
+--Creates 'CANDIDATE_IN' a relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Galway West' and the 'Galway West' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Galway West" AND cand.Constituency = "Galway West"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates 'CANDIDATE_IN' a relationship between candidate nodes with a Constituency property of 'Kerry' and the 'Kerry' constituency node--
+--Creates 'CANDIDATE_IN' a relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Kerry' and the 'Kerry' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Kerry" AND cand.Constituency = "Kerry"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates 'CANDIDATE_IN' a relationship between candidate nodes with a Constituency property of 'Kildare North' and the 'Kildare North' constituency node--
+--Creates 'CANDIDATE_IN' a relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Kildare North' and the 'Kildare North' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Kildare North" AND cand.Constituency = "Kildare North"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates 'CANDIDATE_IN' a relationship between candidate nodes with a Constituency property of 'Kildare South' and the 'Kildare South' constituency node--
+--Creates 'CANDIDATE_IN' a relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Kildare South' and the 'Kildare South' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Kildare South" AND cand.Constituency = "Kildare South"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Laois' and the 'Laois' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Laois' and the 'Laois' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Laois" AND cand.Constituency = "Laois"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Limerick City' and the 'Limerick City' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Limerick City' and the 'Limerick City' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Limerick City" AND cand.Constituency = "Limerick City"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Limerick County' and the 'Limerick County' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Limerick County' and the 'Limerick County' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Limerick County" AND cand.Constituency = "Limerick County"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Longford-Westmeath' and the 'Longford-Westmeath' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Longford-Westmeath' and the 'Longford-Westmeath' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Longford-Westmeath" AND cand.Constituency = "Longford-Westmeath"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Louth' and the 'Louth' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Louth' and the 'Louth' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Louth" AND cand.Constituency = "Louth"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Mayo' and the 'Mayo' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Mayo' and the 'Mayo' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Mayo" AND cand.Constituency = "Mayo"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Meath East' and the 'Meath East' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Meath East' and the 'Meath East' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Meath East" AND cand.Constituency = "Meath East"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Meath West' and the 'Meath West' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Meath West' and the 'Meath West' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Meath West" AND cand.Constituency = "Meath West"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Offaly' and the 'Offaly' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Offaly' and the 'Offaly' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Offaly" AND cand.Constituency = "Offaly"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Roscommon-Galway' and the 'Roscommon-Galway' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Roscommon-Galway' and the 'Roscommon-Galway' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Roscommon-Galway" AND cand.Constituency = "Roscommon-Galway"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Sligo-Leitrim' and the 'Sligo-Leitrim' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Sligo-Leitrim' and the 'Sligo-Leitrim' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Sligo-Leitrim" AND cand.Constituency = "Sligo-Leitrim"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Tipperary' and the 'Tipperary' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Tipperary' and the 'Tipperary' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Tipperary" AND cand.Constituency = "Tipperary"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Waterford' and the 'Waterford' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Waterford' and the 'Waterford' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Waterford" AND cand.Constituency = "Waterford"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Wexford' and the 'Wexford' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Wexford' and the 'Wexford' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Wexford" AND cand.Constituency = "Wexford"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
---Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Wicklow' and the 'Wicklow' constituency node--
+--Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Wicklow' and the 'Wicklow' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Wicklow" AND cand.Constituency = "Wicklow"
-CREATE (cand)-[r:CANDIDATE_IN]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
 
-//4. QUERY CREATES NODES REPRESENTING ALL THE DIFFERENT POLITICAL PARTIES IN IRELAND
+//4. THE FOLLOWING QUERY CREATES NODES REPRESENTING ALL THE DIFFERENT POLITICAL PARTIES IN IRELAND
 
 CREATE (:PoliticalParty {Name: "Fine Gael", Founded: "1933"}), 
 	   (:PoliticalParty {Name: "Fianna Fail", Founded: "1926"}),
@@ -981,102 +982,346 @@ CREATE (:PoliticalParty {Name: "Fine Gael", Founded: "1933"}),
 	   (:PoliticalParty {Name: "Workers Party", Founded: "1970"});
 	   
 	   
-//5. QUERIES CREATE THE RELATIONSHIPS BETWEEN CANDIDATE AND POLITICAL PARTY NODES (RELATIONSHIP TYPE IS: 'MEMBER_OF')
+//5. THE FOLLOWING QUERIES CREATE THE RELATIONSHIPS BETWEEN CANDIDATE AND POLITICAL PARTY NODES (RELATIONSHIP TYPE IS: 'MEMBER_OF')
 //CANDIDATE NODES ARE RELATED TO A POLITICAL PARTY NODES VIA THE 'MEMBER_OF' RELATIONSHIP DEPENDING ON THE CONSTITUENCY THE CANDIDATE IS INVOLVED IN
 
 --Creates a relationship between Candidate nodes with a Party property of 'Fianna Fail' and the 'Fianna Fail' PoliticalParty node--
 
 MATCH (cand:Candidate), (pp:PoliticalParty)
 WHERE cand.Party = "Fianna Fail" AND pp.Name = "Fianna Fail"
-CREATE (cand)-[r:MEMBER_OF]->(cons);
+CREATE (cand)-[:MEMBER_OF]->(pp);
 
 --Creates a relationship between Candidate nodes with a Party property of 'Fine Gael' and the 'Fine Gael' PoliticalParty node--
 
 MATCH (cand:Candidate), (pp:PoliticalParty)
 WHERE cand.Party = "Fine Gael" AND pp.Name = "Fine Gael"
-CREATE (cand)-[r:MEMBER_OF]->(cons);
+CREATE (cand)-[:MEMBER_OF]->(pp);
 
 --Creates a relationship between Candidate nodes with a Party property of 'Labour' and the 'Labour' PoliticalParty node--
 
 MATCH (cand:Candidate), (pp:PoliticalParty)
 WHERE cand.Party = "Labour" AND pp.Name = "Labour"
-CREATE (cand)-[r:MEMBER_OF]->(cons);
+CREATE (cand)-[:MEMBER_OF]->(pp);
 
 --Creates a relationship between Candidate nodes with a Party property of 'Sinn Fein' and the 'Sinn Fein' PoliticalParty node--
 
 MATCH (cand:Candidate), (pp:PoliticalParty)
 WHERE cand.Party = "Sinn Fein" AND pp.Name = "Sinn Fein"
-CREATE (cand)-[r:MEMBER_OF]->(cons);
+CREATE (cand)-[:MEMBER_OF]->(pp);
 
 --Creates a relationship between Candidate nodes with a Party property of 'Green Party' and the 'Green Party' PoliticalParty node--
 
 MATCH (cand:Candidate), (pp:PoliticalParty)
 WHERE cand.Party = "Green Party" AND pp.Name = "Green Party"
-CREATE (cand)-[r:MEMBER_OF]->(cons);
+CREATE (cand)-[:MEMBER_OF]->(pp);
 
 --Creates a relationship between Candidate nodes with a Party property of 'People Before Profit Alliance' and the 'People Before Profit Alliance' PoliticalParty node--
 
 MATCH (cand:Candidate), (pp:PoliticalParty)
 WHERE cand.Party = "People Before Profit Alliance" AND pp.Name = "People Before Profit Alliance"
-CREATE (cand)-[r:MEMBER_OF]->(cons);
+CREATE (cand)-[:MEMBER_OF]->(pp);
 
 --Creates a relationship between Candidate nodes with a Party property of 'Anti Austerity Alliance' and the 'Anti Austerity Alliance' PoliticalParty node--
 
 MATCH (cand:Candidate), (pp:PoliticalParty)
 WHERE cand.Party = "Anti Austerity Alliance" AND pp.Name = "Anti Austerity Alliance"
-CREATE (cand)-[r:MEMBER_OF]->(cons);
+CREATE (cand)-[:MEMBER_OF]->(pp);
 
 --Creates a relationship between Candidate nodes with a Party property of 'RENUA' and the 'RENUA' PoliticalParty node--
 
 MATCH (cand:Candidate), (pp:PoliticalParty)
 WHERE cand.Party = "RENUA" AND pp.Name = "RENUA"
-CREATE (cand)-[r:MEMBER_OF]->(cons);
+CREATE (cand)-[:MEMBER_OF]->(pp);
 
 --Creates a relationship between Candidate nodes with a Party property of 'Direct Democracy Ireland a National Citizens Movement Conference' and the 'Direct Democracy Ireland a National Citizens Movement Conference' PoliticalParty node--
 
 MATCH (cand:Candidate), (pp:PoliticalParty)
 WHERE cand.Party = "Direct Democracy Ireland a National Citizens Movement Conference" AND pp.Name = "Direct Democracy Ireland a National Citizens Movement Conference"
-CREATE (cand)-[r:MEMBER_OF]->(cons);
+CREATE (cand)-[:MEMBER_OF]->(pp);
 
 --Creates a relationship between Candidate nodes with a Party property of 'Fis Nua' and the 'Fis Nua' PoliticalParty node--
 
 MATCH (cand:Candidate), (pp:PoliticalParty)
 WHERE cand.Party = "Fis Nua" AND pp.Name = "Fis Nua"
-CREATE (cand)-[r:MEMBER_OF]->(cons);
+CREATE (cand)-[:MEMBER_OF]->(pp);
 
 --Creates a relationship between Candidate nodes with a Party property of 'Social Democrats' and the 'Social Democrats' PoliticalParty node--
 
 MATCH (cand:Candidate), (pp:PoliticalParty)
 WHERE cand.Party = "Social Democrats" AND pp.Name = "Social Democrats"
-CREATE (cand)-[r:MEMBER_OF]->(cons);
+CREATE (cand)-[:MEMBER_OF]->(pp);
 
 --Creates a relationship between Candidate nodes with a Party property of 'Communist Party' and the 'Communist Party' PoliticalParty node--
 
 MATCH (cand:Candidate), (pp:PoliticalParty)
 WHERE cand.Party = "Communist Party" AND pp.Name = "Communist Party"
-CREATE (cand)-[r:MEMBER_OF]->(cons);
+CREATE (cand)-[:MEMBER_OF]->(pp);
 
 --Creates a relationship between Candidate nodes with a Party property of 'Communist Party' and the 'Communist Party' PoliticalParty node--
 
 MATCH (cand:Candidate), (pp:PoliticalParty)
 WHERE cand.Party = "Communist Party" AND pp.Name = "Communist Party"
-CREATE (cand)-[r:MEMBER_OF]->(cons);
+CREATE (cand)-[:MEMBER_OF]->(pp);
 
 --Creates a relationship between Candidate nodes with a Party property of 'Catholic Democrats' and the 'Catholic Democrats' PoliticalParty node--
 
 MATCH (cand:Candidate), (pp:PoliticalParty)
 WHERE cand.Party = "Catholic Democrats" AND pp.Name = "Catholic Democrats"
-CREATE (cand)-[r:MEMBER_OF]->(cons);
+CREATE (cand)-[:MEMBER_OF]->(pp);
 
 --Creates a relationship between Candidate nodes with a Party property of 'Workers Party' and the 'Workers Party' PoliticalParty node--
 
 MATCH (cand:Candidate), (pp:PoliticalParty)
 WHERE cand.Party = "Workers Party" AND pp.Name = "Workers Party"
-CREATE (cand)-[r:MEMBER_OF]->(cons);
+CREATE (cand)-[:MEMBER_OF]->(pp);
+
+--Creates a relationship between Candidate nodes with a Party property of 'Independant' and the 'No Associated Party' PoliticalParty node--
+
+MATCH (cand:Candidate), (pp:PoliticalParty)
+WHERE cand.Party = "Independant" AND pp.Name = "No Associated Party"
+CREATE (cand)-[:MEMBER_OF]->(pp);
+
+//6. THE FOLLOWING QUERIES CREATE RELATIONSHIPS BETWEEN CANDIDATES AND CONSTITUENCIES NODES (RELATIONSHIP TYPE IS: 'ELECTED_IN')
+//CANDIDATE NODES ARE RELATED TO A CONSTITUENCY NODE VIA THE 'ELECTED_IN' RELATIONSHIP DEPENDING ON THE CONSTITUENCY THE CANDIDATE IS INVOLVED IN AND IF THAT CANDIDATE WAS ACTUALLY
+//ELECTED OR NOT. THE 'ELECTED_IN' RELATIONSHIP ALSO HAS AN 'Election' PROPERTY STATING WHICH ELECTION THE CANDIDATE WAS ELECTED IN.
+//HENCE THESE RELATIONSHIPS SHOW WHICH CANDIDIDATE ARE ELECTED INTO WHICH CONSTITUENCY AND WHICH ELECTION IT WAS.
+
+-Finds the names of the candidates that were elected in Carlow-Kilkenny and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["John Paul Phelan", "Kathleen Funchion", "Pat Deering", "John McGuinness", "Bobby Aylward"] AND can.Constituency = "Carlow-Kilkenny" AND con.Name = "Carlow-Kilkenny"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Cavan–Monaghan and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Brendan Smith", "Caoimhghín O'Caoláin", "Niamh Smyth", "Heather Humphreys"] AND can.Constituency = "Cavan–Monaghan" AND con.Name = "Cavan–Monaghan"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Clare and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Pat Breen", "Joe Carey", "Timmy Dooley", "Michael Harty"] AND can.Constituency = "Clare" AND con.Name = "Clare"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Cork East and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Pat Buckley", "David Stanton", "Sean Sherlock", "Kevin O'Keeffe"] AND can.Constituency = "Cork East" AND con.Name = "Cork East"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Cork North-Central and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Billy Kelleher", "Jonathan O'Brien", "Dara Murphy", "Mick Barry"] AND can.Constituency = "Cork North-Central" AND con.Name = "Cork North-Central"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Cork North-West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Aindrias Moynihan", "Michael Creed", "Michael Moynihan"] AND can.Constituency = "Cork North-West" AND con.Name = "Cork North-West"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Cork South-Central and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Donnchadh O'Laoghaire", "Michael McGrath", "Micheal Martin", "Simon Coveney"] AND can.Constituency = "Cork South-Central" AND con.Name = "Cork South-Central"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Cork South–West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Margaret Murphy O'Mahony", "Jim Daly", "Michael Collins"] AND can.Constituency = "Cork South-West" AND con.Name = "Cork South–West"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Donegal and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Charlie McConalogue", "Pearse Doherty", "Pat the Cope Gallagher", "Joe McHugh", "Thomas Pringle"] AND can.Constituency = "Donegal" AND con.Name = "Donegal"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Dublin Bay North and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Richard Bruton", "Sean Haughey", "Tommy Broughan", "Finian McGrath", "Denise Mitchell"] AND can.Constituency = "Dublin Bay North" AND con.Name = "Dublin Bay North"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Dublin Bay South and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Eamon Ryan", "Eoghan Murphy", "Jim O'Callaghan", "Kate O'Connell"] AND can.Constituency = "Dublin Bay South" AND con.Name = "Dublin Bay South"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Dublin Central and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Paschal Donohoe", "Maureen O'Sullivan", "Mary Lou McDonald"] AND can.Constituency = "Dublin Central" AND con.Name = "Dublin Central"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Dublin Fingal and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Darragh O'Brien", "Clare Daly", "Alan Farrell", "Brendan Ryan", "Louise O'Reilly"] AND can.Constituency = "Dublin Fingal" AND con.Name = "Dublin Fingal"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Dublin Mid–West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Frances Fitzgerald", "Eoin O'Broin", "John Curran", "Gino Kenny"] AND can.Constituency = "Dublin Mid-West" AND con.Name = "Dublin Mid–West"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Dublin North–West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Dessie Ellis", "Roisín Shortall", "Noel Rock"] AND can.Constituency = "Dublin North-West" AND con.Name = "Dublin North–West"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Dublin Rathdown and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Shane Ross", "Josepha Madigan", "Catherine Martin"] AND can.Constituency = "Rathdown" AND con.Name = "Dublin Rathdown"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Dublin South-Central and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Catherine Byrne", "Joan Collins", "Bríd Smith", "Aengus O'Snodaigh"] AND can.Constituency = "Dublin South-Central" AND con.Name = "Dublin South-Central"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Dublin South-West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Colm Brophy", "John Lahart", "Paul Murphy", "Sean Crowe", "Katherine Zappone"] AND can.Constituency = "Dublin South-West" AND con.Name = "Dublin South-West"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Dublin West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Leo Varadkar", "Ruth Coppinger", "Joan Burton", "Jack Chambers"] AND can.Constituency = "Dublin West" AND con.Name = "Dublin West"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Dun Laoghaire and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Mary Mitchell O'Connor", "Richard Boyd Barrett", "Maria Bailey", "Sean Barrett"] AND can.Constituency = "Dun Laoghaire" AND con.Name = "Dun Laoghaire"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Galway East and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Sean Canney", "Anne Rabbitte", "Ciaran Cannon"] AND can.Constituency = "Galway East" AND con.Name = "Galway East"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Galway West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Sean Kyne", "Hildegarde Naughten", "Noel Grealish", "Eamon O'Cuiv", "Catherine Connolly"] AND can.Constituency = "Galway West" AND con.Name = "Galway West"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Kerry and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Michael Healy-Rae", "Danny Healy-Rae", "John Brassil", "Brendan Griffin", "Martin Ferris"] AND can.Constituency = "Kerry" AND con.Name = "Kerry"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Kildare North and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Catherine Murphy", "Bernard Durkan", "James Lawless", "Frank O'Rourke"] AND can.Constituency = "Kildare North" AND con.Name = "Kildare North"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Kildare South and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Seán O'Fearghaíl", "Martin Heydon", "Fiona O'Loughlin"] AND can.Constituency = "Kildare South" AND con.Name = "Kildare South"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Limerick City and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Michael Noonan", "Willie O'Dea", "Jan O'Sullivan", "Maurice Quinlivan"] AND can.Constituency = "Limerick City" AND con.Name = "Limerick City"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Limerick County and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Niall Collins", "Patrick O'Donovan", "Tom Neville"] AND can.Constituency = "Limerick County" AND con.Name = "Limerick County"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Longford-Westmeath and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Peter Burke", "Kevin "Boxer" Moran", "Willie Penrose", "Robert Troy"] AND can.Constituency = "Longford-Westmeath" AND con.Name = "Longford-Westmeath"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Louth and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Declan Breathnach", "Imelda Munster", "Fergus O'Dowd", "Gerry Adams", "Peter Fitzpatrick"] AND can.Constituency = "Louth" AND con.Name = "Louth"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Mayo and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Enda Kenny", "Michael Ring", "Fergus O'Dowd", "Lisa Chambers", "Dara Calleary"] AND can.Constituency = "Mayo" AND con.Name = "Mayo"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Meath East and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Thomas Byrne", "Regina Doherty", "Helen McEntee"] AND can.Constituency = "Meath East" AND con.Name = "Meath East"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Meath West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Shane Cassells", "Peadar Toibin", "Damien English"] AND can.Constituency = "Meath West" AND con.Name = "Meath West"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Offaly and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Barry Cowen", "Marcella Corcoran Kennedy", "Carol Nolan"] AND can.Constituency = "Offaly" AND con.Name = "Offaly"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Roscommon-Galway and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Denis Naughten", "Michael Fitzmaurice", "Eugene Murphy"] AND can.Constituency = "Roscommon-Galway" AND con.Name = "Roscommon-Galway"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Sligo-Leitrim and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Marc MacSharry", "Martin Kenny", "Tony McLoughlin", "Eamon Scanlon"] AND can.Constituency = "Sligo-Leitrim" AND con.Name = "Sligo-Leitrim"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Tipperary and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Michael Lowry", "Mattie McGrath", "Alan Kelly, "Seamus Healy", "Jackie Cahill"] AND can.Constituency = "Tipperary" AND con.Name = "Tipperary"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Waterford and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["John Deasy", "David Cullinane", "John Halligan", "Mary Butler"] AND can.Constituency = "Waterford" AND con.Name = "Waterford"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Wexford and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Paul Kehoe", "Michael D'Arcy", "James Browne", "Brendan Howlin", "Mick Wallace"] AND can.Constituency = "Wexford" AND con.Name = "Wexford"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+-Finds the names of the candidates that were elected in Wicklow and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidiate), (con:Constituency)
+WHERE can.Name IN ["Simon Harris", "Stephen Donnelly", "John Brady", "Pat Casey", "Andrew Doyle"] AND can.Constituency = "Wicklow" AND con.Name = "Wicklow"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
 
 
 
-   
-	  
-	  
+
+

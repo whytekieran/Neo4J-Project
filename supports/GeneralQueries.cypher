@@ -27,9 +27,10 @@ RETURN n;
 MATCH (n:Constituency)
 RETURN COUNT(n.Name) AS ConstituencesAmount;
 
-//8. Output a distinct list of all the different political parties that a candidates are a member of
+//8. Output a distinct ordered list of all the different political parties that a candidates are a member of
 MATCH (cand:Candidate)
-RETURN DISTINCT cand.Party;
+RETURN DISTINCT cand.Party
+ORDER BY cand.Party;
 
 //9. Find any candidate node that has its 'Party' property set to Social Democrat and update it to Social Democrats.(Social Democrat to Social Democrats, was used to update a value while implementing the database)
 MATCH (n:Candidate {Party: "Social Democrat"})
