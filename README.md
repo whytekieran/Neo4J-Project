@@ -45,4 +45,5 @@ RETURN
 ```
 
 ## References
-1. [Neo4J website](http://neo4j.com/), the website of the Neo4j database.
+1. [Neo4J website](http://neo4j.com/), contains the documentation for the Neo4J database.
+2. [Neo4J Relationships](http://neo4j.com/docs/stable/rest-api-relationships.html), relationship documentation Neo4J
