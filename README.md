@@ -46,5 +46,5 @@ RETURN
 
 ## References
 1. [Neo4J website](http://neo4j.com/), contains the documentation for the Neo4J database.
-2. [Neo4J Create statement](http://neo4j.com/docs/stable/query-create.html), contains general queries using the 'CREATE' statement. One referenced statement from here involved setting properties for a relationship.
+2. [Neo4J CREATE statement](http://neo4j.com/docs/stable/query-create.html), contains general queries using the 'CREATE' statement. One referenced statement from here involved setting properties for a relationship.
 3. [Neo4J IN Keyword](http://neo4j.com/docs/stable/cypher-introduction.html) contains information in the introduction section of the Cypher documentation showing how to use the IN keyword to reference multiple properties at once.  
