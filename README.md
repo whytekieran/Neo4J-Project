@@ -46,4 +46,4 @@ RETURN
 
 ## References
 1. [Neo4J website](http://neo4j.com/), contains the documentation for the Neo4J database.
-2. [Neo4J Relationships](http://neo4j.com/docs/stable/rest-api-relationships.html), relationship documentation Neo4J
+2. [Neo4J Create statement](http://neo4j.com/docs/stable/query-create.html), contains general queries using the 'create' statement
