@@ -47,7 +47,6 @@ CREATE (:Constituency {Name: "Carlow-Kilkenny", Seats: "5", Population: "145649"
 
 //2. THE FOLLOWING QUERIES CREATE NODES REPRESENTING ALL THE ELECTION CANDITATES IN IRELAND
 --Candidates for Carlow-Kilkenny Constituency--
-
 CREATE (:Candidate {Name: "John Paul Phelan", Constituency: "Carlow-Kilkenny", Party: "Fine Gael"}), 
        (:Candidate {Name: "Pat Deering", Constituency: "Carlow-Kilkenny", Party: "Fine Gael"}),
 	   (:Candidate {Name: "David Fitzgerald", Constituency: "Carlow-Kilkenny", Party: "Fine Gael"}),
@@ -71,7 +70,7 @@ CREATE (:Candidate {Name: "Heather Humphries", Constituency: "Cavan-Monaghan", P
 	   (:Candidate {Name: "Brendan Smith", Constituency: "Cavan-Monaghan", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Niamh Smyth", Constituency: "Cavan-Monaghan", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Mike Durkan", Constituency: "Cavan-Monaghan", Party: "Fianna Fail"}),
-	   (:Candidate {Name: "Caoimhghín O'Caoláin", Constituency: "Cavan-Monaghan", Party: "Sinn Fein"}),
+	   (:Candidate {Name: "Caoimhghin OCaolain", Constituency: "Cavan-Monaghan", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Kathryn Reilly", Constituency: "Cavan-Monaghan", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Micheál Callaghan", Constituency: "Cavan-Monaghan", Party: "Green Party"}),
 	   (:Candidate {Name: "Mick McDermott", Constituency: "Cavan-Monaghan", Party: "Direct Democracy Ireland a National Citizens Movement Conference"}),
@@ -476,7 +475,7 @@ CREATE (:Candidate {Name: "Martin Heydon", Constituency: "Kildare South", Party:
 	   (:Candidate {Name: "Mary Kennedy", Constituency: "Kildare South", Party: "RENUA"}),
 	   (:Candidate {Name: "Declan Crowe", Constituency: "Kildare South", Party: "Independant"});
 
---Candidates for Laois Constituency--
+--Candidates for Laois Constituency-- 
 
 CREATE (:Candidate {Name: "Charlie Flanagan", Constituency: "Laois", Party: "Fine Gael"}), 
        (:Candidate {Name: "Thomasina Connell", Constituency: "Laois", Party: "Fine Gael"}),
@@ -810,7 +809,7 @@ CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Dublin North-West" AND cand.Constituency = "Dublin North-West"
-CREATE (cand)-[r:CANDIDATE_IN {Election: "General 2016" }]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
 --Creates a 'CANDIDATE_IN' relationship between candidate nodes with a Constituency property of 'Dublin Rathdown' and the 'Rathdown' constituency node--
 
@@ -1080,237 +1079,325 @@ CREATE (cand)-[:MEMBER_OF]->(pp);
 //ELECTED OR NOT. THE 'ELECTED_IN' RELATIONSHIP ALSO HAS AN 'Election' PROPERTY STATING WHICH ELECTION THE CANDIDATE WAS ELECTED IN.
 //HENCE THESE RELATIONSHIPS SHOW WHICH CANDIDIDATE ARE ELECTED INTO WHICH CONSTITUENCY AND WHICH ELECTION IT WAS.
 
--Finds the names of the candidates that were elected in Carlow-Kilkenny and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Carlow-Kilkenny and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property.
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["John Paul Phelan", "Kathleen Funchion", "Pat Deering", "John McGuinness", "Bobby Aylward"] AND can.Constituency = "Carlow-Kilkenny" AND con.Name = "Carlow-Kilkenny"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Cavan–Monaghan and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Cavan–Monaghan and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property.
+--The first query below is not working, it simply says that no rows were changed. I tried to find a solution as to why it was doing this but had no success, there is no reason
+--that i can see why this query would not work, anyway because it didnt i was able to get the same result by running the four seperate queries that are below this one.  I feel
+--this is an issue with Neo4J as this query works fine the majority of the time (also used in other places) and when broken up into seperate queries like below it also works fine.
 
-MATCH (can:Candidiate), (con:Constituency)
-WHERE can.Name IN ["Brendan Smith", "Caoimhghín O'Caoláin", "Niamh Smyth", "Heather Humphreys"] AND can.Constituency = "Cavan–Monaghan" AND con.Name = "Cavan–Monaghan"
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name IN ["Brendan Smith", "Caoimhghin OCaolain", "Niamh Smyth", "Heather Humphries"] AND can.Constituency = "Cavan–Monaghan" AND con.Name = "Cavan–Monaghan" 
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Clare and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--These four queries below were used instead of the one above (same result)
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name = "Brendan Smith" AND can.Constituency = "Cavan-Monaghan" AND con.Name = "Cavan-Monaghan"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name = "Caoimhghin OCaolain" AND can.Constituency = "Cavan-Monaghan" AND con.Name = "Cavan-Monaghan"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name = "Niamh Smyth" AND can.Constituency = "Cavan-Monaghan" AND con.Name = "Cavan-Monaghan"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name = "Heather Humphries" AND can.Constituency = "Cavan-Monaghan" AND con.Name = "Cavan-Monaghan"
+CREATE (can)-[r:ELECTED_IN {Election: "General 2016"}]->(con);
+
+--Finds the names of the candidates that were elected in Clare and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
+
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Pat Breen", "Joe Carey", "Timmy Dooley", "Michael Harty"] AND can.Constituency = "Clare" AND con.Name = "Clare"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Cork East and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Cork East and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Pat Buckley", "David Stanton", "Sean Sherlock", "Kevin O'Keeffe"] AND can.Constituency = "Cork East" AND con.Name = "Cork East"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Cork North-Central and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Cork North-Central and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Billy Kelleher", "Jonathan O'Brien", "Dara Murphy", "Mick Barry"] AND can.Constituency = "Cork North-Central" AND con.Name = "Cork North-Central"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Cork North-West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Cork North-West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Aindrias Moynihan", "Michael Creed", "Michael Moynihan"] AND can.Constituency = "Cork North-West" AND con.Name = "Cork North-West"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Cork South-Central and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Cork South-Central and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Donnchadh O'Laoghaire", "Michael McGrath", "Micheal Martin", "Simon Coveney"] AND can.Constituency = "Cork South-Central" AND con.Name = "Cork South-Central"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Cork South–West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Cork South–West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
+--The first query below is not working, it simply says that no rows were changed. I tried to find a solution as to why it was doing this but had no success, there is no reason
+--that i can see why this query would not work, anyway because it didnt i was able to get the same result by running the three seperate queries that are below this one. I feel
+--this is an issue with Neo4J as this query works fine the majority of the time (also used in other places) and when broken up into seperate queries like below it also works fine.
 
-MATCH (can:Candidiate), (con:Constituency)
-WHERE can.Name IN ["Margaret Murphy O'Mahony", "Jim Daly", "Michael Collins"] AND can.Constituency = "Cork South-West" AND con.Name = "Cork South–West"
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name IN ["Margaret Murphy-O'Mahony", "Jim Daly", "Michael Collins"] AND can.Constituency = "Cork South-West" AND con.Name = "Cork South–West" 
+CREATE (can)-[r:ELECTED_IN {Election: "General 2016"}]->(con);
+
+--These three queries below were used instead of the one above (same result)
+
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name = "Margaret Murphy-O'Mahony" AND can.Constituency = "Cork South-West" AND con.Name = "Cork South-West"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Donegal and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
-
-MATCH (can:Candidiate), (con:Constituency)
-WHERE can.Name IN ["Charlie McConalogue", "Pearse Doherty", "Pat the Cope Gallagher", "Joe McHugh", "Thomas Pringle"] AND can.Constituency = "Donegal" AND con.Name = "Donegal"
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name = "Jim Daly" AND can.Constituency = "Cork South-West" AND con.Name = "Cork South-West"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Dublin Bay North and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name = "Michael Collins" AND can.Constituency = "Cork South-West" AND con.Name = "Cork South-West"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
-MATCH (can:Candidiate), (con:Constituency)
+--Finds the names of the candidates that were elected in Donegal and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
+
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name IN ["Charlie McConalogue", "Pearse Doherty", "Pat The Cope Gallagher", "Joe McHugh", "Thomas Pringle"] AND can.Constituency = "Donegal" AND con.Name = "Donegal"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+--Finds the names of the candidates that were elected in Dublin Bay North and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
+
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Richard Bruton", "Sean Haughey", "Tommy Broughan", "Finian McGrath", "Denise Mitchell"] AND can.Constituency = "Dublin Bay North" AND con.Name = "Dublin Bay North"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Dublin Bay South and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Dublin Bay South and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Eamon Ryan", "Eoghan Murphy", "Jim O'Callaghan", "Kate O'Connell"] AND can.Constituency = "Dublin Bay South" AND con.Name = "Dublin Bay South"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Dublin Central and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Dublin Central and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Paschal Donohoe", "Maureen O'Sullivan", "Mary Lou McDonald"] AND can.Constituency = "Dublin Central" AND con.Name = "Dublin Central"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Dublin Fingal and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Dublin Fingal and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Darragh O'Brien", "Clare Daly", "Alan Farrell", "Brendan Ryan", "Louise O'Reilly"] AND can.Constituency = "Dublin Fingal" AND con.Name = "Dublin Fingal"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Dublin Mid–West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Dublin Mid–West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property.
+--The first query below is not working, it simply says that no rows were changed. I tried to find a solution as to why it was doing this but had no success, there is no reason
+--that i can see why this query would not work, anyway because it didnt i was able to get the same result by running the four seperate queries that are below this one. I feel
+--this is an issue with Neo4J as this query works fine the majority of the time (also used in other places) and when broken up into seperate queries like below it also works fine.
 
-MATCH (can:Candidiate), (con:Constituency)
-WHERE can.Name IN ["Frances Fitzgerald", "Eoin O'Broin", "John Curran", "Gino Kenny"] AND can.Constituency = "Dublin Mid-West" AND con.Name = "Dublin Mid–West"
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name IN ["Frances Fitzgerald", "Eoin O'Broin", "John Curran", "Gino Kenny"] AND can.Constituency = "Dublin Mid-West" AND con.Name = "Dublin Mid–West" 
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Dublin North–West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--These four queries below were used instead of the one above (same result)
 
-MATCH (can:Candidiate), (con:Constituency)
-WHERE can.Name IN ["Dessie Ellis", "Roisín Shortall", "Noel Rock"] AND can.Constituency = "Dublin North-West" AND con.Name = "Dublin North–West"
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name = "Frances Fitzgerald" AND can.Constituency = "Dublin Mid-West" AND con.Name = "Dublin Mid-West"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Dublin Rathdown and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name = "Eoin O'Broin" AND can.Constituency = "Dublin Mid-West" AND con.Name = "Dublin Mid-West"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name = "John Curran" AND can.Constituency = "Dublin Mid-West" AND con.Name = "Dublin Mid-West"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name = "Gino Kenny" AND can.Constituency = "Dublin Mid-West" AND con.Name = "Dublin Mid-West"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+--Finds the names of the candidates that were elected in Dublin North–West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property.
+--The first query below is not working, it simply says that no rows were changed. I tried to find a solution as to why it was doing this but had no success, there is no reason
+--that i can see why this query would not work, anyway because it didnt i was able to get the same result by running the three seperate queries that are below this one. I feel
+--this is an issue with Neo4J as this query works fine the majority of the time (also used in other places) and when broken up into seperate queries like below it also works fine.
+
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name IN ["Dessie Ellis", "Roisin Shortall", "Noel Rock"] AND can.Constituency = "Dublin North-West" AND con.Name = "Dublin North–West" 
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+--These three queries below were used instead of the one above (same result)
+
+MATCH (can:Candidate), (con:Constituency)																		//This didnt work but the query below it (same just on a single line)
+WHERE can.Name = "Dessie Ellis" AND can.Constituency = "Dublin North–West" AND con.Name = "Dublin North–West"	//does work, this is just Neo4J being fussy
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+MATCH (can:Candidate), (con:Constituency) WHERE can.Name = "Dessie Ellis" AND can.Constituency = "Dublin North-West" AND con.Name = "Dublin North-West" CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+MATCH (can:Candidate), (con:Constituency)																			//This didnt work but the query below it (same just on a single line)
+WHERE can.Name = "Roisin Shortall" AND can.Constituency = "Dublin North–West" AND con.Name = "Dublin North–West"	//does work, this is just Neo4J being fussy
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+MATCH (can:Candidate), (con:Constituency) WHERE can.Name = "Roisin Shortall" AND can.Constituency = "Dublin North-West" AND con.Name = "Dublin North-West" CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+MATCH (can:Candidate), (con:Constituency)																		//This didnt work but the query below it (same just on a single line)
+WHERE can.Name = "Noel Rock" AND can.Constituency = "Dublin North–West" AND con.Name = "Dublin North–West"		//does work, this is just Neo4J being fussy
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+MATCH (can:Candidate), (con:Constituency) WHERE can.Name = "Noel Rock" AND can.Constituency = "Dublin North-West" AND con.Name = "Dublin North-West" CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+--Finds the names of the candidates that were elected in Dublin Rathdown and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Shane Ross", "Josepha Madigan", "Catherine Martin"] AND can.Constituency = "Rathdown" AND con.Name = "Dublin Rathdown"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Dublin South-Central and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Dublin South-Central and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Catherine Byrne", "Joan Collins", "Bríd Smith", "Aengus O'Snodaigh"] AND can.Constituency = "Dublin South-Central" AND con.Name = "Dublin South-Central"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Dublin South-West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Dublin South-West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Colm Brophy", "John Lahart", "Paul Murphy", "Sean Crowe", "Katherine Zappone"] AND can.Constituency = "Dublin South-West" AND con.Name = "Dublin South-West"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Dublin West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Dublin West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Leo Varadkar", "Ruth Coppinger", "Joan Burton", "Jack Chambers"] AND can.Constituency = "Dublin West" AND con.Name = "Dublin West"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Dun Laoghaire and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Dun Laoghaire and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Mary Mitchell O'Connor", "Richard Boyd Barrett", "Maria Bailey", "Sean Barrett"] AND can.Constituency = "Dun Laoghaire" AND con.Name = "Dun Laoghaire"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Galway East and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Galway East and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Sean Canney", "Anne Rabbitte", "Ciaran Cannon"] AND can.Constituency = "Galway East" AND con.Name = "Galway East"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Galway West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Galway West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Sean Kyne", "Hildegarde Naughten", "Noel Grealish", "Eamon O'Cuiv", "Catherine Connolly"] AND can.Constituency = "Galway West" AND con.Name = "Galway West"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Kerry and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Kerry and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
-WHERE can.Name IN ["Michael Healy-Rae", "Danny Healy-Rae", "John Brassil", "Brendan Griffin", "Martin Ferris"] AND can.Constituency = "Kerry" AND con.Name = "Kerry"
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name IN ["Michael Healy-Rae", "Danny Healy-Rae", "John Brassill", "Brendan Griffin", "Martin Ferris"] AND can.Constituency = "Kerry" AND con.Name = "Kerry"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Kildare North and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Kildare North and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Catherine Murphy", "Bernard Durkan", "James Lawless", "Frank O'Rourke"] AND can.Constituency = "Kildare North" AND con.Name = "Kildare North"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Kildare South and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Kildare South and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Seán O'Fearghaíl", "Martin Heydon", "Fiona O'Loughlin"] AND can.Constituency = "Kildare South" AND con.Name = "Kildare South"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Limerick City and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Laois and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name IN ["Charlie Flanagan", "Sean Fleming", "Brian Stanley"] AND can.Constituency = "Laois" AND con.Name = "Laois"
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
+
+--Finds the names of the candidates that were elected in Limerick City and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
+
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Michael Noonan", "Willie O'Dea", "Jan O'Sullivan", "Maurice Quinlivan"] AND can.Constituency = "Limerick City" AND con.Name = "Limerick City"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Limerick County and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Limerick County and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Niall Collins", "Patrick O'Donovan", "Tom Neville"] AND can.Constituency = "Limerick County" AND con.Name = "Limerick County"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Longford-Westmeath and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Longford-Westmeath and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
-WHERE can.Name IN ["Peter Burke", "Kevin "Boxer" Moran", "Willie Penrose", "Robert Troy"] AND can.Constituency = "Longford-Westmeath" AND con.Name = "Longford-Westmeath"
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name IN ["Peter Burke", "Kevin Moran", "Willie Penrose", "Robert Troy"] AND can.Constituency = "Longford-Westmeath" AND con.Name = "Longford-Westmeath"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Louth and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Louth and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Declan Breathnach", "Imelda Munster", "Fergus O'Dowd", "Gerry Adams", "Peter Fitzpatrick"] AND can.Constituency = "Louth" AND con.Name = "Louth"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Mayo and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Mayo and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
-WHERE can.Name IN ["Enda Kenny", "Michael Ring", "Fergus O'Dowd", "Lisa Chambers", "Dara Calleary"] AND can.Constituency = "Mayo" AND con.Name = "Mayo"
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name IN ["Enda Kenny", "Michael Ring", "Lisa Chambers", "Dara Calleary"] AND can.Constituency = "Mayo" AND con.Name = "Mayo"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Meath East and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Meath East and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Thomas Byrne", "Regina Doherty", "Helen McEntee"] AND can.Constituency = "Meath East" AND con.Name = "Meath East"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Meath West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Meath West and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Shane Cassells", "Peadar Toibin", "Damien English"] AND can.Constituency = "Meath West" AND con.Name = "Meath West"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Offaly and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Offaly and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
-WHERE can.Name IN ["Barry Cowen", "Marcella Corcoran Kennedy", "Carol Nolan"] AND can.Constituency = "Offaly" AND con.Name = "Offaly"
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name IN ["Barry Cowen", "Marcella Corcoran-Kennedy", "Carol Nolan"] AND can.Constituency = "Offaly" AND con.Name = "Offaly"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Roscommon-Galway and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Roscommon-Galway and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Denis Naughten", "Michael Fitzmaurice", "Eugene Murphy"] AND can.Constituency = "Roscommon-Galway" AND con.Name = "Roscommon-Galway"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Sligo-Leitrim and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Sligo-Leitrim and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
-WHERE can.Name IN ["Marc MacSharry", "Martin Kenny", "Tony McLoughlin", "Eamon Scanlon"] AND can.Constituency = "Sligo-Leitrim" AND con.Name = "Sligo-Leitrim"
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name IN ["Marc McSharry", "Martin Kenny", "Tony McLoughlin", "Eamon Scanlon"] AND can.Constituency = "Sligo-Leitrim" AND con.Name = "Sligo-Leitrim"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Tipperary and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Tipperary and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
-WHERE can.Name IN ["Michael Lowry", "Mattie McGrath", "Alan Kelly, "Seamus Healy", "Jackie Cahill"] AND can.Constituency = "Tipperary" AND con.Name = "Tipperary"
+MATCH (can:Candidate), (con:Constituency)
+WHERE can.Name IN ["Michael Lowry", "Mattie McGrath", "Alan Kelly", "Seamus Healy", "Jackie Cahill"] AND can.Constituency = "Tipperary" AND con.Name = "Tipperary"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Waterford and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Waterford and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["John Deasy", "David Cullinane", "John Halligan", "Mary Butler"] AND can.Constituency = "Waterford" AND con.Name = "Waterford"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Wexford and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Wexford and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Paul Kehoe", "Michael D'Arcy", "James Browne", "Brendan Howlin", "Mick Wallace"] AND can.Constituency = "Wexford" AND con.Name = "Wexford"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
--Finds the names of the candidates that were elected in Wicklow and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property-
+--Finds the names of the candidates that were elected in Wicklow and then creates an 'ELECTED_IN' relationship between them and sets the relationships 'Election' property
 
-MATCH (can:Candidiate), (con:Constituency)
+MATCH (can:Candidate), (con:Constituency)
 WHERE can.Name IN ["Simon Harris", "Stephen Donnelly", "John Brady", "Pat Casey", "Andrew Doyle"] AND can.Constituency = "Wicklow" AND con.Name = "Wicklow"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
@@ -1322,17 +1409,24 @@ CREATE (de:Dail {Name: "Dail Eireann", Seats: "158", FirstFounded: "1919"});
 
 CREATE (cc:CeannComhairle {Incumbent: "Sean O'Fearghaíl", IncumbentAppointed: "10 March 2016"});
 
-//9 CREATE RELATIONSHIP BETWEEN THE CANDIDATE NODES THAT WERE ELECTED (HAVE AN ELECTED_IN RELATIONSHIP WITH THEIR CONSTITUENCY) AND THE DAIL NODE
+//9a CREATE RELATIONSHIP BETWEEN THE CANDIDATE NODES THAT WERE ELECTED (HAVE AN ELECTED_IN RELATIONSHIP WITH THEIR CONSTITUENCY) AND THE DAIL NODE
 //THE RELATIONSHIP WILL HAVE THE LABEL 'SEATED_IN'
 
-MATCH (c:Candidate)-[:ELECTED_IN]->(:Constituency)
-CREATE (c)-[r:SEATED_IN]->(:Dail) 
-return r;
+MATCH (c:Candidate)-[:ELECTED_IN]->(:Constituency), (de:Dail)
+CREATE (c)-[r:SEATED_IN]->(de) 
+return c, r, de;
+
+//9b EXACTLY THE SAME QUERY AS ABOVE EXCEPT THE FIRST TIME WE RAN THIS QUERY (ABOVE) ELECTED CANDIDATES FROM LAOIS WERE LEFT OUT, THIS QUERY ADDS THEM AS HAVING A 'SEATED_IN'
+//RELATIONSHIP WITH THE DAIL NODE
+MATCH (c:Candidate)-[:ELECTED_IN]->(:Constituency), (de:Dail)
+WHERE c.Constituency = "Laois"
+CREATE (c)-[r:SEATED_IN]->(de) 
+return c, r, de;
 
 //10. CREATE A RELATIONSHIP BETWEEN THE CEANN COMHAIRLE NODE AND DAIL NODE OF TYPE 'SEATED_IN' BECAUSE THE CEANN COMHAIRLE IS ALSO A MEMBER OF THE DAIL 
 
-MATCH (cc:CeannComhairle), (d:Dail)
-CREATE (cc)-[r:SEATED_IN]->(d)
-RETURN r;
+MATCH (cc:CeannComhairle), (de:Dail)
+CREATE (cc)-[r:SEATED_IN]->(de)
+RETURN cc, r, de;
 
 
