@@ -965,21 +965,21 @@ CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
 //4. THE FOLLOWING QUERY CREATES NODES REPRESENTING ALL THE DIFFERENT POLITICAL PARTIES IN IRELAND
 
-CREATE (:PoliticalParty {Name: "Fine Gael", Founded: "1933"}), 
-	   (:PoliticalParty {Name: "Fianna Fail", Founded: "1926"}),
-	   (:PoliticalParty {Name: "Labour", Founded: "1912"}),
-	   (:PoliticalParty {Name: "Sinn Fein", Founded: "1905"}),
-	   (:PoliticalParty {Name: "Green Party", Founded: "1981"}),
-	   (:PoliticalParty {Name: "People Before Profit Alliance", Founded: "2005"}),
-	   (:PoliticalParty {Name: "Anti Austerity Alliance", Founded: "2014"}),
-	   (:PoliticalParty {Name: "RENUA", Founded: "2015"}),
-	   (:PoliticalParty {Name: "Direct Democracy Ireland a National Citizens Movement Conference", Founded: "2010"}),
-	   (:PoliticalParty {Name: "Fis Nua", Founded: "2010"}),
-	   (:PoliticalParty {Name: "Social Democrats", Founded: "2015"}),
-	   (:PoliticalParty {Name: "Communist Party", Founded: "1933"}),
-	   (:PoliticalParty {Name: "Catholic Democrats", Founded: "1995"}),
-	   (:PoliticalParty {Name: "No Associated Party", Founded: "n/a"}),
-	   (:PoliticalParty {Name: "Workers Party", Founded: "1970"});
+CREATE (:PoliticalParty {Name: "Fine Gael", Founded: "1933", Leader: "Enda Kenny"}),
+	   (:PoliticalParty {Name: "Fianna Fail", Founded: "1926", Leader: "Micheal Martin"}),
+	   (:PoliticalParty {Name: "Labour", Founded: "1912", Leader: "Joan Burton"}),
+	   (:PoliticalParty {Name: "Sinn Fein", Founded: "1905", Leader: "Gerry Adams"}),
+	   (:PoliticalParty {Name: "Green Party", Founded: "1981", Leader: "Eamon Ryan"}),
+	   (:PoliticalParty {Name: "People Before Profit Alliance", Founded: "2005", Leader: "Collective Leadership"}),
+	   (:PoliticalParty {Name: "Anti Austerity Alliance", Founded: "2014", Leader: "None"}),
+	   (:PoliticalParty {Name: "RENUA", Founded: "2015", Leader: "Lucinda Creighton"}),
+	   (:PoliticalParty {Name: "Direct Democracy Ireland a National Citizens Movement Conference", Founded: "2010", Leader: "Pat Greene"}),
+	   (:PoliticalParty {Name: "Fis Nua", Founded: "2010", Leader: "None"}),
+	   (:PoliticalParty {Name: "Social Democrats", Founded: "2015", Leader: "Stephen Donnelly"}),
+	   (:PoliticalParty {Name: "Communist Party", Founded: "1933", Leader: "Lynda Walker"}),
+	   (:PoliticalParty {Name: "Catholic Democrats", Founded: "1995", Leader: "Nora Bennis"}),
+	   (:PoliticalParty {Name: "No Associated Party", Founded: "n/a", Leader: "None"}),
+	   (:PoliticalParty {Name: "Workers Party", Founded: "1970", Leader: "Michael Donnelly"});
 	   
 	   
 //5. THE FOLLOWING QUERIES CREATE THE RELATIONSHIPS BETWEEN CANDIDATE AND POLITICAL PARTY NODES (RELATIONSHIP TYPE IS: 'MEMBER_OF')
@@ -1320,8 +1320,25 @@ MATCH (can:Candidiate), (con:Constituency)
 WHERE can.Name IN ["Simon Harris", "Stephen Donnelly", "John Brady", "Pat Casey", "Andrew Doyle"] AND can.Constituency = "Wicklow" AND con.Name = "Wicklow"
 CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
+//7. CREATING A NODE TO REPRESENT THE DAIL
 
+CREATE (de:Dail {Name: "Dail Eireann", Seats: "158", FirstFounded: "1919"});
 
+//8. CREATING A NODE FOR THE CEANN COMHAIRLE (HEAD OF THE COUNCIL) OF THE DAIL.
 
+CREATE (cc:CeannComhairle {Incumbent: "Sean O'Fearghaíl", IncumbentAppointed: "10 March 2016"});
+
+//9 CREATE RELATIONSHIP BETWEEN THE CANDIDATE NODES THAT WERE ELECTED (HAVE AN ELECTED_IN RELATIONSHIP WITH THEIR CONSTITUENCY) AND THE DAIL NODE
+//THE RELATIONSHIP WILL HAVE THE LABEL 'SEATED_IN'
+
+MATCH (c:Candidate)-[:ELECTED_IN]->(:Constituency)
+CREATE (c)-[r:SEATED_IN]->(:Dail) 
+return r;
+
+//10. CREATE A RELATIONSHIP BETWEEN THE CEANN COMHAIRLE NODE AND DAIL NODE OF TYPE 'SEATED_IN' BECAUSE THE CEANN COMHAIRLE IS ALSO A MEMBER OF THE DAIL 
+
+MATCH (cc:CeannComhairle), (d:Dail)
+CREATE (cc)-[r:SEATED_IN]->(d)
+RETURN r;
 
 
