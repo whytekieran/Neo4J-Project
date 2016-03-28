@@ -228,7 +228,7 @@ CREATE (:Candidate {Name: "Stephanie Regan", Constituency: "Dublin Bay North", P
 
 --Candidates for Dublin Bay South Constituency-- 
  
- CREATE (:Candidate {Name: "Eoghan Murphy", Constituency: "Dublin Bay South", Party: "Fine Gael"}), 
+CREATE (:Candidate {Name: "Eoghan Murphy", Constituency: "Dublin Bay South", Party: "Fine Gael"}), 
        (:Candidate {Name: "Kate O'Connell", Constituency: "Dublin Bay South", Party: "Fine Gael"}),
 	   (:Candidate {Name: "Jim O'Callaghan", Constituency: "Dublin Bay South", Party: "Fianna Fail"}),
 	   (:Candidate {Name: "Kevin Humphries", Constituency: "Dublin Bay South", Party: "Labour"}),
@@ -580,7 +580,7 @@ CREATE (:Candidate {Name: "Regina Doherty", Constituency: "Meath East", Party: "
 	   (:Candidate {Name: "Darren O'Rourke", Constituency: "Meath East", Party: "Sinn Fein"}),
 	   (:Candidate {Name: "Seán O'Buachalla", Constituency: "Meath East", Party: "Green Party"}),
 	   (:Candidate {Name: "Seamus McDonagh", Constituency: "Meath East", Party: "Workers Party"}),
-	   (:Candidate {Name: "Aisling O'Neill", Constituency: "Meath East", Party: "Social Democrat"}),
+	   (:Candidate {Name: "Aisling O'Neill", Constituency: "Meath East", Party: "Social Democrats"}),
 	   (:Candidate {Name: "Ben Gilroy", Constituency: "Meath East", Party: "Direct Democracy Ireland a National Citizens Movement Conference"}),
 	   (:Candidate {Name: "Sarah Tyrell", Constituency: "Meath East", Party: "RENUA"}),
 	   (:Candidate {Name: "Sharon Keogan", Constituency: "Meath East", Party: "Independant"}),
@@ -726,31 +726,31 @@ CREATE (:Candidate {Name: "Andrew Doyle", Constituency: "Wicklow", Party: "Fine 
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Carlow-Kilkenny" AND cand.Constituency = "Carlow-Kilkenny"
-CREATE (cand)-[r:CANDIDATE_IN {Election: "General 2016" }]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
 --Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Cavan-Monaghan' and the 'Cavan-Monaghan' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Cavan-Monaghan" AND cand.Constituency = "Cavan-Monaghan"
-CREATE (cand)-[r:CANDIDATE_IN {Election: "General 2016" }]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
 --Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Clare' and the 'Clare' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Clare" AND cand.Constituency = "Clare"
-CREATE (cand)-[r:CANDIDATE_IN {Election: "General 2016" }]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
 --Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Cork East' and the 'Cork East' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Cork East" AND cand.Constituency = "Cork East"
-CREATE (cand)-[r:CANDIDATE_IN {Election: "General 2016" }]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
 --Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Cork North-Central' and the 'Cork North-Central' constituency node--
 
 MATCH (cons:Constituency), (cand:Candidate)
 WHERE cons.Name = "Cork North-Central" AND cand.Constituency = "Cork North-Central"
-CREATE (cand)-[r:CANDIDATE_IN {Election: "General 2016" }]->(cons);
+CREATE (cand)-[:CANDIDATE_IN {Election: "General 2016" }]->(cons);
 
 --Creates a 'CANDIDATE_IN' relationship and an election property for it. This is between candidate nodes with a Constituency property of 'Cork North-West' and the 'Cork North-West' constituency node--
 
@@ -1049,12 +1049,6 @@ CREATE (cand)-[:MEMBER_OF]->(pp);
 
 MATCH (cand:Candidate), (pp:PoliticalParty)
 WHERE cand.Party = "Social Democrats" AND pp.Name = "Social Democrats"
-CREATE (cand)-[:MEMBER_OF]->(pp);
-
---Creates a relationship between Candidate nodes with a Party property of 'Communist Party' and the 'Communist Party' PoliticalParty node--
-
-MATCH (cand:Candidate), (pp:PoliticalParty)
-WHERE cand.Party = "Communist Party" AND pp.Name = "Communist Party"
 CREATE (cand)-[:MEMBER_OF]->(pp);
 
 --Creates a relationship between Candidate nodes with a Party property of 'Communist Party' and the 'Communist Party' PoliticalParty node--

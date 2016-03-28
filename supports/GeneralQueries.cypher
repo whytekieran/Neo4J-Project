@@ -48,6 +48,99 @@ WHERE cand.Party = "Dublin Mid-West"
 SET cand.Party = "Independant"
 RETURN cand;
 
+//12. Show all the political party nodes
+MATCH (pp:PoliticalParty)
+RETURN pp;
+
+//Queries numbered 13-27 Shows all the members of a particular political party
+//13. Show all candidates who are members of Fianna Fail
+MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)
+WHERE pp.Name = "Fianna Fail"
+RETURN c, r, pp;
+
+//14. Show all candidates who are members of Fine Gael
+MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)
+WHERE pp.Name = "Fine Gael"
+RETURN c, r, pp;
+
+//15. Show all candidates who are members of Labour
+MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)
+WHERE pp.Name = "Labour"
+RETURN c, r, pp;
+
+//16. Show all candidates who are members of Sinn Fein
+MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)
+WHERE pp.Name = "Sinn Fein"
+RETURN c, r, pp;
+
+//17. Show all candidates who are members of Green Party
+MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)
+WHERE pp.Name = "Green Party"
+RETURN c, r, pp;
+
+//18. Show all candidates who are members of People Before Profit Alliance
+MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)
+WHERE pp.Name = "People Before Profit Alliance"
+RETURN c, r, pp;
+
+//19. Show all candidates who are members of Anti Austerity Alliance
+MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)
+WHERE pp.Name = "Anti Austerity Alliance"
+RETURN c, r, pp;
+
+//20. Show all candidates who are members of RENUA
+MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)
+WHERE pp.Name = "RENUA"
+RETURN c, r, pp;
+
+//21. Show all candidates who are members of Direct Democracy Ireland a National Citizens Movement Conference
+MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)
+WHERE pp.Name = "Direct Democracy Ireland a National Citizens Movement Conference"
+RETURN c, r, pp;
+
+//22. Show all candidates who are members of Fis Nua
+MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)
+WHERE pp.Name = "Fis Nua"
+RETURN c, r, pp;
+
+//23. Show all candidates who are members of Social Democrats
+MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)
+WHERE pp.Name = "Social Democrats"
+RETURN c, r, pp;
+
+//24. Show all candidates who are members of Communist Party
+MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)
+WHERE pp.Name = "Communist Party"
+RETURN c, r, pp;
+
+//25. Show all candidates who are members of Catholic Democrats
+MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)
+WHERE pp.Name = "Catholic Democrats"
+RETURN c, r, pp;
+
+//26. Show all candidates who are members of Workers Party
+MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)
+WHERE pp.Name = "Workers Party"
+RETURN c, r, pp;
+
+//27. Show all candidates who are members of No Associated Party
+MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)
+WHERE pp.Name = "No Associated Party"
+RETURN c, r, pp;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
