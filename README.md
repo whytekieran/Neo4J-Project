@@ -8,9 +8,17 @@
 
 ## **_Introduction_**
 My name is Ciaran Whyte and as part of a Graph Thoery Module based in GMIT (Galway-Mayo Institute of Technology) i have to design and build a
-graph database. I will be creating the database using Neo4J. 
+graph database. The database is supposed to contain data regarding the 2016 General Election that took place in Ireland this year. At a minimum, 
+the requirements specify that i must have data for both constituencies and candidates. In this project i have implemented that data along with 
+much more which i will be explaining in more detail later in this documentation. 
 
-##### **_Neo4J Vs MySQL_**
+![Irish General Election](http://4.bp.blogspot.com/-TA9UAqjqzz0/VorEd6rHy-I/AAAAAAAAFbY/KwBjXT1OQlw/s640/GE2016%2BA.png)
+
+Once i have implemented the database with the data that was specified i must then come up with three interesting queries for the database, these 
+queries must demonstrate a good working knowledge of the Neo4J query language, which is called Cypher. The queries and the Cypher language will 
+also be explained in more detail later in this documentation.
+
+#### **_Neo4J and Cypher_**
 
 So what is Neo4J and what is a graph database? Neo4j is a graph database management system developed by Neo Technology, Inc. It can be compared to 
 MySQL which is the equivalent of Neo4J. The main difference between Neo4J and MySQL them is that Neo4J is used for graph databases and MySQL is used 
