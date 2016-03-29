@@ -10,7 +10,7 @@
 My name is Ciaran Whyte and as part of a Graph Thoery Module based in GMIT (Galway-Mayo Institute of Technology) i have to design and build a
 graph database. I will be creating the database using Neo4J. 
 
-#### **_Neo4J Vs MySQL_**
+##### **_Neo4J Vs MySQL_**
 
 So what is Neo4J and what is a graph database? Neo4j is a graph database management system developed by Neo Technology, Inc. It can be compared to 
 MySQL which is the equivalent of Neo4J. The main difference between Neo4J and MySQL them is that Neo4J is used for graph databases and MySQL is used 
