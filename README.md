@@ -24,17 +24,23 @@ language will also be explained in more detail later in this documentation.
 
 ## **_What is a Graph Database_**
 Graph databases are based on the mathematics of graph theory which falls into the category of discreet mathematics. In mathematics and computer science, 
-graph theory is the study of graphs, which are mathematical structures used to model relations between objects. Graph databases use nodes (Vertices) and 
-edges (Forms a relationship between nodes). We can then associate properties and labels with these nodes and edges in order to provide more specific
-information.
+graph theory is the study of graphs, which are mathematical structures used to model relations between objects. Graph databases use nodes (Also called Vertices 
+or Objects) and edges (Also known as arcs. Form a relationship between nodes). We can then associate properties and labels with nodes and edges in order to provide 
+more specific information.
 
-> **Below is an image representing the layout of a simple graph database, the database seen here consists of three nodes that each have the label 'Person'
+> **Below is an image representing the layout of a simple graph database in Neo4J, the database seen here consists of three nodes that each have the label 'Person'
 and a 'name' property which is set to each persons individual name. These nodes are connected to eachother by what we call a 'Directed Edge(Relationship)' 
-meaning that thse nodes are only connected in one direction eg Jim knows Ian, but Ian does not know Jim. We gives this relationship a label called 'Knows'
-which indicates the type of relationship it is. Just like nodes, we could also associate properties with these relationships, for example we could have a
-property called 'since' which could indicate the date the person node first knew the other person node**
+meaning that thse nodes are only connected in one direction eg Jim knows Ian, but Ian does not know Jim. What this shows is that Neo4J uses directed edges, meaning 
+the edge between nodes must point in a certain direction, it cannot be undirected. Relationships in Neo4J can also be bi-directional, the downfall of this being that
+if we have the same relationship between two nodes in opposite directions is that we create an unessesary relationship, it uses space and can slow traversal time.
+The following link is a great blog about how to model bi-directional relationships in Neo4J [Modelling Data in Neo4j: Bidirectional Relationships](http://github.com)
+
+We give this relationship a label called 'Knows' which indicates the type of relationship it is. Just like nodes, we could also associate properties with these 
+relationships, for example we could add a property called 'since' which could indicate the date the person node first knew the other person node**
 
 ![SimpleGraphDBLayout](/readmeImages/simpleGraphLayout.png)
+
+The most popular graph database management system currently available today is called Neo4J. 
 
 ## **_The Project Database_**
 Explain how you created your database, and how information is represented in it.
@@ -81,6 +87,8 @@ RETURN
 8. [Dáil Éireann] (https://en.wikipedia.org/wiki/D%C3%A1il_%C3%89ireann) contains information about the Dail of Ireland.
 9. [Ceann Comhairle] (https://en.wikipedia.org/wiki/Ceann_Comhairle) contains information about the Ceann Comhairle (Dail Chairperson).
 10. [Graph Database Wikapedia] (https://en.wikipedia.org/wiki/Graph_database) wikipedia page about graph databases.
-10. [Graph Theory Wikapedia] (https://en.wikipedia.org/wiki/Graph_theory) wikipedia page about graph thoery.
+11. [Graph Theory Wikapedia] (https://en.wikipedia.org/wiki/Graph_theory) wikipedia page about graph thoery.
+12. [Mastering Markdown Language] (https://guides.github.com/features/mastering-markdown) information about how to use the markdown language.
+
 
 
