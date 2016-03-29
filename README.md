@@ -34,7 +34,6 @@ meaning that thse nodes are only connected in one direction eg Jim knows Ian, bu
 the edge between nodes must point in a certain direction, it cannot be undirected. Relationships in Neo4J can also be bi-directional, the downfall of this being that
 if we have the same relationship between two nodes in opposite directions is that we create an unessesary relationship, it uses space and can slow traversal time.
 The following link is a great blog about how to model bi-directional relationships in Neo4J [Modelling Data in Neo4j: Bidirectional Relationships](http://github.com)
-
 We give this relationship a label called 'Knows' which indicates the type of relationship it is. Just like nodes, we could also associate properties with these 
 relationships, for example we could add a property called 'since' which could indicate the date the person node first knew the other person node**
 
