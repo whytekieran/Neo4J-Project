@@ -12,6 +12,9 @@ graph database. The database is supposed to contain data regarding the 2016 Gene
 the requirements specify that i must have data for both constituencies and candidates. In this project i have implemented that data along with 
 much more which i will be explaining in more detail later in this documentation. 
 
+> **Below is an image representing the 40 different constituencies in Ireland and in brackets beside their name we have the amount of seats that
+particular constituency has**
+
 ![Constituencies](/readmeImages/constituencies.png)
 
 Once i have implemented the database with the data that was specified i must then come up with three interesting queries for the database, these 
