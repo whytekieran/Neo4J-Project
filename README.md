@@ -8,7 +8,8 @@
 
 ## **_Introduction_**
 My name is Ciaran Whyte and as part of a Graph Thoery Module based in GMIT (Galway-Mayo Institute of Technology) I have to design and build a
-graph database using Neo4J and Cypher. The database is supposed to contain data regarding the 2016 General Election that took place in Ireland 
+graph database using Neo4J and Cypher. Today Neo4J is the worlds most popular graph database managment system, it uses a language called Cypher as its query
+language. The database is supposed to contain data regarding the 2016 General Election that took place in Ireland 
 this year. At a minimum, the requirements specify that I must have data for both constituencies and candidates. In this project I have implemented 
 that data along with some additional data which I will be explaining in more detail later in this documentation. 
 
@@ -40,7 +41,7 @@ relationships, for example we could add a property called 'since' which could in
 
 ![SimpleGraphDBLayout](/readmeImages/simpleGraphLayout.png)
 
-The most popular graph database management system currently available today is called Neo4J. 
+## **_Neo4J and Cypher_**
 
 ## **_The Project Database_**
 Explain how you created your database, and how information is represented in it.
