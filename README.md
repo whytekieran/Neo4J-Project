@@ -60,9 +60,16 @@ This section will now discuss Neo4J and the Cypher query in some more depth.
 #### **_Neo4J_**
 
 Neo4J is a noSQL graph database management system. It was developed by Neo Technology, Inc. Development for Neo4J first began in 2003 and it has been available publically
-through open source since 2007. It is cross platform software meaning it works on multiple operating systems, including Windows, Mac PC's and Linux. Neo4J is implemented
-using both Java and Scala, it is JVM (Java Virtual Machine) based. The Neo4J source code and the ability to perform verion tracking of the software is available from the
-following link on Github [Neo4J Source Code](https://github.com/neo4j/neo4j) 
+through open source since 2007. It is cross platform software meaning it works on multiple operating systems, including Windows, Mac PC's and Linux. 
+
+Neo4J is implemented using both Java and Scala, it is JVM (Java Virtual Machine) based. Neo4J was originally developed to work with the Java programming language (Hence the
+'J' in Neo4J) but since its become available that has been expanded to include many other languages like Python for example. The Neo4J source code and the ability to perform 
+version tracking of the software is available from the following link on Github [Neo4J Source Code](https://github.com/neo4j/neo4j). 
+
+Most NoSQL databases lack true ACID transactions unlike Neo4J which fully supports ACID (Atomicity, Consistency, Isolation, Durability) out of the box. ACID makes sure that 
+database transactions are processed in a reliable way, meaning that a transaction with the database must fully finish, otherwise the changes that were made before the 
+failure must be undone. ACID databases also store their data on some sort of durable storage, eg hard disk. Neo4J also provide for efficient data importing, allowing CSV and
+relational formatted data to be easily converted. Lastly, Neo4J is also incredibly fast, allowing a user to search through millions of connections a second.
 
 ## **_The Project Database_**
 Explain how you created your database, and how information is represented in it.
