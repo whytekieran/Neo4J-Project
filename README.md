@@ -19,8 +19,8 @@ these elected members then congregate together to form the Irish House of Parlim
 
 ![Constituencies](/readmeImages/constituencies.png)
 
-Once I have implemented the database with the data specified in the requirments and shown in the above image I must then come up with three interesting queries for the 
-database, these queries must demonstrate a good working knowledge of the Neo4J query language, which is called Cypher. The queries and the Cypher 
+Once I have implemented the database with the data specified in the requirements and shown in the above image I must then come up with three interesting queries for the 
+database, these queries must demonstrate a good working knowledge of the Neo4J query language, Cypher. The queries and the Cypher 
 language will also be explained in more detail later in this documentation.
 
 ## **_What is a Graph Database_**
@@ -42,6 +42,16 @@ relationships, for example we could add a property called 'since' which could in
 ![SimpleGraphDBLayout](/readmeImages/simpleGraphLayout.png)
 
 ## **_Neo4J and Cypher_**
+
+Earlier in this documentation we briefly mentioned Neo4J and its supporting language Cypher. We have also mentioned the general layout of a graph database and the four 
+main elements that it consists of, which are:
+
+Element | Description
+------------ | -------------
+Node | Represents an entity in the database, defined as a circle when shown visually.
+Edge | Represents a relationship between nodes, must be directional and are defined as lines when shown visually.
+Labels | Used to shown what type of entity a node is representing or what type of relationship an edge is representing
+Properties | Used to set information about a node or edge
 
 ## **_The Project Database_**
 Explain how you created your database, and how information is represented in it.
