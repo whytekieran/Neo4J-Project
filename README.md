@@ -91,15 +91,35 @@ In this example we are going to use Cypher to build the graph that we defined in
 graph step by step, explaining the Cypher code along the way.
 
 **Step 1**
-
-We must create the nodes
+Creating the nodes
 
 ```cypher
-CREATE (i:Person {Name: "Ian"}), 
-       (j:Person {Name: "Jim"}),
-       (e:Person {Name: "Emil"})
-RETURN i, j, e;
+CREATE (i:Person {Name: "Ian"}), 		//The CREATE keyword is used to create nodes and patterns.
+       (j:Person {Name: "Jim"}),		//Basically, this is what each of these nodes is describing (usedToReferenceNodeLater:Label {Key: "Value"})
+       (e:Person {Name: "Emil"}) 
+RETURN i, j, e;							//The return keyword is optional, once the nodes are created this keyword causes them to be shown back to the user.
 ```
+(Note: i, j and e are temporary reference variables, they are only used to refer to an element later in the query)
+Now that we have created the three nodes we need to now create the relationships between them.
+
+**Step 2**
+Creating the relationships between the nodes
+
+```cypher
+MATCH 									//The MATCH keyword is used to retrive any elements that match the patterns specified. (Kind of like your SELECT statement in SQL)
+	(i:Person {Name: "Ian"}), 			//Then we specify the nodes we are looking for and use a temporary placeholder so we can reference them further in the query.
+    (j:Person {Name: "Jim"}),		
+    (e:Person {Name: "Emil"}) 		
+CREATE									//Next we use the CREATE keyword to create the relationships
+	(i)-[r1:KNOWS]->(e),				//We dont need to reference the node, just its placeholder (Here we say create the 'KNOWS' relationship between Ian and Emil)
+	(j)-[r2:FOLLOWS_TWITTER]->(i)
+	(j)-[r3:FOLLOWS_TWITTER]->(e)
+RETURN
+	r1, r2, r3;							//Return the relationships back to the user so he/she can see them.
+```
+
+Thats it, with those two simple steps we have created the graph shown earlier, if you want to view more information you can view the documentation for Cypher from the 
+Neo4J website, here is the link [Cypher Documentation](http://neo4j.com/docs/stable/cypher-query-lang.html). 
 
 ## **_The Project Database_**
 Explain how you created your database, and how information is represented in it.
