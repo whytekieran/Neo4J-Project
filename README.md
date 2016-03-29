@@ -22,12 +22,17 @@ Once I have implemented the database with the data that was specified in the req
 database, these queries must demonstrate a good working knowledge of the Neo4J query language, which is called Cypher. The queries and the Cypher 
 language will also be explained in more detail later in this documentation.
 
-#### **_Neo4J and the Cypher query language_**
+## **_What is a Graph Database_**
+Graph databases are based on the mathematics of graph theory which falls into the category of discreet mathematics. In mathematics and computer science, 
+graph theory is the study of graphs, which are mathematical structures used to model relations between objects. Graph databases use nodes (Vertices) and 
+edges (Forms a relationship between nodes). We can then associate properties and labels with these nodes and edges in order to provide more specific
+information.
 
-So what is Neo4J and Cypher? Neo4j is a _graph database management system_ developed by Neo Technology, Inc. Neo4J can be compared to 
-MySQL, the main difference between Neo4J and MySQL is that Neo4J is used for graph databases and MySQL is used for relational databases.
+> **Below is an image representing the layout of a simple graph**
 
-## **_The Database_**
+![SimpleGraphDBLayout](/readmeImages/simpleGraphLayout.png)
+
+## **_The Project Database_**
 Explain how you created your database, and how information is represented in it.
 
 ## **_Queries_**
@@ -71,3 +76,7 @@ RETURN
 7. [Irish General Election Winners] (http://www.thejournal.ie/here-are-the-tds-you-have-elected-2628128-Mar2016) contains information about the elected candidates in the irish general election.
 8. [Dáil Éireann] (https://en.wikipedia.org/wiki/D%C3%A1il_%C3%89ireann) contains information about the Dail of Ireland.
 9. [Ceann Comhairle] (https://en.wikipedia.org/wiki/Ceann_Comhairle) contains information about the Ceann Comhairle (Dail Chairperson).
+10. [Graph Database Wikapedia] (https://en.wikipedia.org/wiki/Graph_database) wikipedia page about graph databases.
+10. [Graph Theory Wikapedia] (https://en.wikipedia.org/wiki/Graph_theory) wikipedia page about graph thoery.
+
+
