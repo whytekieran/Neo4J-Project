@@ -4757,3 +4757,4 @@ Storage files: (filename : modification date - size)
 2016-03-29 11:24:01.835+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
 2016-03-29 11:24:01.835+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
 2016-03-29 12:00:32.719+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 268ms.
+2016-03-29 13:00:33.138+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 386ms.

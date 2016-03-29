@@ -12,7 +12,7 @@ graph database. The database is supposed to contain data regarding the 2016 Gene
 the requirements specify that i must have data for both constituencies and candidates. In this project i have implemented that data along with 
 much more which i will be explaining in more detail later in this documentation. 
 
-![Irish General Election](http://4.bp.blogspot.com/-TA9UAqjqzz0/VorEd6rHy-I/AAAAAAAAFbY/KwBjXT1OQlw/s640/GE2016%2BA.png)
+![Irish General Election](https://2.bp.blogspot.com/-3qXC7oN7TK8/VW43v4yc2mI/AAAAAAAAD10/thN1NMWv-h0/s320/2012%2B-.png)
 
 Once i have implemented the database with the data that was specified i must then come up with three interesting queries for the database, these 
 queries must demonstrate a good working knowledge of the Neo4J query language, which is called Cypher. The queries and the Cypher language will 
