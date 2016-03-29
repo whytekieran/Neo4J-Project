@@ -35,8 +35,8 @@ more specific information.
 and a 'name' property which is set to each persons individual name. These nodes are connected to eachother by what we call a 'Directed Edge(Relationship)' 
 meaning that these nodes are only connected in one direction eg Jim knows Ian, but Ian does not know Jim. What this shows is that Neo4J uses directed edges, meaning 
 the edge between nodes must point in a certain direction, it cannot be undirected. Relationships in Neo4J can also be bi-directional but we must use two directed edges
-to accomplish this, the downfall of this approach being that if we have the same relationship between two nodes in opposite directions we create an unessesary relationship, 
-it uses space and can slow traversal time. The following link is a great blog about how to model bi-directional relationships in Neo4J [Modelling Data in Neo4j: 
+to accomplish this, the downfall of this approach being that if we have the same relationship between two nodes in opposite directions we create an unnessesary relationship, 
+it uses space and can slow traversal time. The following link is a great blog about how to model bi-directional relationships correctly in Neo4J [Modelling Data in Neo4j: 
 Bidirectional Relationships](http://graphaware.com/neo4j/2013/10/11/neo4j-bidirectional-relationships.html).   
 We give this relationship a label called 'Knows' which indicates the type of relationship it is. Just like nodes, we could also associate properties with these 
 relationships, for example we could add a property called 'since' which could indicate the date the person node first knew the other person node**
@@ -45,7 +45,7 @@ relationships, for example we could add a property called 'since' which could in
 
 ## **_Neo4J and Cypher_**
 
-In the previous section we briefly mentioned Neo4J and its supporting language Cypher. We have also mentioned the general layout of a graph database and the four 
+In the previous sections we briefly mentioned Neo4J and its supporting language Cypher. We have also mentioned the general layout of a graph database and the four 
 main elements that it consists of, which are:
 
 Element | Description
@@ -55,7 +55,11 @@ Edge | Represents a relationship between nodes, must be directional and are defi
 Labels | Used to shown what type of entity a node is representing or what type of relationship an edge is representing
 Properties | Used to set information about a node or edge
 
+This section will now discuss Neo4J and the Cypher query in some more depth.
 
+#### **_Neo4J_**
+
+Just some sample text to see how the layout looks
 
 ## **_The Project Database_**
 Explain how you created your database, and how information is represented in it.
