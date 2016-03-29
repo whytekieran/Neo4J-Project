@@ -55,7 +55,9 @@ Edge | Represents a relationship between nodes, must be directional and are defi
 Labels | Used to shown what type of entity a node is representing or what type of relationship an edge is representing
 Properties | Used to set information about a node or edge
 
-This section will now discuss Neo4J and the Cypher query in some more depth.
+Although i say that there are four main elements in a Neo4J graph database, some people may say its actually two. (Nodes and Edges) This is technically true, what im 
+trying to show in the above table is the _four most important components_ of a Neo4J graph database.
+This section will now discuss Neo4J and the Cypher query language in some more depth.
 
 #### **_Neo4J_**
 
@@ -63,13 +65,32 @@ Neo4J is a noSQL graph database management system. It was developed by Neo Techn
 through open source since 2007. It is cross platform software meaning it works on multiple operating systems, including Windows, Mac PC's and Linux. 
 
 Neo4J is implemented using both Java and Scala, it is JVM (Java Virtual Machine) based. Neo4J was originally developed to work with the Java programming language (Hence the
-'J' in Neo4J) but since its become available that has been expanded to include many other languages like Python for example. The Neo4J source code and the ability to perform 
+'J' in Neo4J) but since then that has been expanded to include many other languages like Python for example. The Neo4J source code and the ability to perform 
 version tracking of the software is available from the following link on Github [Neo4J Source Code](https://github.com/neo4j/neo4j). 
 
 Most NoSQL databases lack true ACID transactions unlike Neo4J which fully supports ACID (Atomicity, Consistency, Isolation, Durability) out of the box. ACID makes sure that 
 database transactions are processed in a reliable way, meaning that a transaction with the database must fully finish, otherwise the changes that were made before the 
 failure must be undone. ACID databases also store their data on some sort of durable storage, eg hard disk. Neo4J also provide for efficient data importing, allowing CSV and
 relational formatted data to be easily converted. Lastly, Neo4J is also incredibly fast, allowing a user to search through millions of connections a second.
+
+#### **_Cypher_**
+
+Cypher is Neo4J’s declarative graph query language. The Cypher language borrows some of its structure and keywords from SQL which allows users that are familier with using
+relational database management systems like MySQL to quickly become accustomed to using Neo4J as well. The Cypher language allows a user to describe what he/she wants to 
+select, insert, update or delete from a graph database without requiring the user to describe exactly how its done.
+
+Cypher uses ASCII-Art to represent patterns, this form of pattern matching is done in place of the traditional relational approach where we would declare which coloumns we want.
+To refer to a node we use parentheses which look like circles, eg (node). To refer to relationships we use square brackets, eg [relationship]. We can specify the direction of
+the relation ship by using a syntax something like the following (node1)-[follows]->(node2). As you can see its very clear what we are specifying, we are saying that node1 follows
+node2. Lastly we can specify labels by using syntax like :label and specify properties by using key-value pairs inside square brackets, eg {key: "value"}. Both labels and properties
+can go inside a relationship or a node.
+
+#### **_Cypher Example_** 
+
+In this example we are going to use Cypher to build the graph that we defined in the previous section 'What is a Graph Database'. This example will go though the creation of the 
+graph step by step, explaining the Cypher code along the way.
+
+**Step 1**
 
 ## **_The Project Database_**
 Explain how you created your database, and how information is represented in it.
@@ -118,6 +139,7 @@ RETURN
 10. [Graph Database Wikapedia] (https://en.wikipedia.org/wiki/Graph_database) wikipedia page about graph databases.
 11. [Graph Theory Wikapedia] (https://en.wikipedia.org/wiki/Graph_theory) wikipedia page about graph thoery.
 12. [Mastering Markdown Language] (https://guides.github.com/features/mastering-markdown) information about how to use the markdown language.
+13. [Cypher Query Language] (http://neo4j.com/developer/cypher) information about cypher and how to use it.
 
 
 
