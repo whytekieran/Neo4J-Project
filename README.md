@@ -9,7 +9,9 @@
 ## **_Introduction_**
 My name is Ciaran Whyte and as part of a Graph Thoery Module based in GMIT (Galway-Mayo Institute of Technology) I have to design and build a
 graph database using Neo4J and Cypher. Today Neo4J is the worlds most popular graph database managment system, it uses a language called Cypher as its query
-language. The database is supposed to contain data regarding the 2016 General Election that took place in Ireland 
+language. 
+
+The database im implementing is supposed to contain data regarding the 2016 General Election that took place in Ireland 
 this year. At a minimum, the requirements specify that I must have data for both constituencies and candidates. In this project I have implemented 
 that data along with some additional data which I will be explaining in more detail later in this documentation. 
 
@@ -43,7 +45,7 @@ relationships, for example we could add a property called 'since' which could in
 
 ## **_Neo4J and Cypher_**
 
-Earlier in this documentation we briefly mentioned Neo4J and its supporting language Cypher. We have also mentioned the general layout of a graph database and the four 
+In the previous section we briefly mentioned Neo4J and its supporting language Cypher. We have also mentioned the general layout of a graph database and the four 
 main elements that it consists of, which are:
 
 Element | Description
@@ -52,6 +54,8 @@ Node | Represents an entity in the database, defined as a circle when shown visu
 Edge | Represents a relationship between nodes, must be directional and are defined as lines when shown visually.
 Labels | Used to shown what type of entity a node is representing or what type of relationship an edge is representing
 Properties | Used to set information about a node or edge
+
+
 
 ## **_The Project Database_**
 Explain how you created your database, and how information is represented in it.
