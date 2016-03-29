@@ -118,8 +118,10 @@ RETURN
 	r1, r2, r3;							//Return the relationships back to the user so he/she can see them.
 ```
 
-Thats it, with those two simple steps we have created the graph shown earlier, if you want to view more information you can view the documentation for Cypher from the 
+Thats it, with those two simple steps we have created the graph shown earlier, if you want to view more information about Cypher you can view its documentation from the 
 Neo4J website, here is the link [Cypher Documentation](http://neo4j.com/docs/stable/cypher-query-lang.html). 
+
+## **_Neo4J (Graph Database) Vs MySQL (Relational Database)_**
 
 ## **_The Project Database_**
 Explain how you created your database, and how information is represented in it.
