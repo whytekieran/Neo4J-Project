@@ -28,7 +28,11 @@ graph theory is the study of graphs, which are mathematical structures used to m
 edges (Forms a relationship between nodes). We can then associate properties and labels with these nodes and edges in order to provide more specific
 information.
 
-> **Below is an image representing the layout of a simple graph**
+> **Below is an image representing the layout of a simple graph database, the database seen here consists of three nodes that each have the label 'Person'
+and a 'name' property which is set to each persons individual name. These nodes are connected to eachother by what we call a 'Directed Edge(Relationship)' 
+meaning that thse nodes are only connected in one direction eg Jim knows Ian, but Ian does not know Jim. We gives this relationship a label called 'Knows'
+which indicates the type of relationship it is. Just like nodes, we could also associate properties with these relationships, for example we could have a
+property called 'since' which could indicate the date the person node first knew the other person node**
 
 ![SimpleGraphDBLayout](/readmeImages/simpleGraphLayout.png)
 
