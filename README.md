@@ -92,6 +92,15 @@ graph step by step, explaining the Cypher code along the way.
 
 **Step 1**
 
+We must create the nodes
+
+```cypher
+CREATE (i:Person {Name: "Ian"}), 
+       (j:Person {Name: "Jim"}),
+       (e:Person {Name: "Emil"})
+RETURN i, j, e;
+```
+
 ## **_The Project Database_**
 Explain how you created your database, and how information is represented in it.
 
