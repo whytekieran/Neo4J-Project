@@ -2,13 +2,16 @@
 
 **Student Name:** Ciaran Whyte </br>
 **Student ID:** G00254624 </br>
+**Course:** Software Development </br>
 **Module:** Graph Theory </br>
 **Lecturer:** Ian Mcloughlin </br>
 
 ## **_Introduction_**
 My name is Ciaran Whyte and as part of a Graph Thoery Module based in GMIT (Galway-Mayo Institute of Technology) i have to design and build a
-graph database. I will be creating the database in Neo4J which uses a query language called Cypher. This is the equivalant of a language like SQL used
-with relational databases.
+graph database. I will be creating the database using Neo4J. 
+
+So what is Neo4J and what is a graph database? To explain what these are we can compare them to the more commonly used relational database. 
+Neo4J is the worlds leading graph database managment system, developed by Neo Technology Inc.
 
 ## **_Database_**
 Explain how you created your database, and how information is represented in it.
