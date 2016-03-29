@@ -13,7 +13,8 @@ this year. At a minimum, the requirements specify that I must have data for both
 that data along with some additional data which I will be explaining in more detail later in this documentation. 
 
 > **Below is an image representing the 40 different constituencies in Ireland and in brackets beside the constituency name we indicate the amount of seats 
-that particular constituency has. The candidates in each constituency then run for election in order to win a seat in their respective constituency**
+that particular constituency has. The candidates in each constituency then run for election in order to win a seat in their respective constituency. All of
+these elected members then congregate together to form the Irish House of Parliment, or Dáil Éireann as its more commonly known**
 
 ![Constituencies](/readmeImages/constituencies.png)
 
@@ -23,9 +24,8 @@ language will also be explained in more detail later in this documentation.
 
 #### **_Neo4J and the Cypher query language_**
 
-So what is Neo4J and what is a graph database? Neo4j is a graph database management system developed by Neo Technology, Inc. It can be compared to 
-MySQL which is the equivalent of Neo4J. The main difference between Neo4J and MySQL them is that Neo4J is used for graph databases and MySQL is used 
-for relational databases.
+So what is Neo4J and Cypher? Neo4j is a _graph database management system_ developed by Neo Technology, Inc. Neo4J can be compared to 
+MySQL, the main difference between Neo4J and MySQL is that Neo4J is used for graph databases and MySQL is used for relational databases.
 
 ## **_The Database_**
 Explain how you created your database, and how information is represented in it.
