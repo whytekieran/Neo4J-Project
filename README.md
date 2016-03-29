@@ -59,7 +59,10 @@ This section will now discuss Neo4J and the Cypher query in some more depth.
 
 #### **_Neo4J_**
 
-Just some sample text to see how the layout looks
+Neo4J is a noSQL graph database management system. It was developed by Neo Technology, Inc. Development for Neo4J first began in 2003 and it has been available publically
+through open source since 2007. It is cross platform software meaning it works on multiple operating systems, including Windows, Mac PC's and Linux. Neo4J is implemented
+using both Java and Scala, it is JVM (Java Virtual Machine) based. The Neo4J source code and the ability to perform verion tracking of the software is available from the
+following link on Github [Neo4J Source Code](https://github.com/neo4j/neo4j) 
 
 ## **_The Project Database_**
 Explain how you created your database, and how information is represented in it.
