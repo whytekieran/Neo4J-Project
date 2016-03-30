@@ -6,14 +6,14 @@
 **Module:** Graph Theory </br>
 **Lecturer:** Ian Mcloughlin </br>
 
-**_Git Branches:_** </br>
+**_Git Branches:_** 
 
-			**1. Master Branch** The commits to the branch include any queries that are involved in creating the database and the ReadMe.md, the query files commited
+**1. Master Branch** The commits to the branch include any queries that are involved in creating the database and the ReadMe.md, the query files commited
 								 on this branch are the CreateDatabase.cypher and GeneralQueries.cypher files which are located inside the supports folder, the 
 								 largest amount of commits will be found here. </br>
-			**2. Query Data Branch** The commits on this branch include any queries that are involved in searching for useful and interesting data. The query file
+**2. Query Data Branch** The commits on this branch include any queries that are involved in searching for useful and interesting data. The query file
 									 commited on this branch is the QueryData.cypher file which is located inside the supports folder. </br>
-			**3. Finished Branch** Lastly, this branch contains one commit which is the finished project. </br>
+**3. Finished Branch** Lastly, this branch contains one commit which is the finished project. </br>
 
 ## **_Introduction_**
 My name is Ciaran Whyte and as part of a Graph Thoery Module based in GMIT (Galway-Mayo Institute of Technology) I have to design and build a
