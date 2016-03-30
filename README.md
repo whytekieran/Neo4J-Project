@@ -8,11 +8,13 @@
 
 **_Git Branches:_** 
 
-**1. Master Branch** The commits to the branch include any queries that are involved in creating the database and the ReadMe.md, the query files commited
+**1. Master Branch** The commits to this branch include any queries that are involved in creating the database and the ReadMe.md, the query files commited
 								 on this branch are the CreateDatabase.cypher and GeneralQueries.cypher files which are located inside the supports folder, the 
 								 largest amount of commits will be found here. </br>
 **2. Query Data Branch** The commits on this branch include any queries that are involved in searching for useful and interesting data. The query file
-									 commited on this branch is the QueryData.cypher file which is located inside the supports folder. </br>
+									 commited on this branch is the QueryData.cypher file which is located inside the supports folder and the three query.cypher
+									 files which are located inside the scripts folder. (The QueryData.cypher file contains queries used while i was attempting to 
+									 come up with my three queries, the queries here are the ones that didnt make my top three.) </br>
 **3. Finished Branch** Lastly, this branch contains one commit which is the finished project. </br>
 
 ## **_Introduction_**
@@ -182,7 +184,7 @@ Overall which approach you decide to take when designing an application really d
 wish to view more information about relational database here is a link to MySQL's documentation. [MySQL](https://dev.mysql.com/doc/)
 
 ## **_The Project Database_**
-In the introduction of this documentation I described the project that i will be doing which involves creating a graph databse. Now that ive explained a little about the technologies 
+In the introduction of this documentation I described the project that i will be doing which involves creating a graph database. Now that ive explained a little about the technologies 
 that will be using i will now explain the database that ive created for my project. 
 
 **The Database Nodes**
