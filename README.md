@@ -184,16 +184,33 @@ wish to view more information about relational database here is a link to MySQL'
 In the introduction of this documentation I described the project that i will be doing which involves creating a graph databse. Now that ive explained a little about the technologies 
 that will be using i will now explain the database that ive created for my project. 
 
-**The Nodes and their Properties**
+**The Database Nodes**
 
-Firstly i shall explain the different types of nodes in my project, the project consists of six different types of nodes which are outlined in the table below
+Firstly i shall explain the different types of nodes in my project, the project consists of six different types of nodes which are outlined in the table below along with their
+properties and labels.
 
 Node | Description | Label(s) | Property(s)
 ------------ | ------------- | ------------- | -------------
-Node | Description | Label | Property
-Node | Description | Label | Property
-Node | Description | Label | Property
-Node | Description | Label | Property
+Candidate Node | Represents an election candidates from a constituency | Candidate | Name, Consistency, Party
+Consistency Node | Represents a particular constituency | Constituency | Name, Seats, Population, Province, Created
+Political Party Node | Represents a particular political party | PoliticalParty | Name, Founded, Leader
+TD Node| Represents a candidate node that has been elected | Candidate, TD | Name, Consistency, Party
+Dail Node | Node representing the Dáil Éireann of Ireland | Dail | Name, Seats, FirstFounded
+Ceann Comhairle Node | Represents the Ceann Comhairle (Chairperson) of the dail, also a TD | CeannComhairle, TD | Incumbent, IncumbentAppointed
+
+**The Database Relationships**
+
+Next we have the relationships that connect these nodes together, the project consists of four different types of relationships, these relationships are outlined in the
+table below.
+
+Relationship | Description | Connected Nodes | Label(s) | Property(s)
+------------ | ------------- | ------------- | -------------
+CANDIDATE_IN Relationship | Represents a candidates from a constituency | Candidate | Name, Consistency, Party
+ELECTED_IN Relationship | Represents a particular constituency | Constituency | Name, Seats, Population, Province, Created
+SEATED_IN Relationship | Represents a particular political party | PoliticalParty | Name, Founded, Leader
+MEMBER_OF Relationship | Represents a candidate node that has been elected | Candidate, TD | Name, Consistency, Party
+
+
 
 ## **_Queries_**
 Summarise your three queries here.
