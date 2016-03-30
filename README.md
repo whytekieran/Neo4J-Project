@@ -154,7 +154,31 @@ So how do these two types of database compare to eachother, here we list some of
 
 **Relational Database Advantages**
 
-So how does the Graph database stack up against the relational database.
+1. A relational database is much faster when operating on large amounts fo data. In a graph database, each record has to be examined individually during a query because the
+   structure of the data must be determined. In relational database a schema is defined, so this is known ahead of time.
+2. Relational databases use less storage space, because unlike graph databases they do not need to store many relationships.
+3. Relational databases have been around for quite a long time and are tried and tested, graph databses are relatively new and people tend to favour ways that they are familier
+   with and they know will work.
+
+**Relational Database Disadvantages**
+
+1. Relational databases require a schema right from the beginning, once a table for the databse has a schema, it cant be changed, the alterations you can do to the table are
+   very minimal. This means that if at some point during a project the data you wish to store changes, this can cause issues as the structure for the database now must be changed.
+2. Relational database queries are not well suited to certain tasks, for example tasks a social networking site may want to accomplish like searching for freinds of friends. It 
+   can accomplish these tasks but only from the use of expensive JOIN's of tables.
+   
+**Graph Database Advantages**
+
+1. Graph Databases are schemaless, meaning that if the type of data we are storing changes we do not need to change any underlying structure, we simply just add the alterations.
+2. Graph Databases are extemely effective at performing the kind of searches that relational databases arent good at. These are searches like finding friends of friends or trying
+   to find the shortest path between two entities.
+   
+**Graph Database Disadvantages**
+
+1. Graph Databases tend to use a lot of storage space because of the extra relationships that they must store.
+
+Overall which approach you decide to take when designing an application really depends on the task your trying to accomplish, both databases are useful in certain areas. If you
+wish to view more information about relational database here is a link to MySQL's documentation. [MySQL](https://dev.mysql.com/doc/)
 
 ## **_The Project Database_**
 Explain how you created your database, and how information is represented in it.
