@@ -1,4 +1,4 @@
-# **_Irish Constituencies Neo4j Database_**
+# **_Irish General Election Neo4j Database_**
 
 **Student Name:** Ciaran Whyte </br>
 **Student ID:** G00254624 </br>
@@ -204,13 +204,11 @@ Next we have the relationships that connect these nodes together, the project co
 table below.
 
 Relationship | Description | Connected Nodes | Label(s) | Property(s)
------------- | ------------- | ------------- | -------------
-CANDIDATE_IN Relationship | Represents a candidates from a constituency | Candidate | Name, Consistency, Party
-ELECTED_IN Relationship | Represents a particular constituency | Constituency | Name, Seats, Population, Province, Created
-SEATED_IN Relationship | Represents a particular political party | PoliticalParty | Name, Founded, Leader
-MEMBER_OF Relationship | Represents a candidate node that has been elected | Candidate, TD | Name, Consistency, Party
-
-
+------------ | ------------- | ------------- | ------------- | -------------
+Candidate_in Relationship | Represents which candidate is running for office in which constituency | Candidate, Consistency | CANDIDATE_IN | Election (States which election it was)
+Elected_in Relationship | Represents which candidate has been elected into which constituency | Candidate, Constituency | ELECTED_IN | Election (States which election it was)
+Seated_in Relationship | Represents which candidates have a seat in the dail. (Ones with ELECTED_IN relationship) | Candidate, Dail | SEATED_IN | None
+Member_of Relationship | Represents which candidate is a member of which political party | Candidate, PoliticalParty | MEMBER_OF | None
 
 ## **_Queries_**
 Summarise your three queries here.
