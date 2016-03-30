@@ -181,7 +181,19 @@ Overall which approach you decide to take when designing an application really d
 wish to view more information about relational database here is a link to MySQL's documentation. [MySQL](https://dev.mysql.com/doc/)
 
 ## **_The Project Database_**
-Explain how you created your database, and how information is represented in it.
+In the introduction of this documentation I described the project that i will be doing which involves creating a graph databse. Now that ive explained a little about the technologies 
+that will be using i will now explain the database that ive created for my project. 
+
+**The Nodes and their Properties**
+
+Firstly i shall explain the different types of nodes in my project, the project consists of six different types of nodes which are outlined in the table below
+
+Node | Description | Label(s) | Property(s)
+------------ | ------------- | ------------- | -------------
+Node | Description | Label | Property
+Node | Description | Label | Property
+Node | Description | Label | Property
+Node | Description | Label | Property
 
 ## **_Queries_**
 Summarise your three queries here.
