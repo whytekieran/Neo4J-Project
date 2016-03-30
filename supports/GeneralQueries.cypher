@@ -1,5 +1,7 @@
 											 GENERAL QUERIES (SOME QUERIES USED WHILE TESING AND CREATING THE DATABASE)
 										------------------------------------------------------------------------------------
+										
+--The following queries were used throughout the development and testing of the database, they were not used for the purpose of trying to retrive useful and interesting data.
 														
 //1. Finds and returns all nodes in the database (Used for checking nodes while testing and creating)
 MATCH (n) RETURN n;

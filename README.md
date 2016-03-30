@@ -6,6 +6,14 @@
 **Module:** Graph Theory </br>
 **Lecturer:** Ian Mcloughlin </br>
 
+**_Git Branches:_** 
+			**1. Master Branch** The commits to the branch include any queries that are involved in creating the database and the ReadMe.md, the query files commited
+								 on this branch are the CreateDatabase.cypher and GeneralQueries.cypher files which are located inside the supports folder, the 
+								 largest amount of commits will be found here.
+			**2. Query Data Branch** The commits on this branch include any queries that are involved in searching for useful and interesting data. The query file
+									 commited on this branch is the QueryData.cypher file which is located inside the supports folder.
+			**3. Finished Branch** Lastly, this branch contains one commit which is the finished project.
+
 ## **_Introduction_**
 My name is Ciaran Whyte and as part of a Graph Thoery Module based in GMIT (Galway-Mayo Institute of Technology) I have to design and build a
 graph database using Neo4J and Cypher. Today Neo4J is the worlds most popular graph database managment system, it uses a language called Cypher as its query
@@ -81,7 +89,7 @@ select, insert, update or delete from a graph database without requiring the use
 
 Cypher uses ASCII-Art to represent patterns, this form of pattern matching is done in place of the traditional relational approach where we would declare which coloumns we want.
 To refer to a node we use parentheses which look like circles, eg (node). To refer to relationships we use square brackets, eg [relationship]. We can specify the direction of
-the relation ship by using a syntax something like the following (node1)-[follows]->(node2). As you can see its very clear what we are specifying, we are saying that node1 follows
+the relationship by using a syntax something like the following (node1)-[follows]->(node2). As you can see its very clear what we are specifying, we are saying that node1 follows
 node2. Lastly we can specify labels by using syntax like :label and specify properties by using key-value pairs inside square brackets, eg {key: "value"}. Both labels and properties
 can go inside a relationship or a node.
 
@@ -122,6 +130,12 @@ Thats it, with those two simple steps we have created the graph shown earlier, i
 Neo4J website, here is the link [Cypher Documentation](http://neo4j.com/docs/stable/cypher-query-lang.html). 
 
 ## **_Neo4J (Graph Database) Vs MySQL (Relational Database)_**
+
+Over the course of this documentation the word 'MySQL' as been briefly mentioned once or twice. MySQL and SQL is the equivalent to Neo4J and Cypher. The main difference being
+that MySQL is a relational database management system and SQL (Structured Query Language) is MySQL's supporting language. 
+
+
+///here we can explain the differences and advantages/disadvantages of both.
 
 ## **_The Project Database_**
 Explain how you created your database, and how information is represented in it.
