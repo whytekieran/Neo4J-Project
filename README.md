@@ -134,8 +134,27 @@ Neo4J website, here is the link [Cypher Documentation](http://neo4j.com/docs/sta
 Over the course of this documentation the word 'MySQL' as been briefly mentioned once or twice. MySQL and SQL is the equivalent to Neo4J and Cypher. The main difference being
 that MySQL is a relational database management system and SQL (Structured Query Language) is MySQL's supporting language. 
 
+#### **_Relational Structure_**
 
-///here we can explain the differences and advantages/disadvantages of both.
+We have described already the structure of a graph database, a relational database on the otherhand does not use vertices and edges like the graph database, instead relational
+databases organise their data into tables with rows and columns, columns in different tables are then related to eachother through what we call the 'FOREIGN_KEY' attribute.
+Graph databases are often called schemaless database meaning we dont need to define a structure or data types before we create the graph. Relational databases do require a
+schema, each column must have a defined data type specifying exactly what type of data it will accept. This has advantages and disadvantages which will explained in the next
+section. 
+
+> **Below is an image representing the layout of a simple relational database, we see three tables, the customer, pet and appointments table. The appointments table is
+called a junction table and it contains data related to both the pet and customer table. This is done through the appointments table's foreign keys, which are the
+CUSTOMER_ID and PET_ID columns**
+
+![SimpleGraphDBLayout](/readmeImages/relational.png)
+
+#### **_Advantages and Disadvantages_**
+
+So how do these two types of database compare to eachother, here we list some of the advantages and disadvantages of each.
+
+**Relational Database Advantages**
+
+So how does the Graph database stack up against the relational database.
 
 ## **_The Project Database_**
 Explain how you created your database, and how information is represented in it.
