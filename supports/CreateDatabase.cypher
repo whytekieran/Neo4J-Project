@@ -470,7 +470,7 @@ CREATE (:Candidate {Name: "Anthony Lawlor", Constituency: "Kildare North", Party
 
 CREATE (:Candidate {Name: "Martin Heydon", Constituency: "Kildare South", Party: "Fine Gael", Gender: "Male"}), 
        (:Candidate {Name: "Fiona McLoughlin-Healy", Constituency: "Kildare South", Party: "Fine Gael", Gender: "Female"}),
-	   (:Candidate {Name: "Seán O'Fearghaíl", Constituency: "Kildare South", Party: "Fianna Fail", Gender: "Male"}), //ceann comhairle need to fix this remove ceean comhairle node and give label here instead
+	   (:Candidate {Name: "Seán O'Fearghaíl", Constituency: "Kildare South", Party: "Fianna Fail", Gender: "Male"}), 
 	   (:Candidate {Name: "Fiona O'Loughlin", Constituency: "Kildare South", Party: "Fianna Fail", Gender: "Female"}),
 	   (:Candidate {Name: "Mark Wall", Constituency: "Kildare South", Party: "Labour", Gender: "Male"}),
 	   (:Candidate {Name: "Patricia Ryan", Constituency: "Kildare South", Party: "Sinn Fein", Gender: "Female"}),
@@ -1453,6 +1453,11 @@ SET cc:TD;
 
 CREATE (:Candidate {Name: "Sean Barrett", Constituency: "Dun Laoghaire", Party: "Fine Gael", Gender: "Male"});
 
+--Sean Barrett is a candidate of Dun Laoghaire so re-create CANDIDATE_IN relationship for him
+
+MATCH (c:Candidate {Name: "Sean Barrett"}), (con:Constituency {Name: "Dun Laoghaire"})
+CREATE (c)-[:CANDIDATE_IN]->(con);
+
 --Sean Barrett was elected, so we need to re-create that relationship
 
 MATCH (can:Candidate {Name: "Sean Barrett"}), (con:Constituency {Name: "Dun Laoghaire"})
@@ -1477,7 +1482,6 @@ DETACH DELETE cc;
 
 MATCH (c:TD {Name: "Seán O'Fearghaíl"})-[r:SEATED_IN]->(de:Dail)
 SET c:CeannComhairle;
-
 
 
 
