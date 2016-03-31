@@ -14,7 +14,7 @@
 **2. Query Data Branch** The commits on this branch include any queries that are involved in searching for useful and interesting data. The query file
 									 commited on this branch is the QueryData.cypher file which is located inside the supports folder and the three query.cypher
 									 files which are located inside the scripts folder. (The QueryData.cypher file contains queries used while i was attempting to 
-									 come up with my three queries, the queries here are the ones that didnt make my top three.) </br>
+									 come up with my three queries, the queries here are the ones that didnt make my top three. (Note: first commit here is one of the last on master)) </br>
 **3. Finished Branch** Lastly, this branch contains one commit which is the finished project. </br>
 
 ## **_Introduction_**
