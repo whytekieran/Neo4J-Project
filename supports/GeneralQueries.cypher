@@ -1,7 +1,9 @@
-											 GENERAL QUERIES (SOME QUERIES USED WHILE TESING AND CREATING THE DATABASE)
-										------------------------------------------------------------------------------------
+												   GENERAL QUERIES (SOME QUERIES USED WHILE TESING THE DATABASE)
+										 ------------------------------------------------------------------------------------
 										
---The following queries were used throughout the development and testing of the database, they were not used for the purpose of trying to retrive useful and interesting data.
+--The following queries were used throughout the testing of the database, they were not used for the purpose of trying to retrive useful and interesting data or in creation
+--of the database. They were used to test the queries used to create the database.
+
 														
 //1. Finds and returns all nodes in the database (Used for checking nodes while testing and creating)
 MATCH (n) RETURN n;
@@ -186,6 +188,42 @@ RETURN n, r, de;
 //accurate that advises me that a new Ceann Comhairle was elected. This means that keeping this particular candidate in the Dail would cause 159 seats which is not possible
 //so using the information ive researched and my best judgement, im deleting this candidate to keep the seats at 158 which is accurate.
 MATCH (can:Candidate) WHERE can.Name= "Sean Barrett" and can.Constituency = "Dun Laoghaire" DETACH DELETE can;
+
+//38-42 In the previous step i made a mistake. You can see in the queries were i create the databse, near the bottom i need to re-create some entites, these queries
+//were used while testing the recreated nodes and relationships.
+
+//38. Find Sean Barrett, check if he is in the dail
+MATCH (c:Candidate {Name: "Sean Barrett"})-[r:SEATED_IN]->(de:Dail)
+RETURN c, r, de;
+
+//39. Find Sean Barrett check if he is a member of any party
+MATCH (c:TD {Name: "Sean Barrett"})-[r:MEMBER_OF]->(pp:PoliticalParty {Name: "Fine Gael"})
+RETURN c, r, pp;
+
+//40. Search for Sean Barrett
+MATCH (c:Candidate {Name: "Sean Barrett"})
+RETURN c;
+
+//41. Here i was testing are there two Sean O'Fearghaíl's which there were. I needed to replace one of them with Sean Barrett
+MATCH (c:Candidate {Name: "Seán O'Fearghaíl"})-[r:SEATED_IN]->(de:Dail),
+	  (cc:CeannComhairle)-[r1:SEATED_IN]->(de:Dail)
+RETURN c, r, de, cc, r1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -197,9 +197,12 @@ Node | Description | Label(s) | Property(s)
 Candidate Node | Represents an election candidate from a constituency | Candidate | Name, Constituency, Party
 Constituency Node | Represents a particular constituency | Constituency | Name, Seats, Population, Province, Created
 Political Party Node | Represents a particular political party | PoliticalParty | Name, Founded, Leader
-TD Node| Represents a candidate node that has been elected | Candidate, TD | Name, Consistency, Party
+TD Node| Represents a candidate node that has been elected | Candidate, TD | Name, Constituency, Party
 Dail Node | Node representing the Dáil Éireann of Ireland | Dail | Name, Seats, FirstFounded
-Ceann Comhairle Node | Represents the Ceann Comhairle (Chairperson) of the dail, also a TD | CeannComhairle, TD | Incumbent, IncumbentAppointed (Date)
+Ceann Comhairle Node | Represents the Ceann Comhairle (Chairperson) of the dail, also a TD | CeannComhairle, TD, Candidate | Name, Constituency, Party
+
+NOTE: The Candidate, Ceann Comhairle and TD node are actually all the same node, a node can contain multiple labels, the Ceann Comhairle is also a TD and was a Candidate
+	  in the election so it has three labels. This can be done using a format like :label1:label2:label3
 
 **The Database Relationships**
 

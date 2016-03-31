@@ -1,6 +1,9 @@
 															QUERIES USED TO CREATE THE DATABASE
 															-----------------------------------	
 
+--These queries are used solely to create the database															
+															
+
 //1. THE FOLLOWING QUERY CREATES NODES REPRESENTING ALL CONSTITUENCIES IN IRELAND
 
 CREATE (:Constituency {Name: "Carlow-Kilkenny", Seats: "5", Population: "145649", Province: "Leinster", Created: "1948"}), 
@@ -1418,6 +1421,7 @@ return c, r, de;
 
 //9b EXACTLY THE SAME QUERY AS ABOVE EXCEPT THE FIRST TIME WE RAN THIS QUERY (ABOVE) ELECTED CANDIDATES FROM LAOIS WERE LEFT OUT, THIS QUERY ADDS THEM AS HAVING A 'SEATED_IN'
 //RELATIONSHIP WITH THE DAIL NODE
+
 MATCH (c:Candidate)-[:ELECTED_IN]->(:Constituency), (de:Dail)
 WHERE c.Constituency = "Laois"
 CREATE (c)-[r:SEATED_IN]->(de) 
@@ -1440,15 +1444,39 @@ SET can:TD;
 MATCH (cc:CeannComhairle)
 SET cc:TD;
 
+//13. A MISTAKE WAS MADE WITH THE CEANN COMHAIRLE NODE, THE FOLLOWING QUERIES INVOLVE RE-CORRECTING THAT MISTAKE. 
 
+--The problem is that we have two identical people in the dail (Seán O'Fearghaíl) one version as a TD and Candidate, the other as the CeannComhairle, earlier this 
+--caused me to delete Sean Barrett who should be a TD. Sean O'Fearghaíl should be a TD and CeannComhairle
 
+--Need to re-create this node. He was deleted earlier to keep the seat number correct but is still a candidate
 
+CREATE (:Candidate {Name: "Sean Barrett", Constituency: "Dun Laoghaire", Party: "Fine Gael", Gender: "Male"});
 
+--Sean Barrett was elected, so we need to re-create that relationship
 
+MATCH (can:Candidate {Name: "Sean Barrett"}), (con:Constituency {Name: "Dun Laoghaire"})
+CREATE (can)-[:ELECTED_IN {Election: "General 2016"}]->(con);
 
+--Sean Barrett was elected so he is also seated in the dail, need to re-create that relationship
 
+MATCH (can:Candidate {Name: "Sean Barrett"})-[:ELECTED_IN]->(con:Constituency {Name: "Dun Laoghaire"}), (de:Dail)
+CREATE (can)-[r:SEATED_IN]->(de);
 
+-- If Sean Barrett is in the Dail then he is a TD hence give him the TD label
 
+MATCH (can:Candidate {Name: "Sean Barrett"})
+SET can:TD;
+
+-- Now delete the current CeannComhairle node. This deletes the record of Seán O'Fearghaíl as CeannComhairle node
+
+MATCH (cc:CeannComhairle)
+DETACH DELETE cc;
+
+--Give Candidate and TD node Seán O'Fearghaíl another label of CeannComhairle instead of having a node dedicated to it
+
+MATCH (c:TD {Name: "Seán O'Fearghaíl"})-[r:SEATED_IN]->(de:Dail)
+SET c:CeannComhairle;
 
 
 
