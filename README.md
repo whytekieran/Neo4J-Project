@@ -123,8 +123,8 @@ MATCH 									//The MATCH keyword is used to retrive any elements that match th
     (e:Person {Name: "Emil"}) 		
 CREATE									//Next we use the CREATE keyword to create the relationships
 	(i)-[r1:KNOWS]->(e),				//We dont need to reference the node, just its placeholder (Here we say create the 'KNOWS' relationship between Ian and Emil)
-	(j)-[r2:FOLLOWS_TWITTER]->(i)
-	(j)-[r3:FOLLOWS_TWITTER]->(e)
+	(j)-[r2:KNOWS]->(i)
+	(j)-[r3:KNOWS]->(e)
 RETURN
 	r1, r2, r3;							//Return the relationships back to the user so he/she can see them.
 ```
