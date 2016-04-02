@@ -36,9 +36,9 @@ RETURN COUNT(distinct cmd), COUNT(distinct cfd);
 //but the database could not handle it :/
 
 MATCH (cm:Candidate {Gender: "Male"}), 
-	  (cf:Candidate {Gender: "Female"}),							//TAKES TO LONG
+	  (cf:Candidate {Gender: "Female"}),							
 	  (cmd:TD {Gender: "Male"})-[r1:SEATED_IN]->(n1), 
-	  (cfd:TD {Gender: "Female"})-[r2:SEATED_IN]->(n1)
+	  (cfd:TD {Gender: "Female"})-[r2:SEATED_IN]->(n2)
 RETURN COUNT(distinct cm), COUNT(distinct cf), COUNT(distinct cmd), COUNT(distinct cfd);
 
 //8. Finds the amount of Fianna Fail Members in the dail vs Fine Gael
