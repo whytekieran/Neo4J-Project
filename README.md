@@ -121,7 +121,7 @@ MATCH 									//The MATCH keyword is used to retrive any elements that match th
 	(i:Person {Name: "Ian"}), 			//Then we specify the nodes we are looking for and use a temporary placeholder so we can reference them further in the query.
     (j:Person {Name: "Jim"}),		
     (e:Person {Name: "Emil"}) 		
-CREATE									//Next we use the CREATE keyword to create the relationships
+CREATE									//Next we use the CREATE keyword to create the relationships and give the label 'KNOWS'
 	(i)-[r1:KNOWS]->(e),				//We dont need to reference the node, just its placeholder (Here we say create the 'KNOWS' relationship between Ian and Emil)
 	(j)-[r2:KNOWS]->(i)
 	(j)-[r3:KNOWS]->(e)
