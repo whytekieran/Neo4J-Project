@@ -17,6 +17,9 @@
 									 come up with my three queries, the queries here are the ones that didnt make my top three. </br>
 **3. Finished Branch** Lastly, this branch contains one commit which is the finished project. </br>
 
+(Note: The Query Data branch was merged back to the master on a regular basis to keep them both in sync, then after one final merge we make one single commit 
+to the Finished branch were the completed project can be downloaded.)
+
 ## **_Introduction_**
 My name is Ciaran Whyte and as part of a Graph Thoery Module based in GMIT (Galway-Mayo Institute of Technology) I have to design and build a
 graph database using Neo4J and Cypher. Today Neo4J is the worlds most popular graph database managment system, it uses a language called Cypher as its query
