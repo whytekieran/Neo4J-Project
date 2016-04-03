@@ -28,13 +28,28 @@ MATCH (cfd:TD {Gender: "Female"})-[r1:SEATED_IN]->(de:Dail),
 	  (cmd:TD {Gender: "Male"})-[r2:SEATED_IN]->(de:Dail)
 RETURN COUNT(distinct cmd), COUNT(distinct cfd);
 
-//7. Attempted to do a query which would count all males and females and count all male and female in the dail for comparison
+//7a. Attempted to do a query which would count all males and females and count all male and female in the dail for comparison
 //but the database could not handle it :/
 MATCH (cm:Candidate {Gender: "Male"}), 
 	  (cf:Candidate {Gender: "Female"}),							
 	  (cmd:TD {Gender: "Male"})-[r1:SEATED_IN]->(n1), 
 	  (cfd:TD {Gender: "Female"})-[r2:SEATED_IN]->(n2)
 RETURN COUNT(distinct cm), COUNT(distinct cf), COUNT(distinct cmd), COUNT(distinct cfd);
+
+//7b Here is a way to get the information that couldnt be done in 7a. This will return the information in only 70ms unlike query 7a which took so long i cancelled the query.
+MATCH (c:Candidate)-[r]->(n1)
+RETURN
+CASE
+WHEN type(r) = "CANDIDATE_IN" AND c.Gender = "Male"
+THEN count(c) + " Male Candidates"
+WHEN type(r) = "ELECTED_IN" AND c.Gender = "Male"
+THEN count(c) + " Elected Male Candidates"
+WHEN type(r) = "CANDIDATE_IN" AND c.Gender = "Female"
+THEN count(c) + " Female Candidates"
+WHEN type(r) = "ELECTED_IN" AND c.Gender = "Female"
+THEN count(c) + " Elected Female Candidates"
+ELSE count(distinct c) + " Total Candidates (Male and Female)"
+END AS Results;
 
 //8. Finds the amount of Fianna Fail Members in the dail vs Fine Gael
 MATCH (cff:TD {Party: "Fianna Fail"}),
@@ -212,13 +227,19 @@ RETURN DISTINCT c.Name
 ORDER BY c.Name;
 
 //31-32   The following queries are a few examples of using the shortestpath() function.
-//31. Finds shortest path between Enda Kenny and Gerry Adams	(The * symbol means return all relationships of any type. Can also do *..5 to specify number of hops, 5 in this example)
+//31a. Finds shortest path between Enda Kenny and Gerry Adams	(The * symbol means return all relationships of any type. Can also do *..5 to specify number of hops, 5 in this example)
 MATCH (ek:Candidate {Name: "Enda Kenny"}), (ga:Candidate {Name: "Gerry Adams"}), 
 p = shortestPath((ek)-[*]-(ga)) RETURN p
+
+//31b. Finds shortest path between Enda Kenny and Gerry Adams	(The * symbol means return all relationships of any type. Can also do *..5 to specify number of hops, 5 in this example)
+//This time though we simply return the amount of relationships between them
+MATCH (ek:Candidate {Name: "Enda Kenny"}), (ga:Candidate {Name: "Gerry Adams"}), 
+p = shortestPath((ek)-[*]-(ga)) RETURN LENGTH(RELATIONSHIPS(p)) AS RelationshipsBetween;
 
 //32. Finds the shortest path between Enda Kenny and a political party (Will return that he is a member of Fine Gael)
 MATCH (ek:Candidate {Name: "Enda Kenny"}), (pp:PoliticalParty), 
 p = shortestPath((ek)-[:MEMBER_OF]-(ga)) RETURN p
+
 
 
 
