@@ -29,7 +29,7 @@ MATCH (cfd:TD {Gender: "Female"})-[r1:SEATED_IN]->(de:Dail),
 RETURN COUNT(distinct cmd), COUNT(distinct cfd);
 
 //7a. Attempted to do a query which would count all males and females and count all male and female in the dail for comparison
-//but the database could not handle it :/
+//but the database could not handle it :/ Accomplished in query 34
 MATCH (cm:Candidate {Gender: "Male"}), 
 	  (cf:Candidate {Gender: "Female"}),							
 	  (cmd:TD {Gender: "Male"})-[r1:SEATED_IN]->(n1), 
@@ -77,7 +77,7 @@ RETURN COUNT(distinct cff) AS FiannaFail, COUNT(distinct csf) AS SinnFein;
 MATCH (cl:Candidate)-[r1:CANDIDATE_IN]->(con:Constituency {Province: "Leinster"})
 RETURN COUNT(distinct cl) AS Leinster;
 
-//14. Counts how many candidates are in Leinster, Munster and Connacht takes 5-15seconds Leinster=299 Munster=146 Connacht=76
+//14. Counts how many candidates are in Leinster, Munster and Connacht Leinster=299 Munster=146 Connacht=76
 MATCH (cl:Candidate)-[r1:CANDIDATE_IN]->(conl:Constituency {Province: "Leinster"}),	
 	  (cm:Candidate)-[r2:CANDIDATE_IN]->(conm:Constituency {Province: "Munster"}),
 	  (cc:Candidate)-[r3:CANDIDATE_IN]->(conc:Constituency {Province: "Connacht"})
@@ -88,7 +88,7 @@ MATCH (con:Constituency)
 WHERE toInt(con.Population) > 100000 AND con.Seats = "3"
 RETURN con;
 
-//16-18 These queries compare the amiunt of male vs female candidates in each province. 
+//16-18 These queries compare the amount of male vs female candidates in each province. 
 //16. Compare amount of males vs female in Leinster
 MATCH (cf:Candidate {Gender: "Female"})-[r1:CANDIDATE_IN]->(conl:Constituency {Province: "Leinster"}),	
 	  (cm:Candidate {Gender: "Male"})-[r2:CANDIDATE_IN]->(conc:Constituency {Province: "Leinster"})
@@ -114,11 +114,11 @@ RETURN COUNT(distinct cf) AS FemaleCandidates,
 	   ROUND(((toFloat(COUNT(distinct cfe)) /  toFloat(COUNT(distinct cf))) * 100)) + "%" AS PercentageElected;
 
 //20. Male Candidates, Elected Male Candidates and Percentage of how many Male candidates were elected (31%)
-MATCH (cf:Candidate {Gender: "Male"})-[r1:CANDIDATE_IN]->(con1:Constituency),	
-	  (cfe:Candidate {Gender: "Male"})-[r2:ELECTED_IN]->(con2:Constituency)
+MATCH (cm:Candidate {Gender: "Male"})-[r1:CANDIDATE_IN]->(con1:Constituency),	
+	  (cme:Candidate {Gender: "Male"})-[r2:ELECTED_IN]->(con2:Constituency)
 RETURN COUNT(distinct cf) AS MaleCandidates, 
 	   COUNT(distinct cfe) AS MaleElectedCandidates, 
-	   ROUND(((toFloat(COUNT(distinct cfe)) /  toFloat(COUNT(distinct cf))) * 100)) + "%" AS PercentageElected;
+	   ROUND(((toFloat(COUNT(distinct cme)) /  toFloat(COUNT(distinct cm))) * 100)) + "%" AS PercentageElected;
 
 //21. Shows Fianna Fail Candidates and all other candidates. Using the <> operator
 MATCH (cff:Candidate)-[:MEMBER_OF]->(ppff:PoliticalParty {Name: "Fianna Fail"}), (c:Candidate)-[:MEMBER_OF]->(pp:PoliticalParty)
@@ -240,12 +240,44 @@ p = shortestPath((ek)-[*]-(ga)) RETURN LENGTH(RELATIONSHIPS(p)) AS Relationships
 MATCH (ek:Candidate {Name: "Enda Kenny"}), (pp:PoliticalParty), 
 p = shortestPath((ek)-[:MEMBER_OF]-(ga)) RETURN p
 
+//33. This query will get the total amount of candidates, male and female candidate
+MATCH (c:Candidate)-[r1]->(Constituency)
+WITH COUNT(distinct c) AS can
+MATCH (mcan:Candidate)-[r2]->(conm:Constituency)
+WHERE mcan.Gender = "Male"
+WITH COUNT(distinct mcan) AS mcan, can
+MATCH (fcan:Candidate)-[r3]->(conf:Constituency)
+WHERE fcan.Gender = "Female"
+WITH COUNT(distinct fcan) AS fcan, mcan, can
+RETURN can, mcan, fcan
 
 
-
-
-
-
+//34. This query gets the total amount of candidates, male candidates, female candidates, elected male candidates, elected female candidates and the percentage of how many male and
+//female were elected. This is what was attemtped in query 7. Using the WITH keyword it greatly speeds up the query speed.
+MATCH (c:Candidate)-[r1]->(Constituency)
+WITH COUNT(distinct c) AS TotalCandidates
+MATCH (mcan:Candidate)-[r2]->(conm:Constituency)
+WHERE mcan.Gender = "Male"
+WITH COUNT(distinct mcan) AS TotalMCandidates, TotalCandidates
+MATCH (fcan:Candidate)-[r3]->(conf:Constituency)
+WHERE fcan.Gender = "Female"
+WITH COUNT(distinct fcan) AS TotalFCandidates, TotalMCandidates, TotalCandidates
+MATCH (fcane:Candidate)-[r4:ELECTED_IN]->(confe:Constituency)
+WHERE fcane.Gender = "Female"
+WITH COUNT(distinct fcane) AS ElectedFCandidates, TotalMCandidates, TotalCandidates, TotalFCandidates
+MATCH (mcane:Candidate)-[r5:ELECTED_IN]->(conme:Constituency)
+WHERE mcane.Gender = "Male"
+WITH COUNT(distinct mcane) AS ElectedMCandidates, 
+	 ROUND(((toFloat(COUNT(distinct mcane)) /  toFloat(TotalMCandidates)) * 100)) + "%" AS MalePercentageElected,
+	 ROUND(((toFloat(ElectedFCandidates) /  toFloat(TotalFCandidates)) * 100)) + "%" AS FemalePercentageElected,
+	 TotalMCandidates, TotalCandidates, TotalFCandidates, ElectedFCandidates
+RETURN TotalCandidates, 
+	  TotalMCandidates, 
+	  TotalFCandidates, 
+	  ElectedFCandidates, 
+	  ElectedMCandidates,
+	  MalePercentageElected,
+	  FemalePercentageElected;
 
 
 

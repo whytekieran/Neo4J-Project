@@ -1,7 +1,7 @@
 // Referenced as query 25 in QueryData.cypher this query will return how many Candidate nodes represent each party (So must count the 'MEMBER_OF' relationships)
 
 //There are many ways this type of query could be approached, this query may be long but it will give back results in a very fast time.
-//The query is done by using Case Expressions.
+//The query is done by using Case Expressions and the count function.
 //Firstly we get all candidates and the party they are a member of using the MATCH keyword.
 //The Case Expression works as follows:
 //CASE (Start of case)
