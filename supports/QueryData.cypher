@@ -178,15 +178,58 @@ WHEN pp.Name = "Workers Party"
 THEN count(c) + " Workers Party"
 END AS PartyCandidates
 
-//26. Here is an example using a regular expression to find Candidates with a name beginning with the letters 'Ja'
+//26. Here is an example using a Regular Expression to find Candidates with a name beginning with the letters 'Ja'
 MATCH (c:Candidate)
 WHERE c.Name =~ 'Ja.*'
 RETURN c.Name;
 
+//27. This query will output each political party with a list of every member belonging to that party next to it. Showing examples of using the WITH keyword
+//along with using the collect() function to collect each group of members.
+MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)
+WITH pp, collect(c.Name) AS Members
+RETURN pp.Name AS PoliticalParty, Members
+ORDER BY pp.Name ASC;
+
+//28. This query does the same as above, the difference being it only shows political parties that had 5 or less members as candidates in the election
+MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)
+WITH pp, collect(c.Name) AS Members
+WHERE SIZE(Members) <= 5
+RETURN pp.Name AS PoliticalParty, Members
+ORDER BY pp.Name ASC;
+
+//29. Nice query showing Enda Kenny has CANDIDATE_IN, ELECTED_IN, MEMBER_OF and SEATED_IN relationships with his constituency, dail and political party.
+MATCH (c:Candidate {Name: "Enda Kenny"})-[r]->(node)
+RETURN r;
+
+//30a Gets all the other candidates that were elected into Mayo along with Enda Kenny
+MATCH (ek:Candidate {Name: "Enda Kenny"})-[:ELECTED_IN]->(:Constituency)<-[:ELECTED_IN]-(c:Candidate) 
+WHERE c.Name <> "Enda Kenny" 
+RETURN c.Name ORDER BY c.Name;
+
+//30b Same result using variable length relationship
+MATCH (ek:Candidate {Name: "Enda Kenny"})-[:ELECTED_IN*2]-(c:Candidate)
+RETURN DISTINCT c.Name
+ORDER BY c.Name;
+
+//31-32   The following queries are a few examples of using the shortestpath() function.
+//31. Finds shortest path between Enda Kenny and Gerry Adams	(The * symbol means return all relationships of any type. Can also do *..5 to specify number of hops, 5 in this example)
+MATCH (ek:Candidate {Name: "Enda Kenny"}), (ga:Candidate {Name: "Gerry Adams"}), 
+p = shortestPath((ek)-[*]-(ga)) RETURN p
+
+//32. Finds the shortest path between Enda Kenny and a political party (Will return that he is a member of Fine Gael)
+MATCH (ek:Candidate {Name: "Enda Kenny"}), (pp:PoliticalParty), 
+p = shortestPath((ek)-[:MEMBER_OF]-(ga)) RETURN p
 
 
 
-	 
+
+
+
+
+
+
+
+
 
 
 
