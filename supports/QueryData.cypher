@@ -1,5 +1,5 @@
 																		QUERIES FOR INTERESTING DATA
-																   --------------------------------------
+																    ------------------------------------
 														
 --The following queries were used while trying to come up with interesting queries to retrieve data. These are the ones which did not make the top three shown in the documentation.
 --A major issue i found with Neo4J compared with something like SQL is the length of time it takes to perform certain queries, much longer than SQL in general. This is something
