@@ -222,7 +222,7 @@ Member_of Relationship | Represents which candidate is a member of which politic
 ## **_Queries_**
 The following contains my three Cypher queries for the database i have created.
 
-#### **_Query one title_**
+#### **_1. Political Party Candidates_**
 
 This query will return the amount of Candidate nodes that represent each political party. This is accomplished by using Case Expressions.
 By writing the query in this way we greatly reduce the amount of thime the query takes this execute. This is compared to writing each pattern 
@@ -265,7 +265,7 @@ THEN count(c) + " Workers Party"
 END AS PartyCandidates
 ```
 
-#### **_Query two title_**
+#### **_2. Battle of the sexes_**
 
 This query will get the total amount of candidates, male candidates, female candidates, elected male candidates, 
 elected female candidates and the percentage of how many male and female were elected. Trying to match all the patterns using the same MATCH would result 
@@ -299,13 +299,30 @@ RETURN TotalCandidates,
 	  FemalePercentageElected;
 ```
 
-#### **_Query three title_**
-This query retreives the Bacon number of an actor...
+#### **_Fianna Fail Candidates and the Provinces_**
+
+This query will get the amount of Fianna Fail candidates in Leinster, Munster and Connacht then the amount of elected Fianna Fail Candidates in the same three provinces.
+Using this data we then calculate what percentage of Fianna Fail candidates were elected in each province.
+
 ```cypher
-MATCH
-	(Bacon)
-RETURN
-	Bacon;
+MATCH (cl:Candidate {Party: "Fianna Fail"})-[r1:CANDIDATE_IN]->(conl:Constituency {Province: "Leinster"})
+WITH COUNT(distinct cl) AS LeinsterFiannaFail
+MATCH (cm:Candidate {Party: "Fianna Fail"})-[r2:CANDIDATE_IN]->(conl:Constituency {Province: "Munster"})
+WITH COUNT(distinct cm) AS MunsterFiannaFail, LeinsterFiannaFail
+MATCH (cc:Candidate {Party: "Fianna Fail"})-[r3:CANDIDATE_IN]->(conl:Constituency {Province: "Connacht"})
+WITH COUNT(distinct cc) AS ConnachtFiannaFail, MunsterFiannaFail, LeinsterFiannaFail
+MATCH (cle:Candidate {Party: "Fianna Fail"})-[r4:ELECTED_IN]->(conl:Constituency {Province: "Leinster"})
+WITH COUNT(distinct cle) AS LeinsterFiannaFailElected, ConnachtFiannaFail, MunsterFiannaFail, LeinsterFiannaFail
+MATCH (cme:Candidate {Party: "Fianna Fail"})-[r5:ELECTED_IN]->(conl:Constituency {Province: "Munster"})
+WITH COUNT(distinct cme) AS MunsterFiannaFailElected, LeinsterFiannaFailElected, ConnachtFiannaFail, MunsterFiannaFail, LeinsterFiannaFail 
+MATCH (cce:Candidate {Party: "Fianna Fail"})-[r6:ELECTED_IN]->(conl:Constituency {Province: "Connacht"})
+WITH COUNT(distinct cce) AS ConnachtFiannaFailElected, 
+	 ROUND(((toFloat(COUNT(distinct cce)) /  toFloat(ConnachtFiannaFail)) * 100)) + "%" AS ConnachtFiannaFailElectedP,
+	 ROUND(((toFloat(MunsterFiannaFailElected) /  toFloat(MunsterFiannaFail)) * 100)) + "%" AS MunsterFiannaFailElectedP,
+	 ROUND(((toFloat(LeinsterFiannaFailElected) /  toFloat(LeinsterFiannaFail)) * 100)) + "%" AS LeinsterFiannaFailElectedP,
+	 MunsterFiannaFailElected, LeinsterFiannaFailElected, ConnachtFiannaFail, MunsterFiannaFail, LeinsterFiannaFail 
+RETURN LeinsterFiannaFail, MunsterFiannaFail, ConnachtFiannaFail, LeinsterFiannaFailElected, MunsterFiannaFailElected, ConnachtFiannaFailElected, LeinsterFiannaFailElectedP,
+	   MunsterFiannaFailElectedP, ConnachtFiannaFailElectedP;
 ```
 
 ## **_References_**
