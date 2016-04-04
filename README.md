@@ -270,7 +270,7 @@ END AS PartyCandidates
 This query will get the total amount of candidates, male candidates, female candidates, elected male candidates, 
 elected female candidates and the percentage of how many male and female were elected. Trying to match all the patterns using the same MATCH would result 
 in a query that would take a vast amount of time to complete. This is why we use the WITH keyword. This is used to get the result of a query and pass that result
-on to the next part of the query, instead of asking Neo4J to do all the work at once.
+on to the next part of the query, instead of asking Neo4J to do all the work at once. This query shows examples of built in functions such as toFloat() and COUNT()
 
 ```cypher
 MATCH (c:Candidate)-[r1]->(Constituency)
