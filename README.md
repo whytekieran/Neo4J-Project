@@ -299,7 +299,7 @@ RETURN TotalCandidates,
 	  FemalePercentageElected;
 ```
 
-#### **_Fianna Fail Candidates and the Provinces_**
+#### **_3. Fianna Fail Candidates and the Provinces_**
 
 This query will get the amount of Fianna Fail candidates in Leinster, Munster and Connacht then the amount of elected Fianna Fail Candidates in the same three provinces.
 Using this data we then calculate what percentage of Fianna Fail candidates were elected in each province.
