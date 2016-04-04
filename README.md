@@ -70,12 +70,12 @@ Labels | Used to shown what type of entity a node is representing or what type o
 Properties | Used to set information about a node or edge
 
 Although i say that there are four main elements in a Neo4J graph database, some people may say its actually two. (Nodes and Edges) This is technically true, what im 
-trying to show in the above table is the _four most important components_ of a Neo4J graph database.
+trying to show in the above table are the _four most important components_ of a Neo4J graph database.
 This section will now discuss Neo4J and the Cypher query language in some more depth.
 
 #### **_Neo4J_**
 
-Neo4J is a noSQL graph database management system. It was developed by Neo Technology, Inc. Development for Neo4J first began in 2003 and it has been available publically
+Neo4J is a noSQL graph database management system. It was developed by Neo Technology, Inc. Development for Neo4J first began in 2003 and it has been available publicly
 through open source since 2007. It is cross platform software meaning it works on multiple operating systems, including Windows, Mac PC's and Linux. 
 
 Neo4J is implemented using both Java and Scala, it is JVM (Java Virtual Machine) based. Neo4J was originally developed to work with the Java programming language (Hence the
@@ -156,7 +156,7 @@ CUSTOMER_ID and PET_ID columns**
 
 #### **_Advantages and Disadvantages_**
 
-So how do these two types of database compare to eachother, here we list some of the advantages and disadvantages of each.
+So how do these two types of database compare to each other, here we list some of the advantages and disadvantages of each type of database.
 
 **Relational Database Advantages**
 
@@ -168,7 +168,7 @@ So how do these two types of database compare to eachother, here we list some of
 
 **Relational Database Disadvantages**
 
-1. Relational databases require a schema right from the beginning, once a table for the databse has a schema, it cant be changed, the alterations you can do to the table are
+1. Relational databases require a schema right from the beginning, once a table for the database has a schema, it cant be changed, the alterations you can do to the table are
    very minimal. This means that if at some point during a project the data you wish to store changes, this can cause issues as the structure for the database now must be changed.
 2. Relational database queries are not well suited to certain tasks, for example tasks a social networking site may want to accomplish like searching for freinds of friends. It 
    can accomplish these tasks but only from the use of expensive JOIN's of tables.
@@ -214,7 +214,7 @@ table below.
 
 Relationship | Description | Connected Nodes | Label(s) | Property(s)
 ------------ | ------------- | ------------- | ------------- | -------------
-Candidate_in Relationship | Represents which candidate is running for office in which constituency | Candidate, Consistency | CANDIDATE_IN | Election (States which election it was)
+Candidate_in Relationship | Represents which candidate is running for office in which constituency | Candidate, Constituency | CANDIDATE_IN | Election (States which election it was)
 Elected_in Relationship | Represents which candidate has been elected into which constituency | Candidate, Constituency | ELECTED_IN | Election (States which election it was)
 Seated_in Relationship | Represents which candidates have a seat in the dail. (Ones with ELECTED_IN relationship) | Candidate, Dail | SEATED_IN | None
 Member_of Relationship | Represents which candidate is a member of which political party | Candidate, PoliticalParty | MEMBER_OF | None
@@ -225,7 +225,7 @@ The following contains my three Cypher queries for the database i have created.
 #### **_1. Political Party Candidates_**
 
 This query will return the amount of Candidate nodes that represent each political party. This is accomplished by using Case Expressions.
-By writing the query in this way we greatly reduce the amount of thime the query takes this execute. This is compared to writing each pattern 
+By writing the query in this way we greatly reduce the amount of time the query takes to execute. This is compared to writing each pattern 
 individually. 
 
 ```cypher
@@ -324,6 +324,9 @@ WITH COUNT(distinct cce) AS ConnachtFiannaFailElected,
 RETURN LeinsterFiannaFail, MunsterFiannaFail, ConnachtFiannaFail, LeinsterFiannaFailElected, MunsterFiannaFailElected, ConnachtFiannaFailElected, LeinsterFiannaFailElectedP,
 	   MunsterFiannaFailElectedP, ConnachtFiannaFailElectedP;
 ```
+
+To view some other interesting queries related to this database you can view the QueryData.cypher file.
+
 
 ## **_References_**
 1. [Neo4J website](http://neo4j.com/), contains the documentation for the Neo4J database.
