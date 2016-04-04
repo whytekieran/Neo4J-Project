@@ -323,6 +323,7 @@ RETURN
 12. [Mastering Markdown Language] (https://guides.github.com/features/mastering-markdown) information about how to use the markdown language.
 13. [Cypher Query Language] (http://neo4j.com/developer/cypher) information about cypher and how to use it.
 14. [Neo4J MATCH Keyword and capabilities] (http://neo4j.com/docs/stable/query-match.html) information about the 'MATCH' keyword and how you can use it.
+15. [Blog about the WITH Keyword] (http://wes.skeweredrook.com/the-mythical-with-neo4js-cypher-query-language) information about the WITH keyword in Cypher.
 
 
 
