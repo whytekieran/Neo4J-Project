@@ -220,16 +220,49 @@ Seated_in Relationship | Represents which candidates have a seat in the dail. (O
 Member_of Relationship | Represents which candidate is a member of which political party | Candidate, PoliticalParty | MEMBER_OF | None
 
 ## **_Queries_**
-Summarise your three queries here.
-Then explain them one by one in the following sections.
+The following contains my three Cypher queries for the database i have created.
 
 #### **_Query one title_**
-This query retreives the Bacon number of an actor...
+
+This query will return the amount of Candidate nodes that represent each political party. This is accomplished by using Case Expressions.
+By writing the query in this way we greatly reduce the amount of thime the query takes this execute. This is compared to writing each pattern 
+individually. 
+
 ```cypher
-MATCH
-	(Bacon)
+MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)	
 RETURN
-	Bacon;
+CASE
+WHEN pp.Name = "Fianna Fail"
+THEN count(c) + " Fianna Fail"
+WHEN pp.Name = "Fine Gael"
+THEN count(c) + " Fine Gael"
+WHEN pp.Name = "Sinn Fein"
+THEN count(c) + " Sinn Fein"
+WHEN pp.Name = "Labour"
+THEN count(c) + " Labour"
+WHEN pp.Name = "Green Party"
+THEN count(c) + " Green Party"
+WHEN pp.Name = "People Before Profit Alliance"
+THEN count(c) + " People Before Profit Alliance"
+WHEN pp.Name = "Anti Austerity Alliance"
+THEN count(c) + " Anti Austerity Alliance"
+WHEN pp.Name = "RENUA"
+THEN count(c) + " RENUA"
+WHEN pp.Name = "Direct Democracy Ireland a National Citizens Movement Conference"
+THEN count(c) + " Direct Democracy Ireland a National Citizens Movement Conference"
+WHEN pp.Name = "Fis Nua"
+THEN count(c) + " Fis Nua"
+WHEN pp.Name = "Social Democrats"
+THEN count(c) + " Social Democrats"
+WHEN pp.Name = "Communist Party"
+THEN count(c) + " Communist Party"
+WHEN pp.Name = "Catholic Democrats"
+THEN count(c)+ " " + " Catholic Democrats"
+WHEN pp.Name = "No Associated Party"
+THEN count(c) + " No Associated Party"
+WHEN pp.Name = "Workers Party"
+THEN count(c) + " Workers Party"
+END AS PartyCandidates
 ```
 
 #### **_Query two title_**
