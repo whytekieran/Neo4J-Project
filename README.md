@@ -35,7 +35,7 @@ these elected members then congregate together to form the Irish House of Parlim
 
 ![Constituencies](/readmeImages/constituencies.png)
 
-Once I have implemented the database with the data specified in the requirements and shown in the above image I must then come up with three interesting queries for the 
+Once I have implemented the database with the data specified in the requirements and also briefly shown in the above image I must then come up with three interesting queries for the 
 database, these queries must demonstrate a good working knowledge of the Neo4J query language, Cypher. The queries and the Cypher 
 language will also be explained in more detail later in this documentation.
 
