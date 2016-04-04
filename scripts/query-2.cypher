@@ -1,5 +1,6 @@
 // Referenced as query 34 in QueryData.cypher this query will gets the total amount of candidates, male candidates, female candidates, elected male candidates, 
-// elected female candidates and the percentage of how many male and female were elected.
+// elected female candidates and the percentage of how many male and female were elected. Trying to match all the patterns using the same MATCH would result 
+// in a query that would take a vast amount of time to complete. This is why we use the WITH keyword.
 
 
 MATCH (c:Candidate)-[r1]->(Constituency)

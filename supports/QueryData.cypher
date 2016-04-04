@@ -29,7 +29,7 @@ MATCH (cfd:TD {Gender: "Female"})-[r1:SEATED_IN]->(de:Dail),
 RETURN COUNT(distinct cmd), COUNT(distinct cfd);
 
 //7a. Attempted to do a query which would count all males and females and count all male and female in the dail for comparison
-//but the database could not handle it :/ Accomplished in query 34
+//but the database could not handle it :/ Accomplished in query 34 with percentage
 MATCH (cm:Candidate {Gender: "Male"}), 
 	  (cf:Candidate {Gender: "Female"}),							
 	  (cmd:TD {Gender: "Male"})-[r1:SEATED_IN]->(n1), 
