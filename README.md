@@ -15,7 +15,7 @@
 **2. Query Data Branch** The commits on this branch include any queries that are involved in searching for useful and interesting data. The query file
 									 commited on this branch is the QueryData.cypher file which is located inside the supports folder and the three query.cypher
 									 files which are located inside the scripts folder. (The QueryData.cypher file contains queries used while i was attempting to 
-									 come up with my three queries, the queries here are the ones that didnt make my top three. </br>
+									 come up with my three queries, the queries here are the ones that didnt make my top three and the three that did. </br>
 									 
 **3. Finishing Touches Branch** Lastly, this branch contains a few minor commits containing small final touches to finish the project (eg typo's) and also commits for the closing
 								statement section of the readMe file. </br>
@@ -332,8 +332,8 @@ WITH COUNT(distinct cce) AS ConnachtFiannaFailElected,
 RETURN LeinsterFiannaFail, MunsterFiannaFail, ConnachtFiannaFail, LeinsterFiannaFailElected, MunsterFiannaFailElected, ConnachtFiannaFailElected, LeinsterFiannaFailElectedP,
 	   MunsterFiannaFailElectedP, ConnachtFiannaFailElectedP; //Finally return the data to the user
 ```
-
-To view some other interesting queries related to this database you can view the QueryData.cypher file.
+The three queries above have been copied/pasted into Neo4J and work fine even with the comments there. To view some other interesting queries related to this database 
+you can view the QueryData.cypher file.
 
 ## **_Closing Statement_**
 
