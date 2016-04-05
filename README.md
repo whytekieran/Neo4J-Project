@@ -17,7 +17,7 @@
 									 files which are located inside the scripts folder. (The QueryData.cypher file contains queries used while i was attempting to 
 									 come up with my three queries, the queries here are the ones that didnt make my top three and the three that did. </br>
 									 
-**3. Finishing Touches Branch** Lastly, this branch contains a few minor commits containing small final touches to finish the project (eg typo's) and also commits for the closing
+**3. Finished Branch** Lastly, this branch contains a few minor commits containing small final touches to finish the project (eg typo's) and also commits for the closing
 								statement section of the readMe file. </br>
 
 (Note: Firstly, the Query Data branch was merged back to the master on a regular basis to keep them both in sync. When the final commit was made to the Finishing Touches branch
