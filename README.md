@@ -6,7 +6,7 @@
 **Module:** Graph Theory </br>
 **Lecturer:** Ian Mcloughlin </br>
 
-## **_Git Branches:_** 
+## **_Git Branches_** 
 
 **1. Master Branch** The commits to this branch include any queries that are involved in creating the database and the ReadMe.md, the query files commited
 								 on this branch are the CreateDatabase.cypher and GeneralQueries.cypher files which are located inside the supports folder, the 
@@ -232,11 +232,11 @@ By writing the query in this way we greatly reduce the amount of time the query 
 individually. 
 
 ```cypher
-MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)	
-RETURN
+MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)	//Match any candidate node that has a member of relationship with a political party node
+RETURN													//Return the following data to the user
 CASE
-WHEN pp.Name = "Fianna Fail"
-THEN count(c) + " Fianna Fail"
+WHEN pp.Name = "Fianna Fail"							//Each WHEN statement checks the political party the node represents. e.g. in this situation if the party is Fianna Fail
+THEN count(c) + " Fianna Fail"							//We use the THEN keyword to specify what to do, here we count the candidate associated with fianna fail
 WHEN pp.Name = "Fine Gael"
 THEN count(c) + " Fine Gael"
 WHEN pp.Name = "Sinn Fein"
@@ -246,7 +246,7 @@ THEN count(c) + " Labour"
 WHEN pp.Name = "Green Party"
 THEN count(c) + " Green Party"
 WHEN pp.Name = "People Before Profit Alliance"
-THEN count(c) + " People Before Profit Alliance"
+THEN count(c) + " People Before Profit Alliance"	
 WHEN pp.Name = "Anti Austerity Alliance"
 THEN count(c) + " Anti Austerity Alliance"
 WHEN pp.Name = "RENUA"
@@ -265,7 +265,7 @@ WHEN pp.Name = "No Associated Party"
 THEN count(c) + " No Associated Party"
 WHEN pp.Name = "Workers Party"
 THEN count(c) + " Workers Party"
-END AS PartyCandidates
+END AS PartyCandidates								//End the Case Expression and call it PartyCandidates
 ```
 
 #### **_2. Battle of the sexes_**
@@ -276,21 +276,23 @@ in a query that would take a vast amount of time to complete. This is why we use
 on to the next part of the query, instead of asking Neo4J to do all the work at once. This query shows examples of built in functions such as toFloat() and COUNT()
 
 ```cypher
-MATCH (c:Candidate)-[r1]->(Constituency)
-WITH COUNT(distinct c) AS TotalCandidates
-MATCH (mcan:Candidate)-[r2]->(conm:Constituency)
-WHERE mcan.Gender = "Male"
-WITH COUNT(distinct mcan) AS TotalMCandidates, TotalCandidates
-MATCH (fcan:Candidate)-[r3]->(conf:Constituency)
-WHERE fcan.Gender = "Female"
-WITH COUNT(distinct fcan) AS TotalFCandidates, TotalMCandidates, TotalCandidates
-MATCH (fcane:Candidate)-[r4:ELECTED_IN]->(confe:Constituency)
-WHERE fcane.Gender = "Female"
-WITH COUNT(distinct fcane) AS ElectedFCandidates, TotalMCandidates, TotalCandidates, TotalFCandidates
-MATCH (mcane:Candidate)-[r5:ELECTED_IN]->(conme:Constituency)
-WHERE mcane.Gender = "Male"
-WITH COUNT(distinct mcane) AS ElectedMCandidates, 
-	 ROUND(((toFloat(COUNT(distinct mcane)) /  toFloat(TotalMCandidates)) * 100)) + "%" AS MalePercentageElected,
+MATCH (c:Candidate)-[r1]->(Constituency)			//Match all candidates with any relationship to a constituency
+//Count all candidates (only once hence the distinct keyword). 
+//The WITH keyword is used to get the result and pass it to the next part of the query
+WITH COUNT(distinct c) AS TotalCandidates			
+MATCH (mcan:Candidate)-[r2]->(conm:Constituency)							//Here we use MATCH to get candidates 
+WHERE mcan.Gender = "Male"													//Specify they must be male
+WITH COUNT(distinct mcan) AS TotalMCandidates, TotalCandidates				//Then use COUNT() keyword to count them all and WITH keyword to pass the results on
+MATCH (fcan:Candidate)-[r3]->(conf:Constituency)											//Here we use MATCH to get candidates 
+WHERE fcan.Gender = "Female"																//Specify they must be female
+WITH COUNT(distinct fcan) AS TotalFCandidates, TotalMCandidates, TotalCandidates			//Then use COUNT() keyword to count them all and WITH keyword to pass the results on
+MATCH (fcane:Candidate)-[r4:ELECTED_IN]->(confe:Constituency)								//Here we use MATCH to get all elected candidates 
+WHERE fcane.Gender = "Female"																//Specify they must be female
+WITH COUNT(distinct fcane) AS ElectedFCandidates, TotalMCandidates, TotalCandidates, TotalFCandidates //Then use COUNT() keyword to count them all and WITH keyword to pass the results on
+MATCH (mcane:Candidate)-[r5:ELECTED_IN]->(conme:Constituency)								//Here we use MATCH to get all elected candidates 
+WHERE mcane.Gender = "Male"																	//Specify they must be male
+WITH COUNT(distinct mcane) AS ElectedMCandidates, 											//Then use COUNT() keyword to count them all and WITH keyword to pass the results on
+	 ROUND(((toFloat(COUNT(distinct mcane)) /  toFloat(TotalMCandidates)) * 100)) + "%" AS MalePercentageElected,	//Here we get male and female elected percentage
 	 ROUND(((toFloat(ElectedFCandidates) /  toFloat(TotalFCandidates)) * 100)) + "%" AS FemalePercentageElected,
 	 TotalMCandidates, TotalCandidates, TotalFCandidates, ElectedFCandidates
 RETURN TotalCandidates, 
@@ -299,7 +301,7 @@ RETURN TotalCandidates,
 	  ElectedFCandidates, 
 	  ElectedMCandidates,
 	  MalePercentageElected,
-	  FemalePercentageElected;
+	  FemalePercentageElected;						//Lastly return all the results
 ```
 
 #### **_3. Fianna Fail Candidates and the Provinces_**
@@ -308,24 +310,27 @@ This query will get the amount of Fianna Fail candidates in Leinster, Munster an
 Using this data we then calculate what percentage of Fianna Fail candidates were elected in each province.
 
 ```cypher
-MATCH (cl:Candidate {Party: "Fianna Fail"})-[r1:CANDIDATE_IN]->(conl:Constituency {Province: "Leinster"})
-WITH COUNT(distinct cl) AS LeinsterFiannaFail
-MATCH (cm:Candidate {Party: "Fianna Fail"})-[r2:CANDIDATE_IN]->(conl:Constituency {Province: "Munster"})
+MATCH (cl:Candidate {Party: "Fianna Fail"})-[r1:CANDIDATE_IN]->(conl:Constituency {Province: "Leinster"})	//Match Fianna Fail candidates that are in leinster
+//Use COUNT and distinct keyword to get the amount of Fianna Fail members in leinster
+//Use the WITH keyword to pass the data to the next part of the query.
+WITH COUNT(distinct cl) AS LeinsterFiannaFail																 
+MATCH (cm:Candidate {Party: "Fianna Fail"})-[r2:CANDIDATE_IN]->(conl:Constituency {Province: "Munster"})  //We carry out the same operations for munster and connacht candidates
 WITH COUNT(distinct cm) AS MunsterFiannaFail, LeinsterFiannaFail
-MATCH (cc:Candidate {Party: "Fianna Fail"})-[r3:CANDIDATE_IN]->(conl:Constituency {Province: "Connacht"})
+MATCH (cc:Candidate {Party: "Fianna Fail"})-[r3:CANDIDATE_IN]->(conl:Constituency {Province: "Connacht"}) 
 WITH COUNT(distinct cc) AS ConnachtFiannaFail, MunsterFiannaFail, LeinsterFiannaFail
 MATCH (cle:Candidate {Party: "Fianna Fail"})-[r4:ELECTED_IN]->(conl:Constituency {Province: "Leinster"})
 WITH COUNT(distinct cle) AS LeinsterFiannaFailElected, ConnachtFiannaFail, MunsterFiannaFail, LeinsterFiannaFail
 MATCH (cme:Candidate {Party: "Fianna Fail"})-[r5:ELECTED_IN]->(conl:Constituency {Province: "Munster"})
 WITH COUNT(distinct cme) AS MunsterFiannaFailElected, LeinsterFiannaFailElected, ConnachtFiannaFail, MunsterFiannaFail, LeinsterFiannaFail 
 MATCH (cce:Candidate {Party: "Fianna Fail"})-[r6:ELECTED_IN]->(conl:Constituency {Province: "Connacht"})
+//Get the percentage how many Fianna Fail members were elected in connacht, munster and leinster.
 WITH COUNT(distinct cce) AS ConnachtFiannaFailElected, 
-	 ROUND(((toFloat(COUNT(distinct cce)) /  toFloat(ConnachtFiannaFail)) * 100)) + "%" AS ConnachtFiannaFailElectedP,
+	 ROUND(((toFloat(COUNT(distinct cce)) /  toFloat(ConnachtFiannaFail)) * 100)) + "%" AS ConnachtFiannaFailElectedP,		
 	 ROUND(((toFloat(MunsterFiannaFailElected) /  toFloat(MunsterFiannaFail)) * 100)) + "%" AS MunsterFiannaFailElectedP,
 	 ROUND(((toFloat(LeinsterFiannaFailElected) /  toFloat(LeinsterFiannaFail)) * 100)) + "%" AS LeinsterFiannaFailElectedP,
 	 MunsterFiannaFailElected, LeinsterFiannaFailElected, ConnachtFiannaFail, MunsterFiannaFail, LeinsterFiannaFail 
 RETURN LeinsterFiannaFail, MunsterFiannaFail, ConnachtFiannaFail, LeinsterFiannaFailElected, MunsterFiannaFailElected, ConnachtFiannaFailElected, LeinsterFiannaFailElectedP,
-	   MunsterFiannaFailElectedP, ConnachtFiannaFailElectedP;
+	   MunsterFiannaFailElectedP, ConnachtFiannaFailElectedP; //Finally return the data to the user
 ```
 
 To view some other interesting queries related to this database you can view the QueryData.cypher file.
