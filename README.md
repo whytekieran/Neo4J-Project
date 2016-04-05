@@ -11,10 +11,12 @@
 **1. Master Branch** The commits to this branch include any queries that are involved in creating the database and the ReadMe.md, the query files commited
 								 on this branch are the CreateDatabase.cypher and GeneralQueries.cypher files which are located inside the supports folder, the 
 								 largest amount of commits will be found here. **The master branch also contains the finished project.** </br>
+								 
 **2. Query Data Branch** The commits on this branch include any queries that are involved in searching for useful and interesting data. The query file
 									 commited on this branch is the QueryData.cypher file which is located inside the supports folder and the three query.cypher
 									 files which are located inside the scripts folder. (The QueryData.cypher file contains queries used while i was attempting to 
 									 come up with my three queries, the queries here are the ones that didnt make my top three. </br>
+									 
 **3. Finishing Touches Branch** Lastly, this branch contains a few minor commits containing small final touches to finish the project (eg typo's) and also commits for the closing
 								statement section of the readMe file. </br>
 
