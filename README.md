@@ -15,7 +15,8 @@
 									 commited on this branch is the QueryData.cypher file which is located inside the supports folder and the three query.cypher
 									 files which are located inside the scripts folder. (The QueryData.cypher file contains queries used while i was attempting to 
 									 come up with my three queries, the queries here are the ones that didnt make my top three. </br>
-**3. Finished Branch** Lastly, this branch contains a few minor commits containing small final touches to finish the project. </br>
+**3. Finished Branch** Lastly, this branch contains a few minor commits containing small final touches to finish the project and also commits for the closing
+					   statement section of the this readMe file. </br>
 
 (Note: The Query Data branch was merged back to the master on a regular basis to keep them both in sync, then after one final merge we make one single commit 
 to the Finished branch were the completed project can be downloaded.)
@@ -326,6 +327,12 @@ RETURN LeinsterFiannaFail, MunsterFiannaFail, ConnachtFiannaFail, LeinsterFianna
 ```
 
 To view some other interesting queries related to this database you can view the QueryData.cypher file.
+
+## **_Closing Statement_**
+
+To summarize, graph databases like Neo4J and its supporting query language Cypher are becoming an increasingly popular tool today, especially in the last 10 years since social
+media has taken off. Graph databases when use in the right situation are extremely powerful and useful. Facebook for example uses a graph database, this allows users to quickly
+search for their friends, friends of their friends and so on. I feel personally that in the future graph databases will only become increasingly popular.
 
 
 ## **_References_**
