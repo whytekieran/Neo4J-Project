@@ -340,7 +340,7 @@ you can view the QueryData.cypher file.
 To summarize, graph databases like Neo4J and its supporting query language Cypher are becoming an increasingly popular tool today, especially in the last 10 years since social
 media has taken off. Graph databases when used in the right situation are extremely powerful and useful. Facebook for example uses a graph database, this allows users to quickly
 search for their friends, friends of their friends and so on. I feel personally that in the future graph databases will only become increasingly popular and will be implemented
-more and more environments.
+in more and more environments.
 
 
 ## **_References_**
