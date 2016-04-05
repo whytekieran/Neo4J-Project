@@ -6,7 +6,7 @@
 **Module:** Graph Theory </br>
 **Lecturer:** Ian Mcloughlin </br>
 
-**_Git Branches:_** 
+## **_Git Branches:_** 
 
 **1. Master Branch** The commits to this branch include any queries that are involved in creating the database and the ReadMe.md, the query files commited
 								 on this branch are the CreateDatabase.cypher and GeneralQueries.cypher files which are located inside the supports folder, the 
