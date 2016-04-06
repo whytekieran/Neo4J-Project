@@ -10,7 +10,7 @@
 
 **1. Master Branch** The commits to this branch include any queries that are involved in creating the database and the ReadMe.md, the query files commited
 								 on this branch are the CreateDatabase.cypher and GeneralQueries.cypher files which are located inside the supports folder, the 
-								 largest amount of commits will be found here. There last commits made to this branch involve me just tidying a few minor details.
+								 largest amount of commits will be found here. The last commits made to this branch involve me just tidying a few minor details.
 								 **This master branch contains the finished project.** </br>
 								 
 **2. Query Data Branch** The commits on this branch include any queries that are involved in searching for useful and interesting data. The query file
@@ -22,7 +22,7 @@
 								statement section of the readMe file. </br>
 
 (Note: Firstly, the Query Data branch was merged back to the master on a regular basis to keep them both in sync. When the final commit was made to the Finished branch
-this branch was also merged back to the master branch. The use of differnet branches in this project is to show im familiar and capable of using the software effectively)
+this branch was also merged back to the master branch. The use of differnet branches in this project is mostly to show im familiar and capable of using the software effectively)
 
 ## **_Introduction_**
 My name is Ciaran Whyte and as part of a Graph Thoery Module based in GMIT (Galway-Mayo Institute of Technology) I have to design and build a
