@@ -26,6 +26,8 @@
 (Note: Firstly, the Query Data branch was merged back to the master on a regular basis to keep them both in sync. When the final commit was made to the Finished branch
 this branch was also merged back to the master branch. The use of different branches in this project is mostly to show im familiar and capable of using the git software effectively)
 
+IMPORTANT: When you download this database im unsure if it will start by asking for default username and password of neo4j and neo4j. If it doesnt then it is probably requesting the password i set for the database. The password is: software24
+
 ## **_Introduction_**
 My name is Ciaran Whyte and as part of a Graph Thoery Module based in GMIT (Galway-Mayo Institute of Technology) I have to design and build a
 graph database using Neo4J and Cypher. Today Neo4J is the worlds most popular graph database managment system, it uses a language called Cypher as its query
