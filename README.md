@@ -4,25 +4,27 @@
 **Student ID:** G00254624 </br>
 **Course:** Software Development </br>
 **Module:** Graph Theory </br>
-**Lecturer:** Ian Mcloughlin </br>
+**Lecturer:** Ian McLoughlin </br>
 
-## **_Git Branches_** 
+## **_Git Branches and Project Files_** 
 
 **1. Master Branch** The commits to this branch include any queries that are involved in creating the database and the ReadMe.md, the query files commited
-								 on this branch are the CreateDatabase.cypher and GeneralQueries.cypher files which are located inside the supports folder, the 
-								 largest amount of commits will be found here. The last commits made to this branch involve me just tidying a few minor details.
+								 on this branch are the CreateDatabase.cypher file which contains all the cypher queries that were involved in creating the database 
+								 and the GeneralQueries.cypher file which contains any cypher queries used while testing the database during its creation. 
+								 These files which are located inside the supports folder, the largest amount of commits will be found on this branch. 
+								 The last commits made to this branch involve me just tidying a few minor details and editing the ReadMe.md file.
 								 **This master branch contains the finished project.** </br>
 								 
 **2. Query Data Branch** The commits on this branch include any queries that are involved in searching for useful and interesting data. The query file
 									 commited on this branch is the QueryData.cypher file which is located inside the supports folder and the three query.cypher
 									 files which are located inside the scripts folder. (The QueryData.cypher file contains queries used while i was attempting to 
-									 come up with my three queries, the queries here are the ones that didnt make my top three and the three that did. </br>
+									 come up with my three queries, the queries here are the ones that didnt make my top three inluding the three that did. </br>
 									 
 **3. Finished Branch** Lastly, this branch contains a few minor commits containing small final touches to finish the project (eg typo's) and also commits for the closing
 								statement section of the readMe file. </br>
 
 (Note: Firstly, the Query Data branch was merged back to the master on a regular basis to keep them both in sync. When the final commit was made to the Finished branch
-this branch was also merged back to the master branch. The use of differnet branches in this project is mostly to show im familiar and capable of using the software effectively)
+this branch was also merged back to the master branch. The use of different branches in this project is mostly to show im familiar and capable of using the git software effectively)
 
 ## **_Introduction_**
 My name is Ciaran Whyte and as part of a Graph Thoery Module based in GMIT (Galway-Mayo Institute of Technology) I have to design and build a
@@ -39,7 +41,7 @@ these elected members then congregate together to form the Irish House of Parlim
 
 ![Constituencies](/readmeImages/constituencies.png)
 
-Once I have implemented the database with the data specified in the requirements and also briefly shown in the above image I must then come up with three interesting queries for the 
+Once I have implemented the database with the data specified in the requirements for this project I must then come up with three interesting queries for the 
 database, these queries must demonstrate a good working knowledge of the Neo4J query language, Cypher. The queries and the Cypher 
 language will also be explained in more detail later in this documentation.
 
@@ -70,7 +72,7 @@ Element | Description
 ------------ | -------------
 Node | Represents an entity in the database, defined as a circle when shown visually.
 Edge | Represents a relationship between nodes, must be directional and are defined as lines when shown visually.
-Labels | Used to shown what type of entity a node is representing or what type of relationship an edge is representing
+Labels | Used to show what type of entity a node is representing or what type of relationship an edge is representing
 Properties | Used to set information about a node or edge
 
 Although i say that there are four main elements in a Neo4J graph database, some people may say its actually two. (Nodes and Edges) This is technically true, what im 
@@ -88,12 +90,12 @@ version tracking of the software is available from the following link on Github 
 
 Most NoSQL databases lack true ACID transactions unlike Neo4J which fully supports ACID (Atomicity, Consistency, Isolation, Durability) out of the box. ACID makes sure that 
 database transactions are processed in a reliable way, meaning that a transaction with the database must fully finish, otherwise the changes that were made before the 
-failure must be undone. ACID databases also store their data on some sort of durable storage, eg hard disk. Neo4J also provide for efficient data importing, allowing CSV and
+failure must be undone. ACID databases also store their data on some sort of durable storage, eg hard disk. Neo4J also provides for efficient data importing, allowing CSV and
 relational formatted data to be easily converted. Lastly, Neo4J is also incredibly fast, allowing a user to search through millions of connections a second.
 
 #### **_Cypher_**
 
-Cypher is Neo4J’s declarative graph query language. The Cypher language borrows some of its structure and keywords from SQL which allows users that are familier with using
+Cypher is Neo4J’s declarative graph query language. The Cypher language borrows some of its structure and keywords from SQL which allows users that are familiar with using
 relational database management systems like MySQL to quickly become accustomed to using Neo4J as well. The Cypher language allows a user to describe what he/she wants to 
 select, insert, update or delete from a graph database without requiring the user to describe exactly how its done.
 
@@ -112,9 +114,9 @@ graph step by step, explaining the Cypher code along the way.
 Creating the nodes
 
 ```cypher
-CREATE (i:Person {Name: "Ian"}), 		//The CREATE keyword is used to create nodes and patterns.
-       (j:Person {Name: "Jim"}),		//Basically, this is what each of these nodes is describing (usedToReferenceNodeLater:Label {Key: "Value"})
-       (e:Person {Name: "Emil"}) 
+CREATE (i:Person {name: "Ian"}), 		//The CREATE keyword is used to create nodes and patterns.
+       (j:Person {name: "Jim"}),		//Basically, this is what each of these nodes is describing (usedToReferenceNodeLater:Label {Key: "Value"})
+       (e:Person {name: "Emil"}) 
 RETURN i, j, e;							//The return keyword is optional, once the nodes are created this keyword causes them to be shown back to the user.
 ```
 (Note: i, j and e are temporary reference variables, they are only used to refer to an element later in the query)
@@ -124,10 +126,10 @@ Now that we have created the three nodes we need to now create the relationships
 Creating the relationships between the nodes
 
 ```cypher
-MATCH 									//The MATCH keyword is used to retrive any elements that match the patterns specified. (Kind of like your SELECT statement in SQL)
-	(i:Person {Name: "Ian"}), 			//Then we specify the nodes we are looking for and use a temporary placeholder so we can reference them further in the query.
-    (j:Person {Name: "Jim"}),		
-    (e:Person {Name: "Emil"}) 		
+MATCH 									//The MATCH keyword is used to retrieve any elements that match the patterns specified. (Kind of like your SELECT statement in SQL)
+	(i:Person {name: "Ian"}), 			//Then we specify the nodes we are looking for and use a temporary placeholder so we can reference them further in the query.
+    (j:Person {name: "Jim"}),		
+    (e:Person {name: "Emil"}) 		
 CREATE									//Next we use the CREATE keyword to create the relationships and give the label 'KNOWS'
 	(i)-[r1:KNOWS]->(e),				//We dont need to reference the node, just its placeholder (Here we say create the 'KNOWS' relationship between Ian and Emil)
 	(j)-[r2:KNOWS]->(i)
@@ -137,7 +139,7 @@ RETURN
 ```
 
 Thats it, with those two simple steps we have created the graph shown earlier, if you want to view more information about Cypher you can view its documentation from the 
-Neo4J website, here is the link [Cypher Documentation](http://neo4j.com/docs/stable/cypher-query-lang.html). 
+Neo4J website, here is the link to the [Cypher Documentation](http://neo4j.com/docs/stable/cypher-query-lang.html). 
 
 ## **_Neo4J (Graph Database) Vs MySQL (Relational Database)_**
 
@@ -146,14 +148,14 @@ that MySQL is a relational database management system and SQL (Structured Query 
 
 #### **_Relational Structure_**
 
-We have described already the structure of a graph database, a relational database on the otherhand does not use vertices and edges like the graph database, instead relational
-databases organise their data into tables with rows and columns, columns in different tables are then related to eachother through what we call the 'FOREIGN_KEY' attribute.
+We have already described the structure of a graph database, a relational database on the otherhand does not use vertices and edges like the graph database, instead relational
+databases organise their data into tables with rows(records) and columns(fields), columns in different tables are then related to eachother through what we call the 'FOREIGN_KEY' attribute.
 Graph databases are often called schemaless database meaning we dont need to define a structure or data types before we create the graph. Relational databases do require a
 schema, each column must have a defined data type specifying exactly what type of data it will accept. This has advantages and disadvantages which will explained in the next
 section. 
 
 > **Below is an image representing the layout of a simple relational database, we see three tables, the customer, pet and appointments table. The appointments table is
-called a junction table and it contains data related to both the pet and customer table. This is done through the appointments table's foreign keys, which are the
+called a junction table because it contains data related to both the pet and customer table. This is done through the appointments table's foreign keys, which are the
 CUSTOMER_ID and PET_ID columns**
 
 ![SimpleGraphDBLayout](/readmeImages/relational.png)
@@ -192,7 +194,7 @@ wish to view more information about relational database here is a link to MySQL'
 
 ## **_The Project Database_**
 In the introduction of this documentation I described the project that i will be doing which involves creating a graph database. Now that ive explained a little about the technologies 
-that will be using i will now explain the database that ive created for my project. 
+that i will be using i will now explain the database that ive created for my project. 
 
 **The Database Nodes**
 
@@ -224,13 +226,15 @@ Seated_in Relationship | Represents which candidates have a seat in the dail. (O
 Member_of Relationship | Represents which candidate is a member of which political party | Candidate, PoliticalParty | MEMBER_OF | None
 
 ## **_Queries_**
-The following contains my three Cypher queries for the database i have created.
+In the Introduction section of this documentation i mentioned that i needed to come up with three interesting queries for the database i have created. I spent some time trying 
+to think of some interesting ones and i think the three here do have some interesting data. I also wanted to make use of different keywords and functions and show my understanding
+of them. So the three interesting queries for my database are as follows:
 
 #### **_1. Political Party Candidates_**
 
 This query will return the amount of Candidate nodes that represent each political party. This is accomplished by using Case Expressions.
 By writing the query in this way we greatly reduce the amount of time the query takes to execute. This is compared to writing each pattern 
-individually. 
+individually. This query could be done in different ways but i wanted to show the use of Case Expressions in Cypher.
 
 ```cypher
 MATCH (c:Candidate)-[r:MEMBER_OF]->(pp:PoliticalParty)	//Match any candidate node that has a member of relationship with a political party node
@@ -275,6 +279,7 @@ This query will get the total amount of candidates, male candidates, female cand
 elected female candidates and the percentage of how many male and female were elected. Trying to match all the patterns using the same MATCH would result 
 in a query that would take a vast amount of time to complete. This is why we use the WITH keyword. This is used to get the result of a query and pass that result
 on to the next part of the query, instead of asking Neo4J to do all the work at once. This query shows examples of built in functions such as toFloat() and COUNT()
+The query shows that 22% of female candidates were elected vs 32% for male candidates.
 
 ```cypher
 MATCH (c:Candidate)-[r1]->(Constituency)			//Match all candidates with any relationship to a constituency
@@ -308,7 +313,8 @@ RETURN TotalCandidates,
 #### **_3. Fianna Fail Candidates and the Provinces_**
 
 This query will get the amount of Fianna Fail candidates in Leinster, Munster and Connacht then the amount of elected Fianna Fail Candidates in the same three provinces.
-Using this data we then calculate what percentage of Fianna Fail candidates were elected in each province.
+Using this data we then calculate what percentage of Fianna Fail candidates were elected in each province. This query shows that if you are a Fianna Fail member,
+no matter which province you are a candidate in you actually have a greater than 50% chance of being elected. Simply by being part of Fianna Fail.
 
 ```cypher
 MATCH (cl:Candidate {Party: "Fianna Fail"})-[r1:CANDIDATE_IN]->(conl:Constituency {Province: "Leinster"})	//Match Fianna Fail candidates that are in leinster
