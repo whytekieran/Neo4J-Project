@@ -300,7 +300,7 @@ RETURN LeinsterFiannaFail, MunsterFiannaFail, ConnachtFiannaFail, LeinsterFianna
 	   MunsterFiannaFailElectedP, ConnachtFiannaFailElectedP;
 
 //36. Query showing an example of using the 'OPTIONAL MATCH' Keyword.
-//The optional match will return results if they are found. If results arent found they are ignored but the results that were found are still returned
+//The optional match will return results if they are found (Partial Matching). If results arent found they are ignored but the results that were found are still returned
 //The MATCH keyword has to match everything or it returns nothing. (All or nothing). In this example Lionel Messi is not a candidate, he is a well known footballer and does 
 //not exist in this database. Enda Kenny though does exist. The optional match will still return enda kenny. A normal match would not return anything because one of
 //the patterns doesnt match
