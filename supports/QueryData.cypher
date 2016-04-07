@@ -299,8 +299,15 @@ WITH COUNT(distinct cce) AS ConnachtFiannaFailElected,
 RETURN LeinsterFiannaFail, MunsterFiannaFail, ConnachtFiannaFail, LeinsterFiannaFailElected, MunsterFiannaFailElected, ConnachtFiannaFailElected, LeinsterFiannaFailElectedP,
 	   MunsterFiannaFailElectedP, ConnachtFiannaFailElectedP;
 
+//36. Query showing an example of using the 'OPTIONAL MATCH' Keyword.
+//The optional match will return results if they are found. If results arent found they are ignored but the results that were found are still returned
+//The MATCH keyword has to match everything or it returns nothing. (All or nothing). In this example Lionel Messi is not a candidate, he is a well known footballer and does 
+//not exist in this database. Enda Kenny though does exist. The optional match will still return enda kenny. A normal match would not return anything because one of
+//the patterns doesnt match
+OPTIONAL MATCH (c:Candidate {Name: "Lionel Messi"}),
+			   (c:Candidate {Name: "Enda Kenny"});
 
-
+			   
 
 
 
